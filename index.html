@@ -900,20 +900,20 @@
       <div class="form-row">
         <div class="form-group">
           <label class="form-label">First Name</label>
-          <input type="text" class="form-input" placeholder="John">
+          <input type="text" name="first_name" class="form-input" placeholder="John" required>
         </div>
         <div class="form-group">
           <label class="form-label">Last Name</label>
-          <input type="text" class="form-input" placeholder="Smith">
+          <input type="text" name="last_name" class="form-input" placeholder="Smith" required>
         </div>
       </div>
       <div class="form-group">
         <label class="form-label">Email</label>
-        <input type="email" class="form-input" placeholder="john@company.com">
+        <input type="email" name="email" class="form-input" placeholder="john@company.com" required>
       </div>
       <div class="form-group">
         <label class="form-label">I'm interested in</label>
-        <select class="form-select">
+        <select name="service" class="form-select" required>
           <option value="">Select a service</option>
           <option>Industrial Asset / Turbine Transaction</option>
           <option>Medical Practice Revenue Growth</option>
@@ -924,7 +924,7 @@
       </div>
       <div class="form-group">
         <label class="form-label">Tell us about your situation</label>
-        <textarea class="form-textarea" placeholder="Brief overview of what you're working on..."></textarea>
+        <textarea name="message" class="form-textarea" placeholder="Brief overview of what you're working on..."></textarea>
       </div>
       <button type="submit" class="btn-primary" style="border: none; cursor: none; width: 100%; text-align: center;">
         Send Inquiry
