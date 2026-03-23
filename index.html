@@ -1,0 +1,1000 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Babylon Consulting LLC</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --gold: #C9A84C;
+    --gold-light: #E8C96A;
+    --gold-dim: #8B6F2E;
+    --black: #0A0A0A;
+    --dark: #111111;
+    --dark2: #161616;
+    --dark3: #1E1E1E;
+    --white: #F5F0E8;
+    --white-dim: rgba(245,240,232,0.6);
+    --white-faint: rgba(245,240,232,0.12);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--black);
+    color: var(--white);
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    overflow-x: hidden;
+    cursor: none;
+  }
+
+  /* Custom cursor */
+  .cursor {
+    width: 8px; height: 8px;
+    background: var(--gold);
+    border-radius: 50%;
+    position: fixed;
+    pointer-events: none;
+    z-index: 9999;
+    transition: transform 0.15s ease;
+    mix-blend-mode: difference;
+  }
+  .cursor-ring {
+    width: 32px; height: 32px;
+    border: 1px solid var(--gold);
+    border-radius: 50%;
+    position: fixed;
+    pointer-events: none;
+    z-index: 9998;
+    transition: all 0.3s ease;
+    opacity: 0.5;
+  }
+
+  /* Nav */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0;
+    z-index: 100;
+    padding: 28px 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: linear-gradient(to bottom, rgba(10,10,10,0.95), transparent);
+  }
+
+  .nav-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    font-weight: 300;
+    letter-spacing: 4px;
+    color: var(--gold);
+    text-decoration: none;
+  }
+  .nav-logo span { font-style: italic; color: var(--white); }
+
+  .nav-links { display: flex; gap: 48px; list-style: none; }
+  .nav-links a {
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--white-dim);
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+  .nav-links a:hover { color: var(--gold); }
+
+  /* Hero */
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    padding: 0 60px;
+  }
+
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 80% 60% at 70% 50%, rgba(201,168,76,0.06) 0%, transparent 60%),
+      radial-gradient(ellipse 40% 40% at 20% 80%, rgba(201,168,76,0.04) 0%, transparent 50%),
+      linear-gradient(135deg, #0A0A0A 0%, #111111 50%, #0D0D0D 100%);
+  }
+
+  .hero-grid {
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(201,168,76,0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(201,168,76,0.04) 1px, transparent 1px);
+    background-size: 80px 80px;
+    mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 30%, transparent 100%);
+  }
+
+  .hero-line {
+    position: absolute;
+    left: 0; right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    opacity: 0.2;
+    animation: scanline 8s ease-in-out infinite;
+  }
+  @keyframes scanline {
+    0%, 100% { top: 20%; opacity: 0; }
+    50% { top: 80%; opacity: 0.3; }
+  }
+
+  .hero-content {
+    position: relative;
+    max-width: 800px;
+    animation: fadeUp 1.2s ease forwards;
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  @keyframes fadeUp {
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .hero-eyebrow {
+    font-size: 11px;
+    letter-spacing: 6px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 32px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+  .hero-eyebrow::before {
+    content: '';
+    width: 40px; height: 1px;
+    background: var(--gold);
+  }
+
+  .hero-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(52px, 7vw, 96px);
+    font-weight: 300;
+    line-height: 1.0;
+    letter-spacing: -1px;
+    margin-bottom: 32px;
+  }
+  .hero-title em {
+    font-style: italic;
+    color: var(--gold);
+  }
+
+  .hero-sub {
+    font-size: 14px;
+    line-height: 1.9;
+    color: var(--white-dim);
+    max-width: 480px;
+    margin-bottom: 56px;
+    letter-spacing: 0.5px;
+  }
+
+  .hero-ctas {
+    display: flex;
+    gap: 24px;
+    align-items: center;
+  }
+
+  .btn-primary {
+    display: inline-block;
+    padding: 16px 40px;
+    background: var(--gold);
+    color: var(--black);
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    transition: all 0.3s;
+    position: relative;
+    overflow: hidden;
+  }
+  .btn-primary::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: var(--white);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+    z-index: -1;
+  }
+  .btn-primary:hover { color: var(--black); }
+  .btn-primary:hover::after { transform: scaleX(1); }
+
+  .btn-ghost {
+    display: inline-block;
+    padding: 16px 40px;
+    border: 1px solid rgba(201,168,76,0.4);
+    color: var(--gold);
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    transition: all 0.3s;
+  }
+  .btn-ghost:hover {
+    border-color: var(--gold);
+    background: rgba(201,168,76,0.06);
+  }
+
+  .hero-scroll {
+    position: absolute;
+    bottom: 48px;
+    left: 60px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    font-size: 10px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--white-dim);
+    animation: fadeUp 1.2s 0.6s ease forwards;
+    opacity: 0;
+  }
+  .scroll-line {
+    width: 40px; height: 1px;
+    background: var(--gold-dim);
+    position: relative;
+    overflow: hidden;
+  }
+  .scroll-line::after {
+    content: '';
+    position: absolute;
+    top: 0; left: -100%;
+    width: 100%; height: 100%;
+    background: var(--gold);
+    animation: scrollAnim 2s ease infinite;
+  }
+  @keyframes scrollAnim {
+    to { left: 100%; }
+  }
+
+  /* Divider */
+  .divider {
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(201,168,76,0.3), transparent);
+  }
+
+  /* Ventures section */
+  .section {
+    padding: 120px 60px;
+    position: relative;
+  }
+
+  .section-label {
+    font-size: 10px;
+    letter-spacing: 6px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 64px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+  .section-label::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(90deg, rgba(201,168,76,0.3), transparent);
+    max-width: 200px;
+  }
+
+  .ventures-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2px;
+  }
+
+  .venture-card {
+    background: var(--dark2);
+    padding: 64px 56px;
+    position: relative;
+    overflow: hidden;
+    transition: background 0.4s;
+    cursor: none;
+  }
+  .venture-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 3px; height: 0;
+    background: var(--gold);
+    transition: height 0.4s ease;
+  }
+  .venture-card:hover { background: var(--dark3); }
+  .venture-card:hover::before { height: 100%; }
+
+  .venture-number {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 80px;
+    font-weight: 300;
+    color: rgba(201,168,76,0.08);
+    position: absolute;
+    top: 32px; right: 48px;
+    line-height: 1;
+    transition: color 0.4s;
+  }
+  .venture-card:hover .venture-number { color: rgba(201,168,76,0.12); }
+
+  .venture-icon {
+    width: 48px; height: 48px;
+    border: 1px solid rgba(201,168,76,0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 32px;
+    transition: border-color 0.3s;
+  }
+  .venture-card:hover .venture-icon { border-color: var(--gold); }
+  .venture-icon svg { width: 22px; height: 22px; stroke: var(--gold); fill: none; stroke-width: 1.5; }
+
+  .venture-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 32px;
+    font-weight: 400;
+    margin-bottom: 8px;
+    letter-spacing: 0.5px;
+  }
+
+  .venture-subtitle {
+    font-size: 10px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 24px;
+  }
+
+  .venture-desc {
+    font-size: 13px;
+    line-height: 1.9;
+    color: var(--white-dim);
+    margin-bottom: 40px;
+  }
+
+  .venture-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .tag {
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 6px 14px;
+    border: 1px solid rgba(201,168,76,0.2);
+    color: var(--white-dim);
+  }
+
+  /* Stats bar */
+  .stats-bar {
+    background: var(--dark2);
+    border-top: 1px solid rgba(201,168,76,0.12);
+    border-bottom: 1px solid rgba(201,168,76,0.12);
+    padding: 60px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+  }
+
+  .stat {
+    padding: 0 40px;
+    border-right: 1px solid rgba(201,168,76,0.12);
+    text-align: center;
+  }
+  .stat:first-child { padding-left: 0; }
+  .stat:last-child { border-right: none; }
+
+  .stat-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 52px;
+    font-weight: 300;
+    color: var(--gold);
+    line-height: 1;
+    margin-bottom: 8px;
+  }
+  .stat-label {
+    font-size: 10px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--white-dim);
+  }
+
+  /* Services */
+  .services-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+    margin-top: 0;
+  }
+
+  .service-item {
+    padding: 48px 40px;
+    background: var(--dark2);
+    border-bottom: 2px solid transparent;
+    transition: all 0.3s;
+    position: relative;
+  }
+  .service-item:hover {
+    background: var(--dark3);
+    border-bottom-color: var(--gold);
+  }
+
+  .service-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 13px;
+    color: var(--gold-dim);
+    margin-bottom: 24px;
+    letter-spacing: 2px;
+  }
+
+  .service-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 24px;
+    font-weight: 400;
+    margin-bottom: 16px;
+  }
+
+  .service-desc {
+    font-size: 12px;
+    line-height: 1.8;
+    color: var(--white-dim);
+  }
+
+  /* About / Philosophy */
+  .about-wrap {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 120px;
+    align-items: center;
+  }
+
+  .about-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(40px, 4vw, 64px);
+    font-weight: 300;
+    line-height: 1.1;
+    margin-bottom: 40px;
+  }
+  .about-title em { font-style: italic; color: var(--gold); }
+
+  .about-text {
+    font-size: 14px;
+    line-height: 2;
+    color: var(--white-dim);
+    margin-bottom: 24px;
+  }
+
+  .about-visual {
+    position: relative;
+    height: 500px;
+  }
+  .about-box {
+    position: absolute;
+    background: var(--dark2);
+    border: 1px solid rgba(201,168,76,0.15);
+  }
+  .about-box-1 {
+    top: 0; left: 40px; right: 0; bottom: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .about-box-2 {
+    bottom: 0; left: 0; width: 160px; height: 160px;
+    background: var(--gold);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .about-quote {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 28px;
+    font-style: italic;
+    color: var(--white);
+    text-align: center;
+    padding: 40px;
+    line-height: 1.4;
+  }
+  .about-quote-small {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 16px;
+    font-style: italic;
+    color: var(--black);
+    text-align: center;
+    padding: 16px;
+    line-height: 1.4;
+  }
+
+  /* Contact */
+  .contact-wrap {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 120px;
+    align-items: start;
+  }
+
+  .contact-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(40px, 4vw, 64px);
+    font-weight: 300;
+    line-height: 1.1;
+    margin-bottom: 40px;
+  }
+  .contact-title em { font-style: italic; color: var(--gold); }
+
+  .contact-info {
+    margin-top: 48px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+  .contact-row {
+    display: flex;
+    gap: 24px;
+    align-items: center;
+    padding-bottom: 24px;
+    border-bottom: 1px solid rgba(201,168,76,0.1);
+  }
+  .contact-row-label {
+    font-size: 10px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--gold-dim);
+    min-width: 80px;
+  }
+  .contact-row-val {
+    font-size: 14px;
+    color: var(--white-dim);
+  }
+
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .form-label {
+    font-size: 10px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--gold-dim);
+  }
+  .form-input, .form-select, .form-textarea {
+    background: var(--dark2);
+    border: 1px solid rgba(201,168,76,0.15);
+    color: var(--white);
+    padding: 16px 20px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 13px;
+    font-weight: 300;
+    outline: none;
+    transition: border-color 0.3s;
+    -webkit-appearance: none;
+  }
+  .form-input:focus, .form-select:focus, .form-textarea:focus {
+    border-color: var(--gold);
+  }
+  .form-textarea { resize: vertical; min-height: 120px; }
+  .form-select option { background: var(--dark2); }
+
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+
+  /* Footer */
+  footer {
+    background: var(--dark2);
+    border-top: 1px solid rgba(201,168,76,0.12);
+    padding: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .footer-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 20px;
+    font-weight: 300;
+    letter-spacing: 4px;
+    color: var(--gold);
+  }
+  .footer-copy {
+    font-size: 11px;
+    color: var(--white-faint);
+    letter-spacing: 1px;
+  }
+  .footer-links {
+    display: flex;
+    gap: 32px;
+    list-style: none;
+  }
+  .footer-links a {
+    font-size: 10px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--white-dim);
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+  .footer-links a:hover { color: var(--gold); }
+
+  /* Reveal animations */
+  .reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  @media (max-width: 900px) {
+    nav { padding: 24px 30px; }
+    .nav-links { display: none; }
+    .hero { padding: 0 30px; }
+    .section { padding: 80px 30px; }
+    .ventures-grid, .services-list, .about-wrap, .contact-wrap { grid-template-columns: 1fr; }
+    .stats-bar { grid-template-columns: 1fr 1fr; padding: 40px 30px; }
+    .stat { border-right: none; border-bottom: 1px solid rgba(201,168,76,0.12); padding: 24px 0; }
+    footer { flex-direction: column; gap: 24px; text-align: center; padding: 40px 30px; }
+    .form-row { grid-template-columns: 1fr; }
+    .about-visual { height: 300px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="cursor" id="cursor"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<!-- Nav -->
+<nav>
+  <a href="#" class="nav-logo">BABYLON <span>Consulting</span></a>
+  <ul class="nav-links">
+    <li><a href="#ventures">Ventures</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- Hero -->
+<section class="hero" id="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+  <div class="hero-line"></div>
+
+  <div class="hero-content">
+    <div class="hero-eyebrow">Strategic Facilitation</div>
+    <h1 class="hero-title">
+      Where Capital<br>Meets <em>Precision</em>
+    </h1>
+    <p class="hero-sub">
+      Babylon Consulting operates at the intersection of industrial machinery,
+      medical practice growth, and high-value asset transactions.
+      We don't just advise — we execute.
+    </p>
+    <div class="hero-ctas">
+      <a href="#contact" class="btn-primary">Engage Us</a>
+      <a href="#ventures" class="btn-ghost">Our Ventures</a>
+    </div>
+  </div>
+
+  <div class="hero-scroll">
+    <div class="scroll-line"></div>
+    Scroll to explore
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- Stats -->
+<div class="stats-bar reveal">
+  <div class="stat">
+    <div class="stat-num">$M+</div>
+    <div class="stat-label">Deal Volume Facilitated</div>
+  </div>
+  <div class="stat">
+    <div class="stat-num">2</div>
+    <div class="stat-label">Core Verticals</div>
+  </div>
+  <div class="stat">
+    <div class="stat-num">3+</div>
+    <div class="stat-label">Active Markets</div>
+  </div>
+  <div class="stat">
+    <div class="stat-num">100%</div>
+    <div class="stat-label">Commission-Based Alignment</div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- Ventures -->
+<section class="section" id="ventures">
+  <div class="section-label">Our Ventures</div>
+  <div class="ventures-grid reveal">
+
+    <div class="venture-card">
+      <div class="venture-number">01</div>
+      <div class="venture-icon">
+        <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+      </div>
+      <div class="venture-title">Industrial Asset Arbitrage</div>
+      <div class="venture-subtitle">Turbines · Machinery · AI Infrastructure</div>
+      <p class="venture-desc">
+        We source, vet, and facilitate back-to-back transactions on large-scale
+        industrial equipment — gas and steam turbines, combined cycle units, and
+        heavy machinery for AI data centers and energy infrastructure.
+        Deals range from $1M to $50M+ per asset.
+      </p>
+      <div class="venture-tags">
+        <span class="tag">100MW+ Units</span>
+        <span class="tag">GE · Siemens · Mitsubishi</span>
+        <span class="tag">Global Buyers</span>
+        <span class="tag">Fast Close</span>
+      </div>
+    </div>
+
+    <div class="venture-card">
+      <div class="venture-number">02</div>
+      <div class="venture-icon">
+        <svg viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+      </div>
+      <div class="venture-title">Medical Practice Growth</div>
+      <div class="venture-subtitle">Cash-Based Services · Revenue Expansion</div>
+      <p class="venture-desc">
+        We partner with independent medical practices and med spas to introduce
+        and manage high-margin cash-based service lines. From GLP-1 weight management
+        programs to aesthetic services — we bring the infrastructure, you provide
+        the clinical environment.
+      </p>
+      <div class="venture-tags">
+        <span class="tag">GLP-1 Programs</span>
+        <span class="tag">Zero Upfront Cost</span>
+        <span class="tag">Revenue Share</span>
+        <span class="tag">Turnkey</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- Services -->
+<section class="section" id="services" style="padding-top: 80px;">
+  <div class="section-label">What We Do</div>
+  <div class="services-list reveal">
+
+    <div class="service-item">
+      <div class="service-num">01 —</div>
+      <div class="service-name">Deal Sourcing & Brokerage</div>
+      <p class="service-desc">We identify qualified buyers and sellers for large-scale industrial assets and structure back-to-back transactions that close cleanly.</p>
+    </div>
+
+    <div class="service-item">
+      <div class="service-num">02 —</div>
+      <div class="service-name">Practice Revenue Consulting</div>
+      <p class="service-desc">We audit existing medical practices and identify untapped revenue streams, then implement and manage them on a performance basis.</p>
+    </div>
+
+    <div class="service-item">
+      <div class="service-num">03 —</div>
+      <div class="service-name">Sales Infrastructure</div>
+      <p class="service-desc">We build and operate sales systems for businesses that lack the infrastructure — from scripts and CRM to outreach and follow-up.</p>
+    </div>
+
+    <div class="service-item">
+      <div class="service-num">04 —</div>
+      <div class="service-name">Strategic BD</div>
+      <p class="service-desc">We identify and develop partnerships, distribution channels, and collaboration opportunities across our network of operators and investors.</p>
+    </div>
+
+    <div class="service-item">
+      <div class="service-num">05 —</div>
+      <div class="service-name">Market Entry</div>
+      <p class="service-desc">For businesses looking to enter new verticals or geographies, we provide on-the-ground facilitation, local market intelligence, and execution.</p>
+    </div>
+
+    <div class="service-item">
+      <div class="service-num">06 —</div>
+      <div class="service-name">Transaction Management</div>
+      <p class="service-desc">End-to-end deal management — from initial contact and due diligence support to logistics coordination and closing documentation.</p>
+    </div>
+
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- About -->
+<section class="section" id="about">
+  <div class="section-label">The Philosophy</div>
+  <div class="about-wrap reveal">
+
+    <div>
+      <h2 class="about-title">We Don't<br>Just <em>Advise.</em><br>We Execute.</h2>
+      <p class="about-text">
+        Most consultants hand you a report and walk away. Babylon Consulting
+        embeds itself in the transaction — we only win when you win.
+        Every engagement is structured on performance, alignment, and results.
+      </p>
+      <p class="about-text">
+        Our network spans industrial asset buyers across North America, Europe,
+        and the Middle East, alongside a growing portfolio of medical practices
+        in South Florida and internationally.
+      </p>
+      <p class="about-text">
+        We move fast, operate with discretion, and bring institutional-grade
+        deal discipline to markets that typically lack it.
+      </p>
+      <a href="#contact" class="btn-primary" style="margin-top: 16px; display: inline-block;">
+        Start a Conversation
+      </a>
+    </div>
+
+    <div class="about-visual">
+      <div class="about-box about-box-1">
+        <p class="about-quote">"The best deals are the ones nobody else saw coming."</p>
+      </div>
+      <div class="about-box about-box-2">
+        <p class="about-quote-small">Est.<br>Fort Lauderdale</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- Contact -->
+<section class="section" id="contact">
+  <div class="section-label">Get In Touch</div>
+  <div class="contact-wrap reveal">
+
+    <div>
+      <h2 class="contact-title">Let's Talk<br><em>Business.</em></h2>
+      <p style="font-size:14px; line-height:1.9; color: var(--white-dim); max-width: 380px;">
+        Whether you have a turbine to move, a practice to scale, or a deal
+        that needs a strategic operator — we want to hear from you.
+      </p>
+      <div class="contact-info">
+        <div class="contact-row">
+          <span class="contact-row-label">Email</span>
+          <span class="contact-row-val">ahmed@babylonconsulting.us</span>
+        </div>
+        <div class="contact-row">
+          <span class="contact-row-label">Phone</span>
+          <span class="contact-row-val">+1 (313) 247-2008</span>
+        </div>
+        <div class="contact-row">
+          <span class="contact-row-label">Location</span>
+          <span class="contact-row-val">Fort Lauderdale, Florida</span>
+        </div>
+        <div class="contact-row">
+          <span class="contact-row-label">Markets</span>
+          <span class="contact-row-val">North America · Middle East · Europe</span>
+        </div>
+      </div>
+    </div>
+
+    <form class="contact-form" onsubmit="handleSubmit(event)">
+      <div class="form-row">
+        <div class="form-group">
+          <label class="form-label">First Name</label>
+          <input type="text" class="form-input" placeholder="John">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Last Name</label>
+          <input type="text" class="form-input" placeholder="Smith">
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Email</label>
+        <input type="email" class="form-input" placeholder="john@company.com">
+      </div>
+      <div class="form-group">
+        <label class="form-label">I'm interested in</label>
+        <select class="form-select">
+          <option value="">Select a service</option>
+          <option>Industrial Asset / Turbine Transaction</option>
+          <option>Medical Practice Revenue Growth</option>
+          <option>Sales Infrastructure</option>
+          <option>Strategic Partnership</option>
+          <option>Other</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Tell us about your situation</label>
+        <textarea class="form-textarea" placeholder="Brief overview of what you're working on..."></textarea>
+      </div>
+      <button type="submit" class="btn-primary" style="border: none; cursor: none; width: 100%; text-align: center;">
+        Send Inquiry
+      </button>
+    </form>
+
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div class="footer-logo">BABYLON</div>
+  <p class="footer-copy">© 2026 Babylon Consulting LLC · All rights reserved · Fort Lauderdale, FL</p>
+  <ul class="footer-links">
+    <li><a href="#ventures">Ventures</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</footer>
+
+<script>
+  // Cursor
+  const cursor = document.getElementById('cursor');
+  const ring = document.getElementById('cursorRing');
+  let mx = 0, my = 0, rx = 0, ry = 0;
+  document.addEventListener('mousemove', e => {
+    mx = e.clientX; my = e.clientY;
+    cursor.style.left = mx - 4 + 'px';
+    cursor.style.top = my - 4 + 'px';
+  });
+  function animRing() {
+    rx += (mx - rx) * 0.12;
+    ry += (my - ry) *.12;
+    ring.style.left = rx - 16 + 'px';
+    ring.style.top = ry - 16 + 'px';
+    requestAnimationFrame(animRing);
+  }
+  animRing();
+  document.querySelectorAll('a, button, .venture-card, .service-item').forEach(el => {
+    el.addEventListener('mouseenter', () => {
+      cursor.style.transform = 'scale(2.5)';
+      ring.style.transform = 'scale(1.5)';
+      ring.style.opacity = '0.8';
+    });
+    el.addEventListener('mouseleave', () => {
+      cursor.style.transform = 'scale(1)';
+      ring.style.transform = 'scale(1)';
+      ring.style.opacity = '0.5';
+    });
+  });
+
+  // Scroll reveal
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        observer.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+  // Form
+  function handleSubmit(e) {
+    e.preventDefault();
+    const btn = e.target.querySelector('button');
+    btn.textContent = 'Sent — We\'ll be in touch.';
+    btn.style.background = '#2a2a2a';
+    btn.style.color = 'var(--gold)';
+  }
+</script>
+</body>
+</html>
