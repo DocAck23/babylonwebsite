@@ -669,124 +669,215 @@
     gap: 60px;
   }
 
+  /* ── ARIA HERO AD ─────────────────────────────── */
   .aria-hero-ad {
     position: relative;
-    padding: 40px;
-    border: 1px solid rgba(201, 168, 76, 0.25);
+    padding: 48px;
+    border: 1px solid rgba(201, 168, 76, 0.3);
     background: linear-gradient(
-      135deg,
-      rgba(201, 168, 76, 0.04) 0%,
-      rgba(247, 244, 239, 0.02) 100%
+      145deg,
+      rgba(201, 168, 76, 0.06) 0%,
+      rgba(17, 17, 17, 0.4) 50%,
+      rgba(201, 168, 76, 0.03) 100%
     );
-    backdrop-filter: blur(8px);
-    animation: ariaGlow 4s ease-in-out infinite;
-    max-width: 420px;
+    max-width: 520px;
     margin-left: auto;
-    flex-shrink: 0;
+    margin-right: 0;
+    animation: ariaGlow 5s ease-in-out infinite;
+    overflow: hidden;
   }
-
+  /* Corner accent top-left */
+  .aria-hero-ad::before {
+    content: '';
+    position: absolute;
+    top: -1px;
+    left: -1px;
+    width: 60px;
+    height: 60px;
+    border-top: 2px solid #C9A84C;
+    border-left: 2px solid #C9A84C;
+  }
+  /* Corner accent bottom-right */
+  .aria-hero-ad::after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    right: -1px;
+    width: 60px;
+    height: 60px;
+    border-bottom: 2px solid #C9A84C;
+    border-right: 2px solid #C9A84C;
+  }
   @keyframes ariaGlow {
     0%, 100% {
-      border-color: rgba(201, 168, 76, 0.2);
+      border-color: rgba(201, 168, 76, 0.25);
       box-shadow: 0 0 0 0 rgba(201, 168, 76, 0);
     }
     50% {
-      border-color: rgba(201, 168, 76, 0.5);
-      box-shadow: 0 0 40px -10px rgba(201, 168, 76, 0.15);
+      border-color: rgba(201, 168, 76, 0.55);
+      box-shadow:
+        0 0 60px -15px rgba(201, 168, 76, 0.2),
+        inset 0 0 60px -30px rgba(201, 168, 76, 0.05);
     }
   }
-
+  .aria-ad-top-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 24px;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
   .aria-ad-eyebrow {
     font-size: 10px;
     letter-spacing: 5px;
     text-transform: uppercase;
-    color: rgba(201, 168, 76, 0.7);
-    margin-bottom: 20px;
-    font-family: inherit;
+    color: rgba(201, 168, 76, 0.6);
   }
-
+  .aria-ad-founding-badge {
+    font-size: 9px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: #111;
+    background: #C9A84C;
+    padding: 5px 10px;
+    font-weight: 600;
+    white-space: nowrap;
+  }
   .aria-ad-logo {
-    margin-bottom: 16px;
-    line-height: 1;
-  }
-
-  .aria-ad-logo-text {
-    font-family: 'Playfair Display', 'Georgia', serif;
-    font-size: 52px;
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 72px;
     font-weight: 400;
-    letter-spacing: 12px;
+    letter-spacing: 16px;
     color: #F7F4EF;
+    line-height: 1;
+    margin-bottom: 16px;
   }
-
   .aria-ad-logo-dot {
-    font-family: 'Playfair Display', 'Georgia', serif;
-    font-size: 52px;
-    color: var(--gold);
+    color: #C9A84C;
   }
-
   .aria-ad-tagline {
-    font-family: 'Playfair Display', 'Georgia', serif;
-    font-size: 18px;
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 20px;
     font-weight: 400;
-    color: rgba(247, 244, 239, 0.75);
-    line-height: 1.5;
-    margin-bottom: 28px;
+    color: rgba(247, 244, 239, 0.7);
+    line-height: 1.55;
+    margin-bottom: 24px;
   }
-
   .aria-ad-tagline em {
     font-style: italic;
-    color: var(--gold);
+    color: #C9A84C;
   }
-
+  .aria-ad-divider {
+    width: 40px;
+    height: 1px;
+    background: rgba(201, 168, 76, 0.4);
+    margin-bottom: 24px;
+  }
   .aria-ad-points {
     display: flex;
     flex-direction: column;
     gap: 10px;
-    margin-bottom: 32px;
+    margin-bottom: 28px;
   }
-
   .aria-ad-point {
     font-size: 12px;
     color: rgba(247, 244, 239, 0.5);
-    letter-spacing: 0.5px;
+    letter-spacing: 0.3px;
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 12px;
     line-height: 1.5;
   }
-
   .aria-ad-point-icon {
-    color: var(--gold);
+    color: #C9A84C;
     font-size: 8px;
     flex-shrink: 0;
   }
-
+  /* Founding member pricing block */
+  .aria-ad-offer {
+    background: rgba(201, 168, 76, 0.06);
+    border: 1px solid rgba(201, 168, 76, 0.2);
+    padding: 20px 24px;
+    margin-bottom: 28px;
+  }
+  .aria-ad-offer-row {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    margin-bottom: 12px;
+  }
+  .aria-ad-offer-item {
+    flex: 1;
+    text-align: center;
+  }
+  .aria-ad-offer-divider-v {
+    width: 1px;
+    height: 40px;
+    background: rgba(201, 168, 76, 0.2);
+    flex-shrink: 0;
+  }
+  .aria-ad-offer-label {
+    font-size: 9px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: rgba(201, 168, 76, 0.6);
+    margin-bottom: 6px;
+  }
+  .aria-ad-offer-price {
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    gap: 8px;
+  }
+  .aria-ad-offer-was {
+    font-size: 12px;
+    color: rgba(247, 244, 239, 0.25);
+    text-decoration: line-through;
+  }
+  .aria-ad-offer-now {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 20px;
+    color: #F7F4EF;
+    font-weight: 400;
+  }
+  .aria-ad-offer-note {
+    font-size: 9px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: rgba(201, 168, 76, 0.5);
+    text-align: center;
+    border-top: 1px solid rgba(201, 168, 76, 0.15);
+    padding-top: 12px;
+  }
   .aria-ad-cta {
-    display: inline-block;
-    padding: 13px 32px;
-    background: var(--gold);
-    color: #111111;
+    display: block;
+    width: 100%;
+    padding: 16px;
+    background: #C9A84C;
+    color: #111;
     font-size: 10px;
-    font-weight: 600;
+    font-weight: 700;
     letter-spacing: 2.5px;
     text-transform: uppercase;
     text-decoration: none;
+    text-align: center;
     transition: all 0.3s ease;
     margin-bottom: 16px;
+    cursor: pointer;
   }
-
   .aria-ad-cta:hover {
-    background: var(--gold-light);
-    transform: translateY(-1px);
+    background: #E8C96A;
+    letter-spacing: 3px;
   }
-
   .aria-ad-attribution {
-    font-size: 10px;
-    letter-spacing: 2px;
+    font-size: 9px;
+    letter-spacing: 2.5px;
     text-transform: uppercase;
-    color: rgba(247, 244, 239, 0.2);
+    color: rgba(247, 244, 239, 0.15);
+    text-align: center;
   }
-
+  /* ── ARIA AD RESPONSIVE ─────────────────────────── */
   @media (max-width: 1023px) {
     .hero-inner {
       flex-direction: column;
@@ -794,28 +885,31 @@
     }
     .aria-hero-ad {
       max-width: 100%;
-      margin-left: 0;
-      margin-top: 48px;
-      padding: 32px;
+      margin: 48px 0 0 0;
+      padding: 36px;
     }
-    .aria-ad-logo-text,
-    .aria-ad-logo-dot {
-      font-size: 40px;
-    }
-    .aria-ad-tagline {
-      font-size: 16px;
+    .aria-ad-logo {
+      font-size: 56px;
+      letter-spacing: 12px;
     }
   }
-
   @media (max-width: 640px) {
     .aria-hero-ad {
-      padding: 24px;
-      margin-top: 40px;
+      padding: 28px 24px;
     }
-    .aria-ad-logo-text,
-    .aria-ad-logo-dot {
-      font-size: 36px;
+    .aria-ad-logo {
+      font-size: 44px;
       letter-spacing: 8px;
+    }
+    .aria-ad-tagline {
+      font-size: 17px;
+    }
+    .aria-ad-offer-now {
+      font-size: 17px;
+    }
+    .aria-ad-top-row {
+      flex-direction: column;
+      align-items: flex-start;
     }
   }
 </style>
@@ -860,15 +954,25 @@
     </div>
 
     <div class="aria-hero-ad">
-      <div class="aria-ad-eyebrow">INTRODUCING</div>
-      <div class="aria-ad-logo">
-        <span class="aria-ad-logo-text">ARIA</span>
-        <span class="aria-ad-logo-dot">.</span>
+      <!-- Top row: eyebrow + founding badge -->
+      <div class="aria-ad-top-row">
+        <div class="aria-ad-eyebrow">INTRODUCING</div>
+        <div class="aria-ad-founding-badge">
+          ⚡ FOUNDING 100 — 30% OFF FOR LIFE
+        </div>
       </div>
+      <!-- ARIA wordmark -->
+      <div class="aria-ad-logo">
+        ARIA<span class="aria-ad-logo-dot">.</span>
+      </div>
+      <!-- Main tagline -->
       <div class="aria-ad-tagline">
         Your AI Chief of Staff.<br>
         <em>Ready in 60 seconds.</em>
       </div>
+      <!-- Divider -->
+      <div class="aria-ad-divider"></div>
+      <!-- Three proof points -->
       <div class="aria-ad-points">
         <div class="aria-ad-point">
           <span class="aria-ad-point-icon">✦</span>
@@ -883,9 +987,36 @@
           Email, research, calls, strategy — handled.
         </div>
       </div>
-      <a href="https://youraria.ai" target="_blank" class="aria-ad-cta">
-        Meet ARIA →
+      <!-- Founding member offer block -->
+      <div class="aria-ad-offer">
+        <div class="aria-ad-offer-row">
+          <div class="aria-ad-offer-item">
+            <div class="aria-ad-offer-label">Personal</div>
+            <div class="aria-ad-offer-price">
+              <span class="aria-ad-offer-was">$997</span>
+              <span class="aria-ad-offer-now">$697/mo</span>
+            </div>
+          </div>
+          <div class="aria-ad-offer-divider-v"></div>
+          <div class="aria-ad-offer-item">
+            <div class="aria-ad-offer-label">Business</div>
+            <div class="aria-ad-offer-price">
+              <span class="aria-ad-offer-was">$2,997</span>
+              <span class="aria-ad-offer-now">$2,097/mo</span>
+            </div>
+          </div>
+        </div>
+        <div class="aria-ad-offer-note">
+          Founding rate locked in for life · First 100 clients only
+        </div>
+      </div>
+      <!-- CTA -->
+      <a href="https://youraria.ai"
+         target="_blank"
+         class="aria-ad-cta">
+        Claim Your Founding Rate →
       </a>
+      <!-- Attribution -->
       <div class="aria-ad-attribution">
         A Babylon Consulting product
       </div>
