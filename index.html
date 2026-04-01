@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Babylon Consulting LLC</title>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
 <style>
   :root {
     --gold: #C9A84C;
@@ -657,6 +658,166 @@
     .form-row { grid-template-columns: 1fr; }
     .about-visual { height: 300px; }
   }
+
+  /* ── ARIA HERO AD ────────────────────────────────── */
+  .hero-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    position: relative;
+    gap: 60px;
+  }
+
+  .aria-hero-ad {
+    position: relative;
+    padding: 40px;
+    border: 1px solid rgba(201, 168, 76, 0.25);
+    background: linear-gradient(
+      135deg,
+      rgba(201, 168, 76, 0.04) 0%,
+      rgba(247, 244, 239, 0.02) 100%
+    );
+    backdrop-filter: blur(8px);
+    animation: ariaGlow 4s ease-in-out infinite;
+    max-width: 420px;
+    margin-left: auto;
+    flex-shrink: 0;
+  }
+
+  @keyframes ariaGlow {
+    0%, 100% {
+      border-color: rgba(201, 168, 76, 0.2);
+      box-shadow: 0 0 0 0 rgba(201, 168, 76, 0);
+    }
+    50% {
+      border-color: rgba(201, 168, 76, 0.5);
+      box-shadow: 0 0 40px -10px rgba(201, 168, 76, 0.15);
+    }
+  }
+
+  .aria-ad-eyebrow {
+    font-size: 10px;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    color: rgba(201, 168, 76, 0.7);
+    margin-bottom: 20px;
+    font-family: inherit;
+  }
+
+  .aria-ad-logo {
+    margin-bottom: 16px;
+    line-height: 1;
+  }
+
+  .aria-ad-logo-text {
+    font-family: 'Playfair Display', 'Georgia', serif;
+    font-size: 52px;
+    font-weight: 400;
+    letter-spacing: 12px;
+    color: #F7F4EF;
+  }
+
+  .aria-ad-logo-dot {
+    font-family: 'Playfair Display', 'Georgia', serif;
+    font-size: 52px;
+    color: var(--gold);
+  }
+
+  .aria-ad-tagline {
+    font-family: 'Playfair Display', 'Georgia', serif;
+    font-size: 18px;
+    font-weight: 400;
+    color: rgba(247, 244, 239, 0.75);
+    line-height: 1.5;
+    margin-bottom: 28px;
+  }
+
+  .aria-ad-tagline em {
+    font-style: italic;
+    color: var(--gold);
+  }
+
+  .aria-ad-points {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 32px;
+  }
+
+  .aria-ad-point {
+    font-size: 12px;
+    color: rgba(247, 244, 239, 0.5);
+    letter-spacing: 0.5px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    line-height: 1.5;
+  }
+
+  .aria-ad-point-icon {
+    color: var(--gold);
+    font-size: 8px;
+    flex-shrink: 0;
+  }
+
+  .aria-ad-cta {
+    display: inline-block;
+    padding: 13px 32px;
+    background: var(--gold);
+    color: #111111;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    margin-bottom: 16px;
+  }
+
+  .aria-ad-cta:hover {
+    background: var(--gold-light);
+    transform: translateY(-1px);
+  }
+
+  .aria-ad-attribution {
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: rgba(247, 244, 239, 0.2);
+  }
+
+  @media (max-width: 1023px) {
+    .hero-inner {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    .aria-hero-ad {
+      max-width: 100%;
+      margin-left: 0;
+      margin-top: 48px;
+      padding: 32px;
+    }
+    .aria-ad-logo-text,
+    .aria-ad-logo-dot {
+      font-size: 40px;
+    }
+    .aria-ad-tagline {
+      font-size: 16px;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .aria-hero-ad {
+      padding: 24px;
+      margin-top: 40px;
+    }
+    .aria-ad-logo-text,
+    .aria-ad-logo-dot {
+      font-size: 36px;
+      letter-spacing: 8px;
+    }
+  }
 </style>
 </head>
 <body>
@@ -681,19 +842,53 @@
   <div class="hero-grid"></div>
   <div class="hero-line"></div>
 
-  <div class="hero-content">
-    <div class="hero-eyebrow">Strategic Facilitation</div>
-    <h1 class="hero-title">
-      Where Capital<br>Meets <em>Precision</em>
-    </h1>
-    <p class="hero-sub">
-      Babylon Consulting operates at the intersection of industrial machinery,
-      medical practice growth, and high-value asset transactions.
-      We don't just advise — we execute.
-    </p>
-    <div class="hero-ctas">
-      <a href="#contact" class="btn-primary">Engage Us</a>
-      <a href="#ventures" class="btn-ghost">Our Ventures</a>
+  <div class="hero-inner">
+    <div class="hero-content">
+      <div class="hero-eyebrow">Strategic Facilitation</div>
+      <h1 class="hero-title">
+        Where Capital<br>Meets <em>Precision</em>
+      </h1>
+      <p class="hero-sub">
+        Babylon Consulting operates at the intersection of industrial machinery,
+        medical practice growth, and high-value asset transactions.
+        We don't just advise — we execute.
+      </p>
+      <div class="hero-ctas">
+        <a href="#contact" class="btn-primary">Engage Us</a>
+        <a href="#ventures" class="btn-ghost">Our Ventures</a>
+      </div>
+    </div>
+
+    <div class="aria-hero-ad">
+      <div class="aria-ad-eyebrow">INTRODUCING</div>
+      <div class="aria-ad-logo">
+        <span class="aria-ad-logo-text">ARIA</span>
+        <span class="aria-ad-logo-dot">.</span>
+      </div>
+      <div class="aria-ad-tagline">
+        Your AI Chief of Staff.<br>
+        <em>Ready in 60 seconds.</em>
+      </div>
+      <div class="aria-ad-points">
+        <div class="aria-ad-point">
+          <span class="aria-ad-point-icon">✦</span>
+          No downloads. No setup. No code.
+        </div>
+        <div class="aria-ad-point">
+          <span class="aria-ad-point-icon">✦</span>
+          Lives in WhatsApp. Works immediately.
+        </div>
+        <div class="aria-ad-point">
+          <span class="aria-ad-point-icon">✦</span>
+          Email, research, calls, strategy — handled.
+        </div>
+      </div>
+      <a href="https://youraria.ai" target="_blank" class="aria-ad-cta">
+        Meet ARIA →
+      </a>
+      <div class="aria-ad-attribution">
+        A Babylon Consulting product
+      </div>
     </div>
   </div>
 
