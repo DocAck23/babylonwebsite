@@ -298,59 +298,54 @@
     width: 290px;
     position: relative;
     border-radius: 48px;
-    background: linear-gradient(145deg, #2a2a2e 0%, #1a1a1c 50%, #2a2a2e 100%);
-    padding: 4px;
+    background: linear-gradient(145deg, #3a3a3e 0%, #1a1a1c 30%, #2a2a2e 70%, #3a3a3e 100%);
+    padding: 3px;
     box-shadow:
       0 50px 100px rgba(0,0,0,0.6),
-      0 0 0 1px rgba(255,255,255,0.06),
-      inset 0 0 0 1px rgba(255,255,255,0.04),
+      0 0 0 0.5px rgba(255,255,255,0.1),
+      inset 0 1px 0 rgba(255,255,255,0.08),
       0 0 80px rgba(201,168,76,0.06);
   }
   .iphone-inner {
-    border-radius: 44px;
+    border-radius: 45px;
     overflow: hidden;
-    background: var(--wa-bg);
+    background: #000;
     position: relative;
   }
 
   /* Dynamic Island */
   .dynamic-island {
     position: absolute;
-    top: 12px;
+    top: 10px;
     left: 50%;
     transform: translateX(-50%);
-    width: 120px;
-    height: 34px;
+    width: 126px;
+    height: 36px;
     background: #000;
     border-radius: 20px;
     z-index: 10;
   }
-  .dynamic-island::after {
-    content: '';
-    position: absolute;
-    top: 11px;
-    right: 18px;
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    background: radial-gradient(circle at 40% 40%, #1a1a2e 0%, #0a0a0f 100%);
-    border: 1px solid #1a1a2e;
-  }
 
-  /* Status bar */
+  /* Status bar - sits behind Dynamic Island */
   .status-bar {
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    padding: 14px 28px 0;
+    align-items: flex-start;
+    padding: 16px 24px 0;
     font-size: 12px;
     font-weight: 600;
     color: #fff;
     position: relative;
     z-index: 5;
-    height: 54px;
+    height: 52px;
+    background: #1F2C34;
   }
-  .status-time { font-size: 15px; font-weight: 700; letter-spacing: -0.3px; }
+  .status-time {
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: -0.3px;
+    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', sans-serif;
+  }
   .status-icons { display: flex; gap: 5px; align-items: center; }
   .status-icons svg { width: 16px; height: 12px; fill: #fff; }
   .battery-icon {
@@ -378,18 +373,17 @@
     border-radius: 1.5px;
   }
 
-  /* WhatsApp Header */
+  /* WhatsApp Header - flush with status bar */
   .wa-header {
     display: flex;
     align-items: center;
-    padding: 8px 12px 10px;
+    padding: 6px 10px 8px;
     background: #1F2C34;
-    gap: 10px;
-    border-bottom: 1px solid rgba(255,255,255,0.05);
+    gap: 8px;
   }
-  .wa-back { color: #00A884; font-size: 18px; flex-shrink: 0; }
+  .wa-back { color: #00A884; font-size: 20px; flex-shrink: 0; font-weight: 300; }
   .wa-avatar {
-    width: 34px; height: 34px;
+    width: 32px; height: 32px;
     border-radius: 50%;
     background: linear-gradient(135deg, var(--gold), var(--gold-dim));
     display: flex;
@@ -737,81 +731,54 @@
     align-items: center;
   }
 
-  /* AI Demo - realistic WhatsApp style */
-  .ai-chat-demo {
-    background: var(--wa-bg);
-    border: 1px solid rgba(255,255,255,0.06);
-    border-radius: 24px;
-    overflow: hidden;
-    position: relative;
-    box-shadow: 0 40px 80px rgba(0,0,0,0.4);
-  }
-  .ai-demo-header {
+  /* AI Demo - iPhone mockup matching hero */
+  .ai-phone-wrapper {
     display: flex;
-    align-items: center;
-    padding: 12px 16px;
-    background: #1F2C34;
-    gap: 12px;
-  }
-  .ai-demo-avatar {
-    width: 38px; height: 38px;
-    border-radius: 50%;
-    background: linear-gradient(135deg, var(--gold), var(--gold-dim));
-    display: flex;
-    align-items: center;
     justify-content: center;
-    font-family: 'Playfair Display', serif;
-    font-size: 16px;
-    color: var(--black);
-    font-weight: 500;
-    flex-shrink: 0;
   }
-  .ai-demo-info { flex: 1; }
-  .ai-demo-name {
-    font-size: 15px;
-    font-weight: 500;
-    color: #E9EDEF;
-  }
-  .ai-demo-status {
-    font-size: 11px;
-    color: #8696A0;
-  }
-  .ai-demo-messages {
-    padding: 12px 14px;
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-    min-height: 300px;
-  }
-  .ai-msg {
-    max-width: 85%;
-    padding: 6px 8px 3px;
-    border-radius: 8px;
-    font-size: 13px;
-    line-height: 1.45;
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 300;
+  .ai-phone {
+    width: 320px;
+    border-radius: 48px;
+    background: linear-gradient(145deg, #2a2a2e 0%, #1a1a1c 50%, #2a2a2e 100%);
+    padding: 4px;
+    box-shadow:
+      0 50px 100px rgba(0,0,0,0.5),
+      0 0 0 1px rgba(255,255,255,0.06),
+      inset 0 0 0 1px rgba(255,255,255,0.04);
     position: relative;
-    margin-bottom: 2px;
   }
-  .ai-msg.incoming {
-    background: #1E2A30;
-    color: #E9EDEF;
-    align-self: flex-start;
-    border-top-left-radius: 0;
+  .ai-phone-inner {
+    border-radius: 44px;
+    overflow: hidden;
+    background: var(--wa-bg);
   }
-  .ai-msg.outgoing {
-    background: #005C4B;
-    color: #E9EDEF;
-    align-self: flex-end;
-    border-top-right-radius: 0;
+  .ai-phone .dynamic-island {
+    position: absolute;
+    top: 16px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 120px;
+    height: 34px;
+    background: #000;
+    border-radius: 20px;
+    z-index: 10;
   }
-  .ai-msg .msg-meta {
-    float: right;
-    margin-left: 8px;
-    margin-top: 4px;
-    font-size: 10px;
-    color: rgba(255,255,255,0.4);
+  .ai-phone .status-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 28px 0;
+    font-size: 12px;
+    font-weight: 600;
+    color: #fff;
+    height: 54px;
+  }
+  .ai-phone .wa-header {
+    padding: 6px 12px 8px;
+  }
+  .ai-phone .wa-chat {
+    min-height: 340px;
+    padding: 8px 10px 12px;
   }
 
   .ai-features h2 { margin-bottom: 24px; }
@@ -1554,20 +1521,62 @@
 <!-- ═══ AI CAPABILITIES ═══ -->
 <section class="ai-capabilities">
   <div class="ai-layout">
-    <div class="ai-chat-demo reveal-scale">
-      <div class="ai-demo-header">
-        <div class="ai-demo-avatar">A</div>
-        <div class="ai-demo-info">
-          <div class="ai-demo-name">ARIA &mdash; Executive Assistant</div>
-          <div class="ai-demo-status">online</div>
+    <div class="ai-phone-wrapper reveal-scale">
+      <div class="ai-phone">
+        <div class="ai-phone-inner">
+          <div class="dynamic-island"></div>
+          <div class="status-bar">
+            <span class="status-time">9:41</span>
+            <div class="status-icons">
+              <svg viewBox="0 0 18 12"><path d="M1 8.5h2v3H1zM5 6h2v5.5H5zM9 3.5h2v8H9zM13 1h2v10.5h-2z"/></svg>
+              <svg viewBox="0 0 16 12"><path d="M8 2.4C5.36 2.4 3.05 3.55 1.46 5.36L0 3.82C1.96 1.64 4.81 0.25 8 0.25s6.04 1.39 8 3.57l-1.46 1.54C13 3.55 10.64 2.4 8 2.4zM4.43 7.52L8 11.75l3.57-4.23C10.5 6.34 9.32 5.7 8 5.7s-2.5.64-3.57 1.82z"/></svg>
+              <span class="battery-icon"><span class="battery-fill"></span></span>
+            </div>
+          </div>
+          <div class="wa-header">
+            <span class="wa-back">&lsaquo;</span>
+            <div class="wa-avatar">A</div>
+            <div class="wa-contact-info">
+              <div class="wa-contact-name">ARIA</div>
+              <div class="wa-contact-status">online</div>
+            </div>
+            <div class="wa-header-icons">
+              <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" fill="none" stroke="#8696A0" stroke-width="1.5"/></svg>
+            </div>
+          </div>
+          <div class="wa-chat">
+            <div class="wa-date-chip">Today</div>
+            <div class="wa-bubble incoming">
+              <span class="wa-text">I've screened 4 calls this morning. One was a potential client &mdash; I've scheduled them for your 3pm. Two were spam.</span>
+              <span class="wa-meta"><span class="wa-time">8:12 AM</span></span>
+            </div>
+            <div class="wa-bubble outgoing">
+              <span class="wa-text">Perfect. What's my inbox look like?</span>
+              <span class="wa-meta"><span class="wa-time">8:14 AM</span><span class="wa-checks"><svg viewBox="0 0 16 11"><path d="M11.071.653a.457.457 0 0 0-.304-.102.493.493 0 0 0-.381.178l-6.19 7.636-2.011-2.175a.463.463 0 0 0-.336-.153.457.457 0 0 0-.343.144.461.461 0 0 0-.109.69l2.32 2.508c.103.112.23.169.381.169h.04c.152-.013.274-.073.381-.178l6.532-8.055a.47.47 0 0 0 .02-.674z"/><path d="M14.757.653a.457.457 0 0 0-.304-.102.493.493 0 0 0-.381.178L7.882 8.365 7.57 8.04l-.454.56 .685.74c.103.112.23.169.381.169h.04c.152-.013.274-.073.381-.178l6.532-8.055a.47.47 0 0 0 .02-.674z"/></svg></span></span>
+            </div>
+            <div class="wa-bubble incoming">
+              <span class="wa-text">47 new emails. 3 need your eyes &mdash; flagged. 12 routine &mdash; replied in your voice. Rest archived.</span>
+              <span class="wa-meta"><span class="wa-time">8:14 AM</span></span>
+            </div>
+            <div class="wa-bubble outgoing">
+              <span class="wa-text">Send me the flagged ones.</span>
+              <span class="wa-meta"><span class="wa-time">8:15 AM</span><span class="wa-checks"><svg viewBox="0 0 16 11"><path d="M11.071.653a.457.457 0 0 0-.304-.102.493.493 0 0 0-.381.178l-6.19 7.636-2.011-2.175a.463.463 0 0 0-.336-.153.457.457 0 0 0-.343.144.461.461 0 0 0-.109.69l2.32 2.508c.103.112.23.169.381.169h.04c.152-.013.274-.073.381-.178l6.532-8.055a.47.47 0 0 0 .02-.674z"/><path d="M14.757.653a.457.457 0 0 0-.304-.102.493.493 0 0 0-.381.178L7.882 8.365 7.57 8.04l-.454.56 .685.74c.103.112.23.169.381.169h.04c.152-.013.274-.073.381-.178l6.532-8.055a.47.47 0 0 0 .02-.674z"/></svg></span></span>
+            </div>
+            <div class="wa-bubble incoming">
+              <span class="wa-text">Sent. Also &mdash; your supplier contract expires Friday. Want me to draft a renewal with updated terms?</span>
+              <span class="wa-meta"><span class="wa-time">8:15 AM</span></span>
+            </div>
+          </div>
+          <div class="wa-input-bar">
+            <div class="wa-input-field">
+              <span class="wa-emoji">&#128578;</span>
+              <span class="wa-placeholder">Message</span>
+            </div>
+            <div class="wa-mic">
+              <svg viewBox="0 0 24 24"><path d="M12 1a4 4 0 0 0-4 4v6a4 4 0 0 0 8 0V5a4 4 0 0 0-4-4z"/><path d="M19 10v1a7 7 0 0 1-14 0v-1" fill="none" stroke="#fff" stroke-width="2"/><line x1="12" y1="19" x2="12" y2="23" stroke="#fff" stroke-width="2"/></svg>
+            </div>
+          </div>
         </div>
-      </div>
-      <div class="ai-demo-messages">
-        <div class="ai-msg incoming">I've screened 4 calls this morning. One was a potential client &mdash; I've scheduled them for your 3pm. Two were spam. <span class="msg-meta">8:12 AM</span></div>
-        <div class="ai-msg outgoing">Perfect. What's my inbox look like? <span class="msg-meta">8:14 AM</span></div>
-        <div class="ai-msg incoming">47 new emails. 3 need your eyes &mdash; flagged. 12 routine &mdash; replied in your voice. Rest archived. <span class="msg-meta">8:14 AM</span></div>
-        <div class="ai-msg outgoing">Send me the flagged ones. <span class="msg-meta">8:15 AM</span></div>
-        <div class="ai-msg incoming">Sent. Also &mdash; your supplier contract expires Friday. Want me to draft a renewal with updated terms? <span class="msg-meta">8:15 AM</span></div>
       </div>
     </div>
     <div class="ai-features reveal-right">
