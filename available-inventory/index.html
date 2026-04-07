@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Babylon Consulting — Gas Turbine Package Proposal</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Montserrat:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        gold: '#C9A84C',
+        'gold-light': '#E8C96A',
+        'gold-dim': '#8B6F2E',
+        'babylon-black': '#0A0A0A',
+        'babylon-dark': '#111111',
+        'babylon-dark2': '#161616',
+        'babylon-dark3': '#1E1E1E',
+        'babylon-white': '#F5F0E8',
+      },
+      fontFamily: {
+        'display': ['"Cormorant Garamond"', 'serif'],
+        'body': ['"Montserrat"', 'sans-serif'],
+      }
+    }
+  }
+}
+</script>
+<style>
+  @media print {
+    .page-break { page-break-before: always; }
+    * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
+  }
+  .page-break { break-before: page; }
+  body { background: #0A0A0A; color: #F5F0E8; font-family: 'Montserrat', sans-serif; }
+  .section-page { min-height: 100vh; position: relative; }
+  img { page-break-inside: avoid; }
+  table { page-break-inside: avoid; }
+  .unit-card { page-break-inside: avoid; }
+  .gold-gradient {
+    background: linear-gradient(135deg, #C9A84C 0%, #E8C96A 50%, #C9A84C 100%);
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+  }
+  .gold-line { height: 1px; background: linear-gradient(90deg, transparent, #C9A84C, transparent); }
+  .gold-line-left { height: 1px; background: linear-gradient(90deg, #C9A84C, transparent); }
+  .spec-table td { border-bottom: 1px solid rgba(201,168,76,0.15); padding: 10px 12px; }
+  .status-badge {
+    display: inline-flex; align-items: center; gap: 6px; padding: 6px 16px;
+    border: 1px solid #C9A84C; border-radius: 2px; font-size: 11px;
+    letter-spacing: 2px; text-transform: uppercase; color: #C9A84C;
+  }
+  .status-badge::before {
+    content: ''; width: 6px; height: 6px; border-radius: 50%;
+    background: #4ADE80;
+  }
+  .unit-card {
+    background: linear-gradient(180deg, #161616 0%, #111111 100%);
+    border: 1px solid rgba(201,168,76,0.12); border-radius: 4px;
+  }
+  .photo-grid img {
+    border: 1px solid rgba(201,168,76,0.2); border-radius: 4px; object-fit: cover;
+  }
+</style>
+</head>
+<body class="antialiased">
+
+<!-- ====================== COVER PAGE ====================== -->
+<section class="section-page flex flex-col items-center justify-center relative overflow-hidden page-break">
+  <div class="absolute inset-0 opacity-[0.03]" style="background-image: repeating-linear-gradient(0deg, #C9A84C 0px, transparent 1px, transparent 80px), repeating-linear-gradient(90deg, #C9A84C 0px, transparent 1px, transparent 80px);"></div>
+  <div class="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-gold to-transparent"></div>
+  <div class="text-center relative z-10 px-8">
+    <div class="mb-16">
+      <span class="font-display text-gold text-2xl tracking-[8px] font-light">BABYLON</span>
+      <span class="font-display text-babylon-white text-2xl tracking-[8px] font-light italic ml-1">CONSULTING</span>
+    </div>
+    <div class="w-24 gold-line mx-auto mb-16"></div>
+    <h1 class="font-display text-5xl md:text-7xl font-light tracking-wide mb-6 leading-tight">
+      <span class="text-babylon-white">Exclusive Gas Turbine</span><br>
+      <span class="gold-gradient">Package Offering</span>
+    </h1>
+    <p class="font-body text-sm tracking-[4px] uppercase text-babylon-white/50 mb-8">Multi-Site Global Availability</p>
+    <div class="mt-12 mb-8">
+      <div class="font-display text-6xl md:text-8xl font-light gold-gradient">2.263</div>
+      <div class="font-body text-xs tracking-[6px] uppercase text-babylon-white/60 mt-2">Gigawatts &mdash; 8 Units &mdash; 4 Countries</div>
+    </div>
+    <div class="mt-16 flex flex-wrap justify-center gap-8 text-[10px] tracking-[3px] uppercase text-babylon-white/40">
+      <span>Confirmed Available</span>
+      <span class="text-gold/30">|</span>
+      <span>Direct to Seller</span>
+      <span class="text-gold/30">|</span>
+      <span>Ready for Inspection</span>
+      <span class="text-gold/30">|</span>
+      <span>50Hz / 60Hz Convertible</span>
+    </div>
+  </div>
+  <div class="absolute bottom-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-gold/30 to-transparent"></div>
+</section>
+
+
+<!-- ====================== EXECUTIVE SUMMARY ====================== -->
+<section class="px-8 md:px-16 lg:px-24 py-24 page-break">
+  <div class="mb-12">
+    <p class="font-body text-[10px] tracking-[4px] uppercase text-gold mb-3">Executive Summary</p>
+    <h2 class="font-display text-5xl md:text-6xl font-light text-babylon-white mb-2">The Power Crisis Is Now</h2>
+    <div class="w-16 gold-line-left mt-4"></div>
+  </div>
+
+  <div class="max-w-5xl space-y-8 mb-16">
+    <p class="font-body text-base md:text-lg leading-relaxed text-babylon-white/70">
+      Global data center power consumption is projected to reach <span class="text-gold font-medium">96 GW by 2026</span> &mdash; nearly double 2023 levels &mdash; with AI workloads consuming over 40% of that load. In the US alone, roughly <span class="text-gold font-medium">50 GW of new data center projects</span> were announced in 2025.
+    </p>
+    <p class="font-body text-base md:text-lg leading-relaxed text-babylon-white/70">
+      The grid cannot keep up. PJM Interconnection warns of a <span class="text-gold font-medium">49 GW US generation shortfall by 2028</span>. Half of all global data center projects face delays due to power limitations. Tech giants are scrambling: Meta committed $1.6B for on-site gas generation, Microsoft is partnering with Chevron on a 5 GW gas plant, and Google is building a 933 MW facility in Texas.
+    </p>
+    <p class="font-body text-base md:text-lg leading-relaxed text-babylon-white/70">
+      New heavy-duty gas turbines are <span class="text-gold font-medium">virtually unobtainable</span>. Lead times have stretched to <span class="text-gold font-medium">5&ndash;7 years</span>. GE Vernova&rsquo;s 80 GW backlog extends through 2029, with reservations expected to sell out through 2030. Turbine prices have risen <span class="text-gold font-medium">195% since 2019</span>. Only three OEMs worldwide produce these machines.
+    </p>
+  </div>
+
+  <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-20">
+    <div class="unit-card p-6 text-center">
+      <div class="font-display text-4xl text-gold">96 GW</div>
+      <div class="font-body text-[10px] tracking-[2px] uppercase text-babylon-white/40 mt-2">Projected DC Demand 2026</div>
+    </div>
+    <div class="unit-card p-6 text-center">
+      <div class="font-display text-4xl text-gold">5&ndash;7 yr</div>
+      <div class="font-body text-[10px] tracking-[2px] uppercase text-babylon-white/40 mt-2">New Turbine Lead Time</div>
+    </div>
+    <div class="unit-card p-6 text-center">
+      <div class="font-display text-4xl text-gold">195%</div>
+      <div class="font-body text-[10px] tracking-[2px] uppercase text-babylon-white/40 mt-2">Price Increase Since 2019</div>
+    </div>
+    <div class="unit-card p-6 text-center">
+      <div class="font-display text-4xl text-gold">49 GW</div>
+      <div class="font-body text-[10px] tracking-[2px] uppercase text-babylon-white/40 mt-2">US Generation Shortfall 2028</div>
+    </div>
+  </div>
+
+  <!-- World Map -->
+  <div class="overflow-hidden page-break" style="padding-top: 40px;">
+    <h3 class="font-display text-3xl md:text-4xl font-light text-babylon-white mb-10 text-center">Global Unit Locations</h3>
+    <style>
+      .map-container { position: relative; margin: 0 auto; }
+      .map-container img { width: 100%; display: block; mix-blend-mode: multiply; filter: saturate(2) brightness(1.2); }
+      .map-pin { position: absolute; transform: translate(-50%, -50%); text-align: left; z-index: 10; }
+      .map-pin-dot { width: 10px; height: 10px; background: #C9A84C; border-radius: 50%; border: 2px solid #0A0A0A; box-shadow: 0 0 0 2px rgba(201,168,76,0.4); }
+      .map-pin-label { position: absolute; left: 16px; top: -8px; white-space: nowrap; }
+      .map-pin-label-left { position: absolute; right: 16px; top: -8px; white-space: nowrap; text-align: right; }
+    </style>
+    <div class="map-container bg-babylon-black">
+      <img src="images/world-map-dark.jpg" alt="World Map">
+      <!-- Germany pin — Berlin (52.5°N, 13.4°E) -->
+      <div class="map-pin" style="left: 51.5%; top: 22%;">
+        <div class="map-pin-dot"></div>
+        <div class="map-pin-label-left">
+          <div class="font-body text-[11px] font-semibold tracking-[2px] text-gold">GERMANY</div>
+          <div class="font-body text-[9px] text-babylon-white/50">2 Units | 596 MW</div>
+        </div>
+      </div>
+      <!-- Uzbekistan pin — Tashkent (41°N, 69°E) -->
+      <div class="map-pin" style="left: 65%; top: 29%;">
+        <div class="map-pin-dot"></div>
+        <div class="map-pin-label">
+          <div class="font-body text-[11px] font-semibold tracking-[2px] text-gold">UZBEKISTAN</div>
+          <div class="font-body text-[9px] text-babylon-white/50">1 Unit | 418 MW</div>
+        </div>
+      </div>
+      <!-- China pin — Eastern China (32°N, 117°E) -->
+      <div class="map-pin" style="left: 79%; top: 35%;">
+        <div class="map-pin-dot"></div>
+        <div class="map-pin-label">
+          <div class="font-body text-[11px] font-semibold tracking-[2px] text-gold">CHINA</div>
+          <div class="font-body text-[9px] text-babylon-white/50">4 Units | 876 MW</div>
+        </div>
+      </div>
+      <!-- Argentina pin — Buenos Aires (34.6°S, 58.4°W) -->
+      <div class="map-pin" style="left: 27%; top: 78%;">
+        <div class="map-pin-dot"></div>
+        <div class="map-pin-label">
+          <div class="font-body text-[11px] font-semibold tracking-[2px] text-gold">ARGENTINA</div>
+          <div class="font-body text-[9px] text-babylon-white/50">1 Unit | 373 MW</div>
+        </div>
+      </div>
+    </div>
+    <div class="mt-12 text-center">
+      <div class="w-24 gold-line mx-auto mb-6"></div>
+      <p class="font-body text-xs tracking-[3px] uppercase text-gold mb-2">This Package Represents</p>
+      <p class="font-display text-3xl text-babylon-white">2.263 Gigawatts of Confirmed, Available Power</p>
+      <p class="font-body text-xs text-babylon-white/50 mt-2">A virtually unprecedented offering in today&rsquo;s market</p>
+    </div>
+  </div>
+</section>
+
+
+<!-- ====================== PACKAGE SUMMARY TABLE ====================== -->
+<section class="px-8 md:px-16 lg:px-24 py-20 page-break">
+  <div class="mb-12">
+    <p class="font-body text-[10px] tracking-[4px] uppercase text-gold mb-3">Package Overview</p>
+    <h2 class="font-display text-4xl md:text-5xl font-light text-babylon-white mb-2">Complete Unit Inventory</h2>
+    <div class="w-16 gold-line-left mt-4"></div>
+  </div>
+  <div>
+    <table class="spec-table w-full text-left font-body text-xs">
+      <thead>
+        <tr class="border-b border-gold/30">
+          <th class="py-3 px-3 text-[9px] tracking-[2px] uppercase text-gold font-medium">Unit Type</th>
+          <th class="py-3 px-3 text-[9px] tracking-[2px] uppercase text-gold font-medium">Year</th>
+          <th class="py-3 px-3 text-[9px] tracking-[2px] uppercase text-gold font-medium">Output</th>
+          <th class="py-3 px-3 text-[9px] tracking-[2px] uppercase text-gold font-medium">Hours</th>
+          <th class="py-3 px-3 text-[9px] tracking-[2px] uppercase text-gold font-medium">Last MOH</th>
+          <th class="py-3 px-3 text-[9px] tracking-[2px] uppercase text-gold font-medium">Location</th>
+          <th class="py-3 px-3 text-[9px] tracking-[2px] uppercase text-gold font-medium">Status</th>
+        </tr>
+      </thead>
+      <tbody class="text-babylon-white/80">
+        <tr><td colspan="7" class="py-3 px-5 text-[10px] tracking-[3px] uppercase text-gold/60 font-medium bg-gold/[0.03]">China &mdash; 4 Units</td></tr>
+        <tr>
+          <td class="text-babylon-white font-medium">Siemens SGT5-2000E (V94.2) &mdash; GT1</td>
+          <td>1993</td><td>140 MW</td><td>8,000 since MOH</td><td>Feb 2024</td><td>China</td>
+          <td><span class="status-badge">Available</span></td>
+        </tr>
+        <tr>
+          <td class="text-babylon-white font-medium">Siemens SGT5-2000E (V94.2) &mdash; GT2</td>
+          <td>1993</td><td>140 MW</td><td>33,000 since MOH</td><td>Dec 2019</td><td>China</td>
+          <td><span class="status-badge">Available</span></td>
+        </tr>
+        <tr>
+          <td class="text-babylon-white font-medium">Siemens SGT5-4000F (V94.3A) &mdash; GT12</td>
+          <td>2003</td><td>298 MW</td><td>105,000</td><td>N/A</td><td>China</td>
+          <td><span class="inline-flex items-center gap-2 px-3 py-1 border border-yellow-500/40 rounded-sm text-[11px] tracking-[2px] uppercase text-yellow-400"><span class="w-1.5 h-1.5 bg-yellow-400 rounded-full"></span>Under Inspection</span></td>
+        </tr>
+        <tr>
+          <td class="text-babylon-white font-medium">Siemens SGT5-4000F (V94.3A) &mdash; GT11</td>
+          <td>2004</td><td>298 MW</td><td>105,000</td><td>N/A</td><td>China</td>
+          <td><span class="inline-flex items-center gap-2 px-3 py-1 border border-yellow-500/40 rounded-sm text-[11px] tracking-[2px] uppercase text-yellow-400"><span class="w-1.5 h-1.5 bg-yellow-400 rounded-full"></span>Under Inspection</span></td>
+        </tr>
+        <tr><td colspan="7" class="py-3 px-5 text-[10px] tracking-[3px] uppercase text-gold/60 font-medium bg-gold/[0.03]">Germany &mdash; 2 Units</td></tr>
+        <tr>
+          <td class="text-babylon-white font-medium">SGT5-4000F Turbine Generator Set #1 <span class="text-gold text-xs ml-2">NEW</span></td>
+          <td>2016</td><td>298 MW</td><td>0 (New)</td><td>N/A</td><td>Germany</td>
+          <td><span class="status-badge">Available</span></td>
+        </tr>
+        <tr>
+          <td class="text-babylon-white font-medium">SGT5-4000F Turbine Generator Set #2 <span class="text-gold text-xs ml-2">NEW</span></td>
+          <td>2016</td><td>298 MW</td><td>0 (New)</td><td>N/A</td><td>Germany</td>
+          <td><span class="status-badge">Available</span></td>
+        </tr>
+        <tr><td colspan="7" class="py-3 px-5 text-[10px] tracking-[3px] uppercase text-gold/60 font-medium bg-gold/[0.03]">Uzbekistan &mdash; 1 Unit</td></tr>
+        <tr>
+          <td class="text-babylon-white font-medium">Ansaldo AE94.3A Combined Cycle</td>
+          <td>2018</td><td>418 MW</td><td>0 (New)</td><td>N/A</td><td>Uzbekistan</td>
+          <td><span class="status-badge">Available</span></td>
+        </tr>
+        <tr><td colspan="7" class="py-3 px-5 text-[10px] tracking-[3px] uppercase text-gold/60 font-medium bg-gold/[0.03]">Argentina &mdash; 1 Unit</td></tr>
+        <tr>
+          <td class="text-babylon-white font-medium">GE 9HA.01 Heavy-Duty Gas Turbine</td>
+          <td>2015</td><td>373 MW</td><td>0 (New)</td><td>N/A</td><td>Argentina</td>
+          <td><span class="status-badge">Available</span></td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <tr class="border-t border-gold/30">
+          <td class="py-4 px-5 text-gold font-display text-lg">Total Package</td>
+          <td></td><td class="text-gold font-display text-lg font-semibold">2,263 MW</td>
+          <td colspan="4" class="text-right text-babylon-white/50 text-xs tracking-[2px] uppercase">8 Units &bull; 4 Countries &bull; All Confirmed Available</td>
+        </tr>
+      </tfoot>
+    </table>
+  </div>
+</section>
+
+
+<!-- ====================== CHINA SECTION HEADER ====================== -->
+<section class="section-page flex flex-col justify-center items-center text-center px-8 page-break relative overflow-hidden">
+  <div class="absolute inset-0 opacity-[0.02]" style="background-image: repeating-linear-gradient(45deg, #C9A84C 0px, transparent 1px, transparent 60px);"></div>
+  <div class="relative z-10">
+    <p class="font-body text-[10px] tracking-[6px] uppercase text-gold mb-4">Region 01</p>
+    <h2 class="font-display text-6xl md:text-8xl font-light text-babylon-white mb-4">China</h2>
+    <div class="w-24 gold-line mx-auto mb-6"></div>
+    <p class="font-body text-lg text-babylon-white/50 font-light">4 Units &bull; 876 MW Combined Capacity</p>
+    <div class="mt-8"><span class="status-badge">All Confirmed Available</span></div>
+  </div>
+</section>
+
+
+<!-- ====================== CHINA: V94.2 GT1 ====================== -->
+<section class="px-8 md:px-16 lg:px-24 py-20 page-break">
+  <div class="mb-8">
+    <p class="font-body text-[10px] tracking-[4px] uppercase text-gold mb-2">China &mdash; Unit 1 of 4</p>
+    <h3 class="font-display text-3xl md:text-4xl font-light text-babylon-white">Siemens SGT5-2000E (V94.2) &mdash; GT1</h3>
+    <div class="w-12 gold-line-left mt-4"></div>
+  </div>
+  <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
+    <div>
+      <table class="spec-table w-full text-sm font-body">
+        <tr><td class="text-gold/70 w-48">Manufacturer</td><td class="text-babylon-white">Siemens Energy</td></tr>
+        <tr><td class="text-gold/70">Model</td><td class="text-babylon-white">V94.2 (SGT5-2000E)</td></tr>
+        <tr><td class="text-gold/70">Year of Manufacture</td><td class="text-babylon-white">1993</td></tr>
+        <tr><td class="text-gold/70">Rated Power Output</td><td class="text-babylon-white font-medium">140 MW</td></tr>
+        <tr><td class="text-gold/70">Fuel Type</td><td class="text-babylon-white">Natural Gas (converted from diesel, 2003)</td></tr>
+        <tr><td class="text-gold/70">Total Running Hours</td><td class="text-babylon-white">152,455</td></tr>
+        <tr><td class="text-gold/70">MOH Performed</td><td class="text-babylon-white">4 times (by Siemens Energy)</td></tr>
+        <tr><td class="text-gold/70">Last Major Overhaul</td><td class="text-babylon-white font-medium">February 2024</td></tr>
+        <tr><td class="text-gold/70">Hours Since Last MOH</td><td class="text-babylon-white font-medium">8,000</td></tr>
+        <tr><td class="text-gold/70">Combustion System</td><td class="text-babylon-white">DLN (Low-NOx upgrade 2014, &lt;10 ppm)</td></tr>
+        <tr><td class="text-gold/70">Service Agreement</td><td class="text-babylon-white">10-year CSA with Siemens Energy (2016)</td></tr>
+        <tr><td class="text-gold/70">Condition</td><td class="text-babylon-white">Good operation; normally stopped Dec 1, 2025</td></tr>
+        <tr><td class="text-gold/70">Location</td><td class="text-babylon-white">China</td></tr>
+        <tr><td class="text-gold/70">Availability</td><td><span class="status-badge">Confirmed Available</span></td></tr>
+      </table>
+    </div>
+    <div>
+      <div class="unit-card p-5">
+        <p class="text-[10px] tracking-[3px] uppercase text-gold mb-3">Last MOH Scope (Siemens Energy)</p>
+        <ul class="text-sm text-babylon-white/70 space-y-1 list-disc list-inside">
+          <li>All GG blades changed</li>
+          <li>PT blades, inner casing, combustor and hot section parts all changed</li>
+          <li>GT rotor disassembled and overhauled</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <p class="font-body text-[10px] tracking-[3px] uppercase text-gold mb-6">Equipment Photography</p>
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+    <img src="images/china-v94-01.jpg" alt="Siemens V94.2 - Turbine" class="w-full rounded">
+    <img src="images/china-v94-02.jpg" alt="Siemens V94.2 - Facility" class="w-full rounded">
+  </div>
+</section>
+
+
+<!-- ====================== CHINA: V94.2 GT2 ====================== -->
+<section class="px-8 md:px-16 lg:px-24 py-20 page-break">
+  <div class="mb-8">
+    <p class="font-body text-[10px] tracking-[4px] uppercase text-gold mb-2">China &mdash; Unit 2 of 4</p>
+    <h3 class="font-display text-3xl md:text-4xl font-light text-babylon-white">Siemens SGT5-2000E (V94.2) &mdash; GT2</h3>
+    <div class="w-12 gold-line-left mt-4"></div>
+  </div>
+  <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
+    <div>
+      <table class="spec-table w-full text-sm font-body">
+        <tr><td class="text-gold/70 w-48">Manufacturer</td><td class="text-babylon-white">Siemens Energy</td></tr>
+        <tr><td class="text-gold/70">Model</td><td class="text-babylon-white">V94.2 (SGT5-2000E)</td></tr>
+        <tr><td class="text-gold/70">Year of Manufacture</td><td class="text-babylon-white">1993</td></tr>
+        <tr><td class="text-gold/70">Rated Power Output</td><td class="text-babylon-white font-medium">140 MW</td></tr>
+        <tr><td class="text-gold/70">Fuel Type</td><td class="text-babylon-white">Natural Gas (converted from diesel, 2003)</td></tr>
+        <tr><td class="text-gold/70">Total Running Hours</td><td class="text-babylon-white">148,293</td></tr>
+        <tr><td class="text-gold/70">MOH Performed</td><td class="text-babylon-white">3 times (by Siemens Energy)</td></tr>
+        <tr><td class="text-gold/70">Last Major Overhaul</td><td class="text-babylon-white font-medium">December 2019</td></tr>
+        <tr><td class="text-gold/70">Hours Since Last MOH</td><td class="text-babylon-white font-medium">33,000</td></tr>
+        <tr><td class="text-gold/70">Combustion System</td><td class="text-babylon-white">DLN (Low-NOx upgrade 2014, &lt;10 ppm)</td></tr>
+        <tr><td class="text-gold/70">Service Agreement</td><td class="text-babylon-white">10-year CSA with Siemens Energy (2016)</td></tr>
+        <tr><td class="text-gold/70">Condition</td><td class="text-babylon-white">Good operation; normally stopped Dec 1, 2025</td></tr>
+        <tr><td class="text-gold/70">Location</td><td class="text-babylon-white">China</td></tr>
+        <tr><td class="text-gold/70">Availability</td><td><span class="status-badge">Confirmed Available</span></td></tr>
+      </table>
+    </div>
+    <div>
+      <div class="unit-card p-5">
+        <p class="text-[10px] tracking-[3px] uppercase text-gold mb-3">Background</p>
+        <ul class="text-sm text-babylon-white/70 space-y-1 list-disc list-inside">
+          <li>Original Siemens manufacture, commercial operation since 1995</li>
+          <li>Fuel system converted from diesel to natural gas (2003)</li>
+          <li>Low-NOx DLN combustion upgrade (2014)</li>
+          <li>7 total MOH performed across both GT1 and GT2</li>
+          <li>Twin unit to GT1 &mdash; same facility, same maintenance history</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <p class="font-body text-[10px] tracking-[3px] uppercase text-gold mb-6">Equipment Photography</p>
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+    <img src="images/china-v94-03.jpg" alt="Siemens V94.2 GT2 - Exterior" class="w-full rounded">
+    <img src="images/china-v94-04.jpg" alt="Siemens V94.2 GT2 - Detail" class="w-full rounded">
+  </div>
+</section>
+
+
+<!-- ====================== CHINA: SGT5-4000F GT12 & GT11 ====================== -->
+<section class="px-8 md:px-16 lg:px-24 py-20 page-break">
+  <div class="mb-8">
+    <p class="font-body text-[10px] tracking-[4px] uppercase text-gold mb-2">China &mdash; Units 3 &amp; 4 of 4</p>
+    <h3 class="font-display text-3xl md:text-4xl font-light text-babylon-white">Siemens SGT5-4000F (V94.3A) &mdash; GT12 &amp; GT11</h3>
+    <div class="w-12 gold-line-left mt-4"></div>
+  </div>
+  <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
+    <div>
+      <p class="font-body text-[10px] tracking-[3px] uppercase text-gold mb-4">GT12 &mdash; 2003</p>
+      <table class="spec-table w-full text-sm font-body">
+        <tr><td class="text-gold/70 w-48">Manufacturer</td><td class="text-babylon-white">Siemens Energy</td></tr>
+        <tr><td class="text-gold/70">Model</td><td class="text-babylon-white">SGT5-4000F (V94.3A(2))</td></tr>
+        <tr><td class="text-gold/70">Year of Manufacture</td><td class="text-babylon-white">2003</td></tr>
+        <tr><td class="text-gold/70">Rated Power Output</td><td class="text-babylon-white font-medium">298 MW</td></tr>
+        <tr><td class="text-gold/70">Total Running Hours</td><td class="text-babylon-white">105,000</td></tr>
+        <tr><td class="text-gold/70">Major Overhaul</td><td class="text-babylon-white">N/A</td></tr>
+        <tr><td class="text-gold/70">Location</td><td class="text-babylon-white">China</td></tr>
+        <tr><td class="text-gold/70">Availability</td><td><span class="inline-flex items-center gap-2 px-3 py-1 border border-yellow-500/40 rounded-sm text-[11px] tracking-[2px] uppercase text-yellow-400"><span class="w-1.5 h-1.5 bg-yellow-400 rounded-full"></span>Under Inspection</span></td></tr>
+      </table>
+    </div>
+    <div>
+      <p class="font-body text-[10px] tracking-[3px] uppercase text-gold mb-4">GT11 &mdash; 2004</p>
+      <table class="spec-table w-full text-sm font-body">
+        <tr><td class="text-gold/70 w-48">Manufacturer</td><td class="text-babylon-white">Siemens Energy</td></tr>
+        <tr><td class="text-gold/70">Model</td><td class="text-babylon-white">SGT5-4000F (V94.3A(2))</td></tr>
+        <tr><td class="text-gold/70">Year of Manufacture</td><td class="text-babylon-white">2004</td></tr>
+        <tr><td class="text-gold/70">Rated Power Output</td><td class="text-babylon-white font-medium">298 MW</td></tr>
+        <tr><td class="text-gold/70">Total Running Hours</td><td class="text-babylon-white">105,000</td></tr>
+        <tr><td class="text-gold/70">Major Overhaul</td><td class="text-babylon-white">N/A</td></tr>
+        <tr><td class="text-gold/70">Location</td><td class="text-babylon-white">China</td></tr>
+        <tr><td class="text-gold/70">Availability</td><td><span class="inline-flex items-center gap-2 px-3 py-1 border border-yellow-500/40 rounded-sm text-[11px] tracking-[2px] uppercase text-yellow-400"><span class="w-1.5 h-1.5 bg-yellow-400 rounded-full"></span>Under Inspection</span></td></tr>
+      </table>
+    </div>
+  </div>
+  <p class="font-body text-[10px] tracking-[3px] uppercase text-gold mb-6">Site Photography &mdash; Both Units</p>
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+    <img src="images/china-sgt5-4000f-01.jpg" alt="SGT5-4000F - Plant exterior with piping" class="w-full rounded">
+    <img src="images/china-sgt5-4000f-02.jpg" alt="SGT5-4000F - Turbine hall entrance" class="w-full rounded">
+    <img src="images/china-sgt5-4000f-03.jpg" alt="SGT5-4000F - Generator and turbine enclosure" class="w-full rounded">
+    <img src="images/china-sgt5-4000f-04.jpg" alt="SGT5-4000F - Transformer and substation" class="w-full rounded">
+    <img src="images/china-sgt5-4000f-05.jpg" alt="SGT5-4000F - Full plant overview" class="w-full rounded">
+  </div>
+</section>
+
+
+<!-- ====================== GERMANY SECTION HEADER ====================== -->
+<section class="section-page flex flex-col justify-center items-center text-center px-8 page-break relative overflow-hidden">
+  <div class="absolute inset-0 opacity-[0.02]" style="background-image: repeating-linear-gradient(45deg, #C9A84C 0px, transparent 1px, transparent 60px);"></div>
+  <div class="relative z-10">
+    <p class="font-body text-[10px] tracking-[6px] uppercase text-gold mb-4">Region 02</p>
+    <h2 class="font-display text-6xl md:text-8xl font-light text-babylon-white mb-4">Germany</h2>
+    <div class="w-24 gold-line mx-auto mb-6"></div>
+    <p class="font-body text-lg text-babylon-white/50 font-light">2 Units &bull; 596 MW Combined Capacity</p>
+    <p class="font-body text-sm text-gold/70 mt-4 max-w-xl">Brand new, never fired, still in original Siemens Energy packaging. Manufactured in Berlin.</p>
+    <div class="mt-8 flex gap-4 flex-wrap justify-center">
+      <span class="status-badge">All Confirmed Available</span>
+      <span class="inline-flex items-center gap-2 px-4 py-1.5 border border-gold/40 rounded-sm text-[11px] tracking-[2px] uppercase text-gold">New &mdash; 0 Hours</span>
+    </div>
+  </div>
+</section>
+
+
+<!-- ====================== GERMANY: SGT5-4000F SET #1 ====================== -->
+<section class="px-8 md:px-16 lg:px-24 py-20 page-break">
+  <div class="mb-8">
+    <p class="font-body text-[10px] tracking-[4px] uppercase text-gold mb-2">Germany &mdash; Unit 1 of 2</p>
+    <h3 class="font-display text-3xl md:text-4xl font-light text-babylon-white">SGT5-4000F Turbine Generator Set #1 <span class="text-gold text-2xl">NEW</span></h3>
+    <div class="w-12 gold-line-left mt-4"></div>
+  </div>
+  <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
+    <div>
+      <table class="spec-table w-full text-sm font-body">
+        <tr><td class="text-gold/70 w-48">Manufacturer</td><td class="text-babylon-white">Siemens Energy</td></tr>
+        <tr><td class="text-gold/70">Model (Gas Turbine)</td><td class="text-babylon-white">SGT5-4000F</td></tr>
+        <tr><td class="text-gold/70">Model (Generator)</td><td class="text-babylon-white">SGen5-1200A</td></tr>
+        <tr><td class="text-gold/70">Year of Manufacture</td><td class="text-babylon-white">2016</td></tr>
+        <tr><td class="text-gold/70">Rated Power Output</td><td class="text-babylon-white font-medium">298 MW</td></tr>
+        <tr><td class="text-gold/70">Condition</td><td class="text-babylon-white font-medium">Brand New &mdash; 0 Hours, Never Fired</td></tr>
+        <tr><td class="text-gold/70">Fuel Configuration</td><td class="text-babylon-white">Dual Fuel (Natural Gas + Distillate)</td></tr>
+        <tr><td class="text-gold/70">Control System</td><td class="text-babylon-white">SPPA-T3000</td></tr>
+        <tr><td class="text-gold/70">Storage</td><td class="text-babylon-white">Original Siemens factory crates</td></tr>
+        <tr><td class="text-gold/70">Manufactured</td><td class="text-babylon-white">Berlin, Germany</td></tr>
+        <tr><td class="text-gold/70">Location</td><td class="text-babylon-white">Germany</td></tr>
+        <tr><td class="text-gold/70">Availability</td><td><span class="status-badge">Confirmed Available</span></td></tr>
+      </table>
+    </div>
+    <div>
+      <div class="unit-card p-5">
+        <p class="text-[10px] tracking-[3px] uppercase text-gold mb-3">Complete Package Includes</p>
+        <ul class="text-sm text-babylon-white/70 space-y-1 list-disc list-inside">
+          <li>Core gas turbine (ring combustor, compressor, turbine, bearings)</li>
+          <li>SGen5-1200A generator with full electrical equipment</li>
+          <li>Base module with fuel gas, lube oil, hydraulic systems</li>
+          <li>Dual fuel module with NOx water injection</li>
+          <li>Air intake system with pulse filter &amp; anti-icing</li>
+          <li>SPPA-T3000 control system with redundant automation</li>
+          <li>Starting frequency converter (SFC) &amp; static excitation (SEE)</li>
+          <li>Gas detection, fire detection &amp; CO&#8322; extinguishing systems</li>
+          <li>Noise enclosure with ventilation</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <p class="font-body text-[10px] tracking-[3px] uppercase text-gold mb-6">Equipment Photography</p>
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+    <img src="images/germany-sgt5-01.jpg" alt="SGT5-4000F - Original Siemens factory crate" class="w-full rounded">
+    <img src="images/germany-sgt5-02.jpg" alt="SGT5-4000F - Crated components in storage" class="w-full rounded">
+    <img src="images/germany-sgt5-03.jpg" alt="SGT5-4000F - Conveyor and auxiliary systems" class="w-full rounded">
+    <img src="images/germany-sgt5-04.jpg" alt="SGT5-4000F - Piping and steel components" class="w-full rounded">
+    <img src="images/germany-sgt5-09.jpg" alt="SGT5-4000F - Siemens Energy, Manufactured in Berlin" class="w-full rounded">
+  </div>
+</section>
+
+
+<!-- ====================== GERMANY: SGT5-4000F SET #2 ====================== -->
+<section class="px-8 md:px-16 lg:px-24 py-20 page-break">
+  <div class="mb-8">
+    <p class="font-body text-[10px] tracking-[4px] uppercase text-gold mb-2">Germany &mdash; Unit 2 of 2</p>
+    <h3 class="font-display text-3xl md:text-4xl font-light text-babylon-white">SGT5-4000F Turbine Generator Set #2 <span class="text-gold text-2xl">NEW</span></h3>
+    <div class="w-12 gold-line-left mt-4"></div>
+  </div>
+  <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
+    <div>
+      <table class="spec-table w-full text-sm font-body">
+        <tr><td class="text-gold/70 w-48">Manufacturer</td><td class="text-babylon-white">Siemens Energy</td></tr>
+        <tr><td class="text-gold/70">Model (Gas Turbine)</td><td class="text-babylon-white">SGT5-4000F</td></tr>
+        <tr><td class="text-gold/70">Model (Generator)</td><td class="text-babylon-white">SGen6-1200A</td></tr>
+        <tr><td class="text-gold/70">Year of Manufacture</td><td class="text-babylon-white">2016</td></tr>
+        <tr><td class="text-gold/70">Rated Power Output</td><td class="text-babylon-white font-medium">298 MW</td></tr>
+        <tr><td class="text-gold/70">Condition</td><td class="text-babylon-white font-medium">Brand New &mdash; 0 Hours, Never Fired</td></tr>
+        <tr><td class="text-gold/70">Fuel Configuration</td><td class="text-babylon-white">Dual Fuel (Natural Gas + Distillate)</td></tr>
+        <tr><td class="text-gold/70">Control System</td><td class="text-babylon-white">SPPA-T3000</td></tr>
+        <tr><td class="text-gold/70">Storage</td><td class="text-babylon-white">Original Siemens factory crates</td></tr>
+        <tr><td class="text-gold/70">Manufactured</td><td class="text-babylon-white">Berlin, Germany</td></tr>
+        <tr><td class="text-gold/70">Location</td><td class="text-babylon-white">Germany</td></tr>
+        <tr><td class="text-gold/70">Availability</td><td><span class="status-badge">Confirmed Available</span></td></tr>
+      </table>
+    </div>
+    <div>
+      <div class="unit-card p-5">
+        <p class="text-[10px] tracking-[3px] uppercase text-gold mb-3">Identical Twin Package</p>
+        <p class="text-sm text-babylon-white/70">Same complete scope of supply as Set #1. Both units are brand new, still in original Siemens Energy factory packaging from Berlin.</p>
+      </div>
+    </div>
+  </div>
+  <p class="font-body text-[10px] tracking-[3px] uppercase text-gold mb-6">Equipment Photography</p>
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+    <img src="images/germany-sgt5-05.jpg" alt="SGT5-4000F - Preserved components and fittings" class="w-full rounded">
+    <img src="images/germany-sgt5-06.jpg" alt="SGT5-4000F - Hydraulic pump with desiccant protection" class="w-full rounded">
+    <img src="images/germany-sgt5-07.jpg" alt="SGT5-4000F - RTK control valve DN200" class="w-full rounded">
+    <img src="images/germany-sgt5-08.jpg" alt="SGT5-4000F - Shipping on Seacom flat racks" class="w-full rounded">
+  </div>
+</section>
+
+
+<!-- ====================== UZBEKISTAN SECTION HEADER ====================== -->
+<section class="section-page flex flex-col justify-center items-center text-center px-8 page-break relative overflow-hidden">
+  <div class="absolute inset-0 opacity-[0.02]" style="background-image: repeating-linear-gradient(45deg, #C9A84C 0px, transparent 1px, transparent 60px);"></div>
+  <div class="relative z-10">
+    <p class="font-body text-[10px] tracking-[6px] uppercase text-gold mb-4">Region 03</p>
+    <h2 class="font-display text-6xl md:text-8xl font-light text-babylon-white mb-4">Uzbekistan</h2>
+    <div class="w-24 gold-line mx-auto mb-6"></div>
+    <p class="font-body text-lg text-babylon-white/50 font-light">1 Unit &bull; 418 MW Combined Cycle Capacity</p>
+    <p class="font-body text-sm text-gold/70 mt-4 max-w-xl">Complete combined cycle power plant equipment &mdash; 0 hours, preserved in storage.</p>
+    <div class="mt-8 flex gap-4 flex-wrap justify-center">
+      <span class="status-badge">Confirmed Available</span>
+      <span class="inline-flex items-center gap-2 px-4 py-1.5 border border-gold/40 rounded-sm text-[11px] tracking-[2px] uppercase text-gold">New &mdash; 0 Hours</span>
+    </div>
+  </div>
+</section>
+
+
+<!-- ====================== UZBEKISTAN: ANSALDO AE94.3A ====================== -->
+<section class="px-8 md:px-16 lg:px-24 py-20 page-break">
+  <div class="mb-8">
+    <p class="font-body text-[10px] tracking-[4px] uppercase text-gold mb-2">Uzbekistan &mdash; Unit 1 of 1</p>
+    <h3 class="font-display text-3xl md:text-4xl font-light text-babylon-white">Ansaldo AE94.3A Combined Cycle Power Plant</h3>
+    <div class="w-12 gold-line-left mt-4"></div>
+  </div>
+  <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
+    <div>
+      <table class="spec-table w-full text-sm font-body">
+        <tr><td class="text-gold/70 w-48">Manufacturer</td><td class="text-babylon-white">Ansaldo Energia</td></tr>
+        <tr><td class="text-gold/70">Model (Gas Turbine)</td><td class="text-babylon-white">AE94.3A</td></tr>
+        <tr><td class="text-gold/70">Steam Turbine</td><td class="text-babylon-white">3-Cylinder Steam Turbine</td></tr>
+        <tr><td class="text-gold/70">Year of Manufacture</td><td class="text-babylon-white">2018</td></tr>
+        <tr><td class="text-gold/70">Total Power Output</td><td class="text-babylon-white font-medium">~418.2 MW (~280.7 MW GT / ~137.5 MW ST)</td></tr>
+        <tr><td class="text-gold/70">Condition</td><td class="text-babylon-white font-medium">New &mdash; 0 Hours, 0 Starts, Preserved</td></tr>
+        <tr><td class="text-gold/70">Configuration</td><td class="text-babylon-white">1 GT, 1 ST, 2 Generators</td></tr>
+        <tr><td class="text-gold/70">Fuel Type</td><td class="text-babylon-white">Dual Fuel (Natural Gas / Distillate)</td></tr>
+        <tr><td class="text-gold/70">Combustion</td><td class="text-babylon-white">24 Dry Low NOx burners, annular chamber</td></tr>
+        <tr><td class="text-gold/70">Frequency</td><td class="text-babylon-white">50 Hz</td></tr>
+        <tr><td class="text-gold/70">Location</td><td class="text-babylon-white">Uzbekistan</td></tr>
+        <tr><td class="text-gold/70">Availability</td><td><span class="status-badge">Confirmed Available</span></td></tr>
+      </table>
+    </div>
+    <div>
+      <div class="unit-card p-5 mb-4">
+        <p class="text-[10px] tracking-[3px] uppercase text-gold mb-3">Included Components</p>
+        <ul class="text-sm text-babylon-white/70 space-y-1 list-disc list-inside">
+          <li>Complete AE94.3A gas turbine (flange-to-flange) with annular combustion chamber</li>
+          <li>3-cylinder steam turbine with HP emergency stop &amp; control valves</li>
+          <li>1x GT Generator + 1x ST Generator</li>
+          <li>Fuel gas skid, fuel oil package, lube oil skid, hydraulic oil system</li>
+          <li>Complete air intake system &amp; exhaust gas duct</li>
+        </ul>
+      </div>
+      <div class="unit-card p-5">
+        <p class="text-[10px] tracking-[3px] uppercase text-gold mb-3">Storage Conditions</p>
+        <ul class="text-sm text-babylon-white/70 space-y-1 list-disc list-inside">
+          <li>GT, generators, ST cylinders, rotors &mdash; warm, climate-controlled warehouse</li>
+          <li>ST outer LP cylinders &amp; HRSG modules &mdash; outdoors under canopies</li>
+          <li>All preservation per Ansaldo Energia original manuals</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <p class="font-body text-[10px] tracking-[3px] uppercase text-gold mb-6">Equipment Photography</p>
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+    <img src="images/uzbekistan-ansaldo-01.jpg" alt="Ansaldo AE94.3A - Equipment in storage" class="w-full rounded">
+  </div>
+</section>
+
+
+<!-- ====================== ARGENTINA SECTION HEADER ====================== -->
+<section class="section-page flex flex-col justify-center items-center text-center px-8 page-break relative overflow-hidden">
+  <div class="absolute inset-0 opacity-[0.02]" style="background-image: repeating-linear-gradient(45deg, #C9A84C 0px, transparent 1px, transparent 60px);"></div>
+  <div class="relative z-10">
+    <p class="font-body text-[10px] tracking-[6px] uppercase text-gold mb-4">Region 04</p>
+    <h2 class="font-display text-6xl md:text-8xl font-light text-babylon-white mb-4">Argentina</h2>
+    <div class="w-24 gold-line mx-auto mb-6"></div>
+    <p class="font-body text-lg text-babylon-white/50 font-light">1 Unit &bull; 373 MW Simple Cycle / ~550 MW Combined Cycle</p>
+    <p class="font-body text-sm text-gold/70 mt-4 max-w-xl">Brand new GE 9HA.01 &mdash; zero fired hours.</p>
+    <div class="mt-8 flex gap-4 flex-wrap justify-center">
+      <span class="status-badge">Confirmed Available</span>
+      <span class="inline-flex items-center gap-2 px-4 py-1.5 border border-gold/40 rounded-sm text-[11px] tracking-[2px] uppercase text-gold">New &mdash; 0 Hours</span>
+    </div>
+  </div>
+</section>
+
+
+<!-- ====================== ARGENTINA: GE 9HA.01 ====================== -->
+<section class="px-8 md:px-16 lg:px-24 py-20 page-break">
+  <div class="mb-8">
+    <p class="font-body text-[10px] tracking-[4px] uppercase text-gold mb-2">Argentina &mdash; Unit 1 of 1</p>
+    <h3 class="font-display text-3xl md:text-4xl font-light text-babylon-white">GE 9HA.01 Heavy-Duty Gas Turbine Package</h3>
+    <div class="w-12 gold-line-left mt-4"></div>
+  </div>
+  <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
+    <div>
+      <table class="spec-table w-full text-sm font-body">
+        <tr><td class="text-gold/70 w-48">Manufacturer</td><td class="text-babylon-white">General Electric</td></tr>
+        <tr><td class="text-gold/70">Model</td><td class="text-babylon-white">GE 9HA.01</td></tr>
+        <tr><td class="text-gold/70">Type</td><td class="text-babylon-white">Aero-derivative Gas Turbine</td></tr>
+        <tr><td class="text-gold/70">Year of Manufacture</td><td class="text-babylon-white">2015</td></tr>
+        <tr><td class="text-gold/70">Gross Output (Simple Cycle)</td><td class="text-babylon-white font-medium">~373 MW</td></tr>
+        <tr><td class="text-gold/70">Combined Cycle Output</td><td class="text-babylon-white font-medium">~550 MW (with suitable steam cycle)</td></tr>
+        <tr><td class="text-gold/70">Generator Output (Nominal)</td><td class="text-babylon-white">~451 MW</td></tr>
+        <tr><td class="text-gold/70">Condition</td><td class="text-babylon-white font-medium">New / Unused &mdash; 0 Fired Hours, 0 Starts</td></tr>
+        <tr><td class="text-gold/70">Fuel Configuration</td><td class="text-babylon-white">Dual Fuel (Natural Gas / Distillate)</td></tr>
+        <tr><td class="text-gold/70">Combustion System</td><td class="text-babylon-white">Dry Low NOx (DLN)</td></tr>
+        <tr><td class="text-gold/70">Frequency</td><td class="text-babylon-white">50 Hz</td></tr>
+        <tr><td class="text-gold/70">Location</td><td class="text-babylon-white">Argentina</td></tr>
+        <tr><td class="text-gold/70">Availability</td><td><span class="status-badge">Confirmed Available</span></td></tr>
+      </table>
+    </div>
+    <div></div>
+  </div>
+  <p class="font-body text-[10px] tracking-[3px] uppercase text-gold mb-6">Equipment Photography</p>
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+    <img src="images/argentina-ge9ha-01.jpg" alt="GE 9HA.01 - Warehouse storage" class="w-full rounded">
+    <img src="images/argentina-ge9ha-02.jpg" alt="GE 9HA.01 - Components" class="w-full rounded">
+    <img src="images/argentina-ge9ha-03.jpg" alt="GE 9HA.01 - Generator and crates" class="w-full rounded">
+    <img src="images/argentina-ge9ha-04.jpg" alt="GE 9HA.01 - Equipment in storage" class="w-full rounded">
+  </div>
+</section>
+
+
+<!-- ====================== BUNDLED PRICING ====================== -->
+<section class="section-page flex flex-col justify-center items-center text-center px-8 page-break relative overflow-hidden">
+  <div class="absolute inset-0 opacity-[0.02]" style="background-image: repeating-linear-gradient(45deg, #C9A84C 0px, transparent 1px, transparent 60px);"></div>
+  <p class="font-body text-[10px] tracking-[6px] uppercase text-gold mb-6">Package Pricing</p>
+  <h2 class="font-display text-5xl md:text-7xl font-light text-babylon-white mb-6">Bundled Package Offering</h2>
+  <div class="w-24 gold-line mx-auto mb-10"></div>
+  <div class="max-w-2xl mx-auto">
+    <div class="unit-card p-10">
+      <div class="font-display text-6xl gold-gradient mb-4">2.263 GW</div>
+      <p class="font-body text-sm text-babylon-white/60 mb-8">8 Units &bull; 4 Countries &bull; All Confirmed Available</p>
+      <div class="gold-line mb-8"></div>
+      <p class="font-body text-lg text-babylon-white/80 mb-6">
+        This package is offered as a <span class="text-gold">bundled acquisition</span> opportunity.<br>
+        Preferential pricing is available for buyers acquiring the complete portfolio.
+      </p>
+      <p class="font-body text-sm text-babylon-white/50 mb-8">
+        Individual unit pricing available upon request.<br>
+        Package discount applies to full portfolio acquisition.
+      </p>
+      <div class="gold-line mb-8"></div>
+      <div class="grid grid-cols-4 gap-4 mb-8 text-center">
+        <div><div class="font-display text-2xl text-gold">8</div><div class="text-[9px] tracking-[2px] uppercase text-babylon-white/40">Units</div></div>
+        <div><div class="font-display text-2xl text-gold">4</div><div class="text-[9px] tracking-[2px] uppercase text-babylon-white/40">Countries</div></div>
+        <div><div class="font-display text-2xl text-gold">3</div><div class="text-[9px] tracking-[2px] uppercase text-babylon-white/40">OEMs</div></div>
+        <div><div class="font-display text-2xl text-gold">100%</div><div class="text-[9px] tracking-[2px] uppercase text-babylon-white/40">Confirmed</div></div>
+      </div>
+      <a href="#contact" class="inline-block px-10 py-4 bg-gold text-babylon-black font-body text-xs tracking-[3px] uppercase font-medium hover:bg-gold-light transition-colors">
+        Request Package Pricing
+      </a>
+    </div>
+  </div>
+</section>
+
+
+<!-- ====================== CONTACT ====================== -->
+<section id="contact" class="section-page flex flex-col justify-center items-center text-center px-8 py-20 relative page-break">
+  <div class="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-gold/30 to-transparent"></div>
+  <div class="mb-12">
+    <span class="font-display text-gold text-xl tracking-[8px] font-light">BABYLON</span>
+    <span class="font-display text-babylon-white text-xl tracking-[8px] font-light italic ml-1">CONSULTING</span>
+  </div>
+  <h2 class="font-display text-4xl md:text-5xl font-light text-babylon-white mb-4">Next Steps</h2>
+  <div class="w-16 gold-line mx-auto mb-10"></div>
+  <div class="max-w-xl mx-auto space-y-8">
+    <div class="grid grid-cols-3 gap-6">
+      <div class="unit-card p-6 text-center">
+        <div class="font-display text-3xl text-gold mb-2">01</div>
+        <p class="font-body text-xs tracking-[2px] uppercase text-babylon-white/60">Schedule a Consultation</p>
+      </div>
+      <div class="unit-card p-6 text-center">
+        <div class="font-display text-3xl text-gold mb-2">02</div>
+        <p class="font-body text-xs tracking-[2px] uppercase text-babylon-white/60">Arrange Site Inspections</p>
+      </div>
+      <div class="unit-card p-6 text-center">
+        <div class="font-display text-3xl text-gold mb-2">03</div>
+        <p class="font-body text-xs tracking-[2px] uppercase text-babylon-white/60">Finalize Package Terms</p>
+      </div>
+    </div>
+    <div class="unit-card p-8 mt-8">
+      <p class="text-[10px] tracking-[3px] uppercase text-gold mb-4">Contact</p>
+      <p class="font-body text-lg text-babylon-white mb-2">Babylon Consulting LLC</p>
+      <p class="font-body text-sm text-babylon-white/60 mb-4">
+        <span class="text-gold">ahmed@babylonconsulting.us</span><br>
+        <span class="text-gold">+1 (313) 247-2008</span><br>
+        babylonconsulting.us
+      </p>
+      <div class="gold-line my-4"></div>
+      <p class="font-body text-xs text-babylon-white/40 italic">
+        All units confirmed available as of April 2026. Availability subject to change.<br>
+        Specifications based on seller-provided documentation, subject to buyer verification.
+      </p>
+    </div>
+  </div>
+  <div class="mt-16">
+    <div class="w-8 gold-line mx-auto mb-4"></div>
+    <p class="font-body text-[9px] tracking-[4px] uppercase text-babylon-white/20">Prepared by Babylon Consulting LLC &bull; Confidential</p>
+  </div>
+</section>
+
+</body>
+</html>
