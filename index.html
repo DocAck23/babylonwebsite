@@ -3,8 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Babylon Consulting | AI Automation, Industrial Assets & Medical Growth</title>
-<meta name="description" content="Babylon Consulting designs, builds, deploys, and maintains AI agents and automation systems for businesses. Industrial asset acquisition and medical practice growth.">
+<title>Babylon Consulting | AI Workflow Automation & Done-For-You AI Teams</title>
+<meta name="description" content="Hire your own AI team maintained by Babylon for a monthly retainer. AI-powered lead gen, sales automation, website building, SEO, content creation, and more.">
+<meta property="og:title" content="Babylon Consulting | Hire Your Own AI Team">
+<meta property="og:description" content="Done-for-you AI workflow automation. Lead gen, sales, marketing, content, SEO, websites, and apps — maintained by Babylon for a monthly retainer.">
+<meta property="og:type" content="website">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Montserrat:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
 <style>
@@ -20,11 +23,6 @@
     --white-dim: rgba(245,240,232,0.6);
     --white-faint: rgba(245,240,232,0.12);
     --section-pad: 140px 60px;
-    --wa-green: #005C4B;
-    --wa-green-out: #005C4B;
-    --wa-bubble-out: #1B3A33;
-    --wa-bubble-in: #1E2A30;
-    --wa-bg: #0B141A;
   }
 
   * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -41,7 +39,7 @@
   a { color: inherit; text-decoration: none; }
   img { max-width: 100%; }
 
-  /* ── Custom Cursor ── */
+  /* -- Custom Cursor -- */
   .cursor {
     width: 8px; height: 8px;
     background: var(--gold);
@@ -63,7 +61,7 @@
     opacity: 0.5;
   }
 
-  /* ── Typography ── */
+  /* -- Typography -- */
   .eyebrow {
     font-size: 11px;
     letter-spacing: 4px;
@@ -81,7 +79,7 @@
   p { line-height: 1.8; color: var(--white-dim); font-size: 15px; }
   p + p { margin-top: 16px; }
 
-  /* ── Section Divider ── */
+  /* -- Section Divider -- */
   .divider {
     width: 100%;
     height: 1px;
@@ -89,7 +87,7 @@
     opacity: 0.3;
   }
 
-  /* ── Buttons ── */
+  /* -- Buttons -- */
   .btn {
     display: inline-flex;
     align-items: center;
@@ -123,9 +121,7 @@
     transform: translateY(-2px);
   }
 
-  /* ═══════════════════════════════════════
-     LOVI-STYLE SCROLL ANIMATIONS
-     ═══════════════════════════════════════ */
+  /* -- Scroll Animations -- */
   .reveal {
     opacity: 0;
     transform: translateY(60px);
@@ -135,8 +131,6 @@
     opacity: 1;
     transform: translateY(0);
   }
-
-  /* Staggered children - Lovi style */
   .stagger-children .reveal { transition-delay: 0s; }
   .stagger-children .reveal:nth-child(1) { transition-delay: 0s; }
   .stagger-children .reveal:nth-child(2) { transition-delay: 0.12s; }
@@ -144,56 +138,40 @@
   .stagger-children .reveal:nth-child(4) { transition-delay: 0.36s; }
   .stagger-children .reveal:nth-child(5) { transition-delay: 0.48s; }
   .stagger-children .reveal:nth-child(6) { transition-delay: 0.6s; }
+  .stagger-children .reveal:nth-child(7) { transition-delay: 0.72s; }
+  .stagger-children .reveal:nth-child(8) { transition-delay: 0.84s; }
 
-  /* Parallax scrolling */
   .parallax-slow { will-change: transform; }
   .parallax-medium { will-change: transform; }
 
-  /* Scale-in reveal */
   .reveal-scale {
     opacity: 0;
     transform: scale(0.92);
     transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1), transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
   }
-  .reveal-scale.visible {
-    opacity: 1;
-    transform: scale(1);
-  }
+  .reveal-scale.visible { opacity: 1; transform: scale(1); }
 
-  /* Fade-in only (no movement) */
   .reveal-fade {
     opacity: 0;
     transition: opacity 1.2s ease;
   }
-  .reveal-fade.visible {
-    opacity: 1;
-  }
+  .reveal-fade.visible { opacity: 1; }
 
-  /* Slide from left */
   .reveal-left {
     opacity: 0;
     transform: translateX(-60px);
     transition: opacity 1s cubic-bezier(0.16, 1, 0.3, 1), transform 1s cubic-bezier(0.16, 1, 0.3, 1);
   }
-  .reveal-left.visible {
-    opacity: 1;
-    transform: translateX(0);
-  }
+  .reveal-left.visible { opacity: 1; transform: translateX(0); }
 
-  /* Slide from right */
   .reveal-right {
     opacity: 0;
     transform: translateX(60px);
     transition: opacity 1s cubic-bezier(0.16, 1, 0.3, 1), transform 1s cubic-bezier(0.16, 1, 0.3, 1);
   }
-  .reveal-right.visible {
-    opacity: 1;
-    transform: translateX(0);
-  }
+  .reveal-right.visible { opacity: 1; transform: translateX(0); }
 
-  /* ═══════════════════════════════════════
-     NAV
-     ═══════════════════════════════════════ */
+  /* -- NAV -- */
   nav {
     position: fixed; top: 0; left: 0; right: 0;
     z-index: 100;
@@ -218,7 +196,7 @@
     color: var(--gold);
   }
   .nav-logo span { font-style: italic; color: var(--white); font-size: 16px; letter-spacing: 1px; }
-  .nav-links { display: flex; gap: 48px; list-style: none; }
+  .nav-links { display: flex; gap: 48px; list-style: none; align-items: center; }
   .nav-links a {
     font-size: 11px;
     letter-spacing: 3px;
@@ -227,12 +205,21 @@
     transition: color 0.3s;
   }
   .nav-links a:hover { color: var(--gold); }
+  .nav-links .nav-cta {
+    background: var(--gold);
+    color: var(--black);
+    padding: 10px 24px;
+    font-weight: 500;
+    transition: all 0.3s;
+  }
+  .nav-links .nav-cta:hover {
+    background: var(--gold-light);
+    color: var(--black);
+  }
   .nav-mobile { display: none; background: none; border: none; cursor: none; }
   .nav-mobile svg { width: 24px; height: 24px; stroke: var(--gold); }
 
-  /* ═══════════════════════════════════════
-     HERO
-     ═══════════════════════════════════════ */
+  /* -- HERO -- */
   .hero {
     min-height: 100vh;
     display: flex;
@@ -279,278 +266,239 @@
     to { opacity: 1; transform: translateY(0); }
   }
 
-  /* ═══════════════════════════════════════
-     REALISTIC iPHONE MOCKUP
-     ═══════════════════════════════════════ */
+  /* -- iPhone Mockup (youraria.ai exact) -- */
   .phone-mockup {
     position: relative;
     display: flex;
     justify-content: center;
-    animation: phoneFloat 6s ease-in-out infinite, fadeUp 1s ease 0.3s forwards;
+    animation: phoneFloat 4s ease-in-out infinite alternate, fadeUp 1s ease 0.3s forwards;
     opacity: 0;
   }
   @keyframes phoneFloat {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-12px); }
+    from { transform: translateY(0); }
+    to { transform: translateY(-10px); }
   }
 
-  .iphone-frame {
-    width: 290px;
+  .hs-phone {
     position: relative;
-    border-radius: 48px;
-    background: linear-gradient(145deg, #3a3a3e 0%, #1a1a1c 30%, #2a2a2e 70%, #3a3a3e 100%);
-    padding: 3px;
-    box-shadow:
-      0 50px 100px rgba(0,0,0,0.6),
-      0 0 0 0.5px rgba(255,255,255,0.1),
-      inset 0 1px 0 rgba(255,255,255,0.08),
-      0 0 80px rgba(201,168,76,0.06);
-  }
-  .iphone-inner {
-    border-radius: 45px;
+    width: 280px;
+    height: 560px;
+    background: #1F2C34;
+    border: 8px solid #222;
+    border-radius: 40px;
+    box-shadow: 0 25px 60px rgba(0,0,0,0.3);
     overflow: hidden;
-    background: #000;
-    position: relative;
-  }
-
-  /* Dynamic Island */
-  .dynamic-island {
-    position: absolute;
-    top: 10px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 126px;
-    height: 36px;
-    background: #000;
-    border-radius: 20px;
-    z-index: 10;
-  }
-
-  /* Status bar - sits behind Dynamic Island */
-  .status-bar {
     display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    padding: 16px 24px 0;
-    font-size: 12px;
-    font-weight: 600;
-    color: #fff;
-    position: relative;
-    z-index: 5;
+    flex-direction: column;
+  }
+
+  /* iOS Status Bar */
+  .ip-status {
+    height: 44px;
+    background: #1F2C34;
+    display: grid;
+    grid-template-columns: 1fr 90px 1fr;
+    align-items: center;
+    padding: 0 14px;
+    flex-shrink: 0;
+    border-radius: 32px 32px 0 0;
+  }
+  .ip-status-left { display: flex; align-items: center; justify-content: center; }
+  .ip-status-center { display: flex; align-items: center; justify-content: center; }
+  .ip-di { width: 90px; height: 28px; background: #000; border-radius: 20px; }
+  .ip-status-icons { display: flex; align-items: center; justify-content: center; gap: 5px; }
+  .ip-status-icons svg { display: block; }
+  .ip-status-time { font-family: system-ui, sans-serif; font-size: 12px; font-weight: 500; color: #fff; }
+
+  /* WhatsApp Header */
+  .wa-hdr {
     height: 52px;
     background: #1F2C34;
-  }
-  .status-time {
-    font-size: 16px;
-    font-weight: 700;
-    letter-spacing: -0.3px;
-    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', sans-serif;
-  }
-  .status-icons { display: flex; gap: 5px; align-items: center; }
-  .status-icons svg { width: 16px; height: 12px; fill: #fff; }
-  .battery-icon {
-    width: 25px; height: 12px;
-    border: 1.5px solid rgba(255,255,255,0.9);
-    border-radius: 3px;
-    position: relative;
-    display: inline-block;
-  }
-  .battery-icon::after {
-    content: '';
-    position: absolute;
-    right: -4px;
-    top: 2.5px;
-    width: 2px;
-    height: 5px;
-    background: rgba(255,255,255,0.9);
-    border-radius: 0 1px 1px 0;
-  }
-  .battery-fill {
-    position: absolute;
-    top: 1.5px; left: 1.5px; bottom: 1.5px;
-    width: 70%;
-    background: #4ade80;
-    border-radius: 1.5px;
-  }
-
-  /* WhatsApp Header - flush with status bar */
-  .wa-header {
     display: flex;
     align-items: center;
-    padding: 6px 10px 8px;
-    background: #1F2C34;
+    padding: 0 12px;
     gap: 8px;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+    flex-shrink: 0;
   }
-  .wa-back { color: #00A884; font-size: 20px; flex-shrink: 0; font-weight: 300; }
-  .wa-avatar {
-    width: 32px; height: 32px;
+  .wa-hdr-back {
+    font-size: 16px;
+    font-weight: 500;
+    color: white;
+    margin-right: 4px;
+  }
+  .wa-hdr-avatar {
+    width: 36px;
+    height: 36px;
     border-radius: 50%;
-    background: linear-gradient(135deg, var(--gold), var(--gold-dim));
+    background: var(--gold);
     display: flex;
     align-items: center;
     justify-content: center;
-    font-family: 'Playfair Display', serif;
-    font-size: 15px;
-    color: var(--black);
-    font-weight: 500;
     flex-shrink: 0;
   }
-  .wa-contact-info { flex: 1; min-width: 0; }
-  .wa-contact-name {
+  .wa-hdr-avatar span {
+    color: white;
     font-size: 15px;
-    font-weight: 500;
-    color: #E9EDEF;
-    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
   }
-  .wa-contact-status {
+  .wa-hdr-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .wa-hdr-name {
+    font-size: 14px;
+    font-weight: 600;
+    color: white;
+    line-height: 1.2;
+    font-family: system-ui, -apple-system, sans-serif;
+  }
+  .wa-hdr-status {
     font-size: 11px;
-    color: #8696A0;
-    font-family: 'Montserrat', sans-serif;
+    color: #25D366;
+    line-height: 1.2;
+    font-family: system-ui, -apple-system, sans-serif;
   }
-  .wa-header-icons { display: flex; gap: 16px; }
-  .wa-header-icons svg { width: 20px; height: 20px; fill: #8696A0; }
+  .wa-hdr-icons {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+  .wa-hdr-icons svg { display: block; }
 
-  /* WhatsApp Chat Area */
-  .wa-chat {
-    padding: 8px 10px 12px;
+  /* Chat Body */
+  .hs-chat-body {
+    position: relative;
+    flex: 1;
+    overflow: hidden;
+    background: #0B141A;
+    padding-top: 12px;
+  }
+  .hs-msglist {
+    position: absolute;
+    bottom: 10px;
+    left: 8px;
+    right: 8px;
     display: flex;
     flex-direction: column;
     gap: 4px;
-    min-height: 420px;
-    background:
-      url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.02'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-    position: relative;
-  }
-  .wa-date-chip {
-    align-self: center;
-    background: #182229;
-    color: #8696A0;
-    font-size: 10.5px;
-    padding: 4px 12px;
-    border-radius: 6px;
-    margin: 4px 0 8px;
-    font-family: 'Montserrat', sans-serif;
   }
 
-  /* WhatsApp Bubbles */
-  .wa-bubble {
-    max-width: 82%;
-    padding: 6px 8px 3px;
-    border-radius: 8px;
+  /* Message Bubbles */
+  .hs-bub {
+    padding: 8px 12px;
     font-size: 13px;
-    line-height: 1.45;
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 300;
-    position: relative;
-    margin-bottom: 2px;
-    /* Animation */
+    line-height: 1.5;
+    color: #E9EDEF;
+    font-family: system-ui, -apple-system, sans-serif;
     opacity: 0;
-    transform: translateY(12px);
-    animation: bubbleReveal 0.5s ease forwards;
+    transform: translateY(8px);
+    animation: bubbleReveal 0.4s ease forwards;
+    margin-bottom: 0;
   }
-  .wa-bubble:nth-child(1) { animation-delay: 0.6s; }
-  .wa-bubble:nth-child(2) { animation-delay: 0.8s; }
-  .wa-bubble:nth-child(3) { animation-delay: 1.4s; }
-  .wa-bubble:nth-child(4) { animation-delay: 2.0s; }
-  .wa-bubble:nth-child(5) { animation-delay: 2.6s; }
-  .wa-bubble:nth-child(6) { animation-delay: 3.2s; }
-  .wa-bubble:nth-child(7) { animation-delay: 3.8s; }
+  .hs-bub:nth-child(1) { animation-delay: 0.5s; }
+  .hs-bub:nth-child(2) { animation-delay: 1.0s; }
+  .hs-bub:nth-child(3) { animation-delay: 1.8s; }
+  .hs-bub:nth-child(4) { animation-delay: 2.4s; }
+  .hs-bub:nth-child(5) { animation-delay: 3.0s; }
+  .hs-bub:nth-child(6) { animation-delay: 3.6s; }
+  .hs-bub:nth-child(7) { animation-delay: 4.2s; }
 
   @keyframes bubbleReveal {
-    from { opacity: 0; transform: translateY(12px); }
+    from { opacity: 0; transform: translateY(8px); }
     to { opacity: 1; transform: translateY(0); }
   }
 
-  .wa-bubble.incoming {
-    background: #1E2A30;
-    color: #E9EDEF;
-    align-self: flex-start;
-    border-top-left-radius: 0;
-  }
-  .wa-bubble.incoming::before {
-    content: '';
-    position: absolute;
-    top: 0; left: -6px;
-    width: 0; height: 0;
-    border-top: 0 solid transparent;
-    border-bottom: 8px solid transparent;
-    border-right: 8px solid #1E2A30;
-  }
-  .wa-bubble.outgoing {
+  .hs-bub.outgoing {
     background: #005C4B;
-    color: #E9EDEF;
     align-self: flex-end;
-    border-top-right-radius: 0;
+    border-radius: 18px 18px 4px 18px;
+    max-width: 220px;
+    margin-left: auto;
   }
-  .wa-bubble.outgoing::before {
-    content: '';
-    position: absolute;
-    top: 0; right: -6px;
-    width: 0; height: 0;
-    border-top: 0 solid transparent;
-    border-bottom: 8px solid transparent;
-    border-left: 8px solid #005C4B;
+  .hs-bub.incoming {
+    background: #2A3942;
+    align-self: flex-start;
+    border-radius: 18px 18px 18px 4px;
+    max-width: 230px;
   }
-  .wa-bubble .wa-text { display: inline; }
-  .wa-bubble .wa-meta {
-    float: right;
-    margin-left: 8px;
-    margin-top: 4px;
-    display: flex;
-    align-items: center;
-    gap: 3px;
-  }
-  .wa-bubble .wa-time {
+  .hs-bub .nm {
     font-size: 10px;
-    color: rgba(255,255,255,0.45);
-    white-space: nowrap;
+    color: #8696A0;
+    font-weight: 600;
+    letter-spacing: 0.03em;
+    display: block;
+    margin-bottom: 3px;
+    margin-left: 2px;
   }
-  .wa-checks {
-    display: inline-flex;
-    position: relative;
-    width: 16px;
-    height: 10px;
+  .hs-bub .bub-time {
+    font-size: 10px;
+    color: #8696A0;
+    text-align: right;
+    margin-top: 2px;
   }
-  .wa-checks svg { width: 16px; height: 10px; fill: #53BDEB; }
+  .hs-bub .bub-checks {
+    color: #53BDEB;
+    font-size: 10px;
+    margin-left: 3px;
+    letter-spacing: -2px;
+  }
 
-  /* Input bar */
-  .wa-input-bar {
+  /* WhatsApp Input Bar */
+  .wa-input {
+    height: 52px;
+    background: #1F2C34;
     display: flex;
     align-items: center;
+    padding: 0 12px;
     gap: 8px;
-    padding: 6px 8px;
-    background: var(--wa-bg);
+    flex-shrink: 0;
+  }
+  .wa-input-plus {
+    font-size: 22px;
+    color: white;
+    font-weight: 300;
+    line-height: 1;
   }
   .wa-input-field {
     flex: 1;
-    background: #1E2A30;
+    height: 34px;
+    background: #2A3942;
     border-radius: 20px;
-    padding: 8px 14px;
-    font-size: 12px;
-    color: #8696A0;
-    font-family: 'Montserrat', sans-serif;
     display: flex;
     align-items: center;
+    padding: 0 12px;
     gap: 8px;
   }
-  .wa-input-field .wa-emoji { font-size: 16px; opacity: 0.6; }
-  .wa-input-field .wa-placeholder { flex: 1; }
-  .wa-input-icons { display: flex; gap: 4px; opacity: 0.5; }
-  .wa-input-icons svg { width: 18px; height: 18px; fill: #8696A0; }
-  .wa-mic {
-    width: 36px; height: 36px;
-    border-radius: 50%;
-    background: #00A884;
+  .wa-input-field .wa-emoji { font-size: 16px; }
+  .wa-input-field .wa-placeholder {
+    font-size: 13px;
+    color: rgba(255,255,255,0.35);
+    font-family: system-ui, sans-serif;
+  }
+  .wa-input-icons { display: flex; gap: 12px; align-items: center; }
+  .wa-input-icons svg { display: block; }
+
+  /* Home Indicator */
+  .wa-home {
+    height: 20px;
     display: flex;
     align-items: center;
     justify-content: center;
+    background: #1F2C34;
+    border-radius: 0 0 32px 32px;
     flex-shrink: 0;
   }
-  .wa-mic svg { width: 18px; height: 18px; fill: #fff; }
+  .wa-home-bar {
+    width: 120px;
+    height: 5px;
+    background: rgba(255,255,255,0.3);
+    border-radius: 3px;
+  }
 
-  /* ═══════════════════════════════════════
-     PROBLEM SECTION
-     ═══════════════════════════════════════ */
+  /* -- PROBLEM SECTION -- */
   .problem {
     padding: var(--section-pad);
     text-align: center;
@@ -568,18 +516,60 @@
     font-weight: 400;
   }
 
-  /* ═══════════════════════════════════════
-     HOW WE WORK (4-step process)
-     ═══════════════════════════════════════ */
+  /* -- SERVICES GRID (8 cards) -- */
+  .services {
+    padding: var(--section-pad);
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+  .services-header { text-align: center; margin-bottom: 80px; }
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+  }
+  .service-card {
+    padding: 40px 28px;
+    border: 1px solid var(--white-faint);
+    background: var(--dark2);
+    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    position: relative;
+    overflow: hidden;
+  }
+  .service-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 3px; height: 0;
+    background: var(--gold);
+    transition: height 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .service-card:hover { border-color: rgba(201,168,76,0.2); transform: translateY(-6px); box-shadow: 0 30px 80px rgba(0,0,0,0.4); }
+  .service-card:hover::before { height: 100%; }
+  .service-icon {
+    width: 48px; height: 48px;
+    border: 1px solid var(--gold-dim);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 24px;
+    transition: all 0.4s ease;
+  }
+  .service-card:hover .service-icon {
+    background: rgba(201,168,76,0.08);
+    border-color: var(--gold);
+  }
+  .service-icon svg { width: 22px; height: 22px; stroke: var(--gold); fill: none; stroke-width: 1.5; }
+  .service-card h3 { font-size: 20px; margin-bottom: 12px; color: var(--white); }
+  .service-card p { font-size: 13px; }
+
+  /* -- HOW WE WORK -- */
   .process {
     padding: var(--section-pad);
     max-width: 1200px;
     margin: 0 auto;
   }
-  .process-header {
-    text-align: center;
-    margin-bottom: 80px;
-  }
+  .process-header { text-align: center; margin-bottom: 80px; }
   .process-steps {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -623,166 +613,27 @@
     color: var(--black);
     box-shadow: 0 0 30px rgba(201,168,76,0.2);
   }
-  .step h3 {
-    color: var(--white);
-    margin-bottom: 14px;
-    font-size: 22px;
-  }
-  .step p {
-    font-size: 13px;
-    line-height: 1.7;
-  }
+  .step h3 { color: var(--white); margin-bottom: 14px; font-size: 22px; }
+  .step p { font-size: 13px; line-height: 1.7; }
 
-  /* ═══════════════════════════════════════
-     VERTICALS (3-card grid)
-     ═══════════════════════════════════════ */
-  .verticals {
+  /* -- BABYLON DIFFERENCE (two-column) -- */
+  .difference {
     padding: var(--section-pad);
     max-width: 1200px;
     margin: 0 auto;
   }
-  .verticals-header {
-    text-align: center;
-    margin-bottom: 80px;
-  }
-  .verticals-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 28px;
-  }
-  .vertical-card {
-    background: var(--dark2);
-    border: 1px solid var(--white-faint);
-    padding: 48px 36px;
-    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-    position: relative;
-    overflow: hidden;
-  }
-  .vertical-card::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 0;
-    width: 3px;
-    height: 0;
-    background: var(--gold);
-    transition: height 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-  }
-  .vertical-card:hover {
-    border-color: rgba(201,168,76,0.2);
-    transform: translateY(-6px);
-    box-shadow: 0 30px 80px rgba(0,0,0,0.4);
-  }
-  .vertical-card:hover::before { height: 100%; }
-  .vertical-icon {
-    width: 52px; height: 52px;
-    border: 1px solid var(--gold-dim);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 28px;
-    transition: all 0.4s ease;
-  }
-  .vertical-card:hover .vertical-icon {
-    background: rgba(201,168,76,0.08);
-    border-color: var(--gold);
-  }
-  .vertical-icon svg { width: 24px; height: 24px; stroke: var(--gold); fill: none; stroke-width: 1.5; }
-  .vertical-card .card-label {
-    font-size: 10px;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    color: var(--gold);
-    margin-bottom: 12px;
-    font-weight: 500;
-  }
-  .vertical-card h3 { margin-bottom: 16px; color: var(--white); }
-  .vertical-card p { font-size: 14px; margin-bottom: 24px; }
-  .card-tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-  }
-  .card-tag {
-    font-size: 10px;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    padding: 6px 14px;
-    border: 1px solid var(--white-faint);
-    color: var(--white-dim);
-    transition: all 0.3s;
-  }
-  .vertical-card:hover .card-tag {
-    border-color: rgba(201,168,76,0.2);
-    color: var(--gold-light);
-  }
-
-  /* ═══════════════════════════════════════
-     AI CAPABILITIES (chat mockup + list)
-     ═══════════════════════════════════════ */
-  .ai-capabilities {
-    padding: var(--section-pad);
-    max-width: 1200px;
-    margin: 0 auto;
-  }
-  .ai-layout {
+  .difference-layout {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 80px;
     align-items: center;
   }
-
-  /* AI Demo - iPhone mockup matching hero */
-  .ai-phone-wrapper {
+  .difference-phone {
     display: flex;
     justify-content: center;
   }
-  .ai-phone {
-    width: 320px;
-    border-radius: 48px;
-    background: linear-gradient(145deg, #2a2a2e 0%, #1a1a1c 50%, #2a2a2e 100%);
-    padding: 4px;
-    box-shadow:
-      0 50px 100px rgba(0,0,0,0.5),
-      0 0 0 1px rgba(255,255,255,0.06),
-      inset 0 0 0 1px rgba(255,255,255,0.04);
-    position: relative;
-  }
-  .ai-phone-inner {
-    border-radius: 44px;
-    overflow: hidden;
-    background: var(--wa-bg);
-  }
-  .ai-phone .dynamic-island {
-    position: absolute;
-    top: 16px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 120px;
-    height: 34px;
-    background: #000;
-    border-radius: 20px;
-    z-index: 10;
-  }
-  .ai-phone .status-bar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 14px 28px 0;
-    font-size: 12px;
-    font-weight: 600;
-    color: #fff;
-    height: 54px;
-  }
-  .ai-phone .wa-header {
-    padding: 6px 12px 8px;
-  }
-  .ai-phone .wa-chat {
-    min-height: 340px;
-    padding: 8px 10px 12px;
-  }
-
-  .ai-features h2 { margin-bottom: 24px; }
-  .ai-features > p { margin-bottom: 36px; }
+  .difference-features h2 { margin-bottom: 24px; }
+  .difference-features > p { margin-bottom: 36px; }
   .capability-list { list-style: none; display: flex; flex-direction: column; gap: 16px; }
   .capability-list li {
     display: flex;
@@ -805,28 +656,25 @@
   }
   .capability-list li strong { color: var(--white); font-weight: 500; }
 
-  /* ═══════════════════════════════════════
-     ARIA SHOWCASE
-     ═══════════════════════════════════════ */
-  .aria-showcase {
-    padding: var(--section-pad);
+  /* -- ARIA COMING SOON -- */
+  .aria-teaser {
+    padding: 100px 60px;
+    text-align: center;
     position: relative;
     overflow: hidden;
   }
-  .aria-showcase-bg {
+  .aria-teaser-bg {
     position: absolute; inset: 0;
-    background:
-      radial-gradient(ellipse at 50% 50%, rgba(201,168,76,0.05) 0%, transparent 60%);
+    background: radial-gradient(ellipse at 50% 50%, rgba(201,168,76,0.04) 0%, transparent 60%);
   }
-  .aria-inner {
-    max-width: 1200px;
-    margin: 0 auto;
+  .aria-teaser-inner {
     position: relative;
-    text-align: center;
+    max-width: 600px;
+    margin: 0 auto;
   }
   .aria-logo {
     font-family: 'Playfair Display', serif;
-    font-size: 80px;
+    font-size: 52px;
     color: var(--white);
     letter-spacing: 2px;
     margin-bottom: 8px;
@@ -834,205 +682,36 @@
   .aria-logo .dot { color: var(--gold); }
   .aria-tagline {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 24px;
+    font-size: 22px;
     color: var(--white-dim);
     font-style: italic;
-    margin-bottom: 12px;
-  }
-  .aria-sub {
-    font-size: 13px;
-    color: var(--white-dim);
-    margin-bottom: 48px;
-    letter-spacing: 1px;
-  }
-  .aria-sub a { color: var(--gold); text-decoration: underline; text-underline-offset: 3px; }
-  .founding-badge {
-    display: inline-block;
-    padding: 8px 24px;
-    border: 1px solid var(--gold);
-    font-size: 10px;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    color: var(--gold);
     margin-bottom: 32px;
-    animation: pulseGlow 3s ease-in-out infinite;
   }
-  @keyframes pulseGlow {
-    0%, 100% { box-shadow: 0 0 0 rgba(201,168,76,0); }
-    50% { box-shadow: 0 0 20px rgba(201,168,76,0.15); }
-  }
-
-  .aria-features {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 28px;
-    margin-bottom: 60px;
-    text-align: left;
-  }
-  .aria-feature {
-    background: var(--dark2);
-    border: 1px solid var(--white-faint);
-    padding: 32px 28px;
-    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-  }
-  .aria-feature:hover {
-    border-color: rgba(201,168,76,0.2);
-    transform: translateY(-4px);
-    box-shadow: 0 20px 60px rgba(0,0,0,0.3);
-  }
-  .aria-feature h4 {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 20px;
-    color: var(--white);
-    margin-bottom: 8px;
-    font-weight: 400;
-  }
-  .aria-feature p { font-size: 13px; }
-
-  /* Team Agents */
-  .team-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
-    margin-bottom: 48px;
-  }
-  .team-agent {
-    background: var(--dark2);
-    border: 1px solid var(--white-faint);
-    padding: 28px 20px;
-    text-align: center;
-    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-  }
-  .team-agent:hover {
-    border-color: rgba(201,168,76,0.25);
-    transform: translateY(-4px);
-  }
-  .agent-avatar {
-    width: 56px; height: 56px;
-    border-radius: 50%;
-    background: linear-gradient(135deg, var(--gold), var(--gold-dim));
-    margin: 0 auto 16px;
+  .aria-waitlist {
     display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: 'Playfair Display', serif;
-    font-size: 20px;
-    color: var(--black);
-    font-weight: 500;
-  }
-  .team-agent h4 {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 18px;
-    color: var(--white);
-    margin-bottom: 4px;
-    font-weight: 400;
-  }
-  .team-agent .role {
-    font-size: 10px;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    color: var(--gold);
-  }
-
-  /* Pricing row */
-  .aria-pricing {
-    display: flex;
-    justify-content: center;
-    gap: 40px;
-    margin-bottom: 40px;
-    flex-wrap: wrap;
-  }
-  .price-card {
-    text-align: center;
-    padding: 28px 36px;
-    border: 1px solid var(--white-faint);
-    background: var(--dark2);
-    min-width: 200px;
-    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-  }
-  .price-card.featured {
-    border-color: var(--gold);
-    position: relative;
-  }
-  .price-card.featured::before {
-    content: 'MOST POPULAR';
-    position: absolute;
-    top: -10px;
-    left: 50%;
-    transform: translateX(-50%);
-    background: var(--gold);
-    color: var(--black);
-    font-size: 9px;
-    letter-spacing: 2px;
-    padding: 3px 14px;
-    font-weight: 600;
-  }
-  .price-card .tier {
-    font-size: 10px;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    color: var(--gold);
-    margin-bottom: 8px;
-  }
-  .price-card .price {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 36px;
-    color: var(--white);
-  }
-  .price-card .price s {
-    font-size: 18px;
-    color: var(--white-dim);
-    opacity: 0.4;
-    margin-right: 8px;
-  }
-  .price-card .per { font-size: 12px; color: var(--white-dim); }
-  .price-card:hover { transform: translateY(-4px); box-shadow: 0 20px 60px rgba(0,0,0,0.3); }
-
-  /* ═══════════════════════════════════════
-     SERVICES GRID
-     ═══════════════════════════════════════ */
-  .services {
-    padding: var(--section-pad);
-    max-width: 1200px;
+    gap: 12px;
+    max-width: 440px;
     margin: 0 auto;
+    justify-content: center;
   }
-  .services-header { text-align: center; margin-bottom: 80px; }
-  .services-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 28px;
-  }
-  .service-card {
-    padding: 40px 32px;
-    border: 1px solid var(--white-faint);
+  .aria-waitlist input {
+    flex: 1;
     background: var(--dark2);
-    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-    position: relative;
-  }
-  .service-card::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 0;
-    width: 3px; height: 0;
-    background: var(--gold);
-    transition: height 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-  }
-  .service-card:hover { border-color: rgba(201,168,76,0.2); transform: translateY(-4px); box-shadow: 0 20px 60px rgba(0,0,0,0.3); }
-  .service-card:hover::before { height: 100%; }
-  .service-num {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 48px;
-    color: rgba(201,168,76,0.08);
-    position: absolute;
-    top: 16px; right: 24px;
+    border: 1px solid var(--white-faint);
+    color: var(--white);
+    padding: 14px 18px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
     font-weight: 300;
+    outline: none;
+    transition: border-color 0.3s;
+    cursor: none;
+    min-width: 0;
   }
-  .service-card h3 { font-size: 20px; margin-bottom: 12px; color: var(--white); }
-  .service-card p { font-size: 13px; }
+  .aria-waitlist input:focus { border-color: var(--gold); }
+  .aria-waitlist button { white-space: nowrap; }
 
-  /* ═══════════════════════════════════════
-     STATS BAR
-     ═══════════════════════════════════════ */
+  /* -- STATS BAR -- */
   .stats {
     padding: 80px 60px;
     background: var(--dark2);
@@ -1061,9 +740,7 @@
     color: var(--white-dim);
   }
 
-  /* ═══════════════════════════════════════
-     ABOUT
-     ═══════════════════════════════════════ */
+  /* -- ABOUT -- */
   .about {
     padding: var(--section-pad);
     max-width: 1200px;
@@ -1077,9 +754,7 @@
   }
   .about-text h2 { margin-bottom: 32px; }
   .about-text p { margin-bottom: 20px; }
-  .about-visual {
-    position: relative;
-  }
+  .about-visual { position: relative; }
   .about-quote {
     background: var(--dark2);
     border: 1px solid var(--white-faint);
@@ -1112,68 +787,203 @@
     margin-top: 20px;
   }
 
-  /* ═══════════════════════════════════════
-     CONTACT
-     ═══════════════════════════════════════ */
-  .contact {
+  /* -- ONBOARDING QUIZ -- */
+  .quiz-section {
     padding: var(--section-pad);
-    max-width: 1200px;
+    background: var(--dark2);
+    border-top: 2px solid var(--gold);
+    position: relative;
+  }
+  .quiz-inner {
+    max-width: 720px;
     margin: 0 auto;
   }
-  .contact-layout {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 80px;
+  .quiz-header {
+    text-align: center;
+    margin-bottom: 48px;
   }
-  .contact-info h2 { margin-bottom: 24px; }
-  .contact-info > p { margin-bottom: 40px; }
-  .contact-detail {
+
+  /* Progress bar */
+  .quiz-progress {
     display: flex;
-    align-items: flex-start;
-    gap: 16px;
-    margin-bottom: 24px;
+    gap: 8px;
+    margin-bottom: 48px;
   }
-  .contact-detail .label {
-    font-size: 10px;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    color: var(--gold);
-    margin-bottom: 4px;
+  .quiz-progress-bar {
+    flex: 1;
+    height: 3px;
+    background: var(--white-faint);
+    position: relative;
+    overflow: hidden;
   }
-  .contact-detail .value {
-    font-size: 15px;
+  .quiz-progress-bar.active,
+  .quiz-progress-bar.done {
+    background: var(--gold);
+  }
+  .quiz-progress-bar.active {
+    background: linear-gradient(90deg, var(--gold), var(--gold-dim));
+  }
+
+  /* Steps */
+  .quiz-step {
+    display: none;
+    animation: quizFadeIn 0.4s ease;
+  }
+  .quiz-step.active { display: block; }
+
+  @keyframes quizFadeIn {
+    from { opacity: 0; transform: translateY(16px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .quiz-question {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 24px;
     color: var(--white);
+    margin-bottom: 8px;
     font-weight: 400;
   }
-  .contact-icon {
-    width: 40px; height: 40px;
-    border: 1px solid var(--gold-dim);
+  .quiz-subtext {
+    font-size: 14px;
+    color: var(--white-dim);
+    margin-bottom: 28px;
+  }
+
+  /* Option cards */
+  .quiz-options {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin-bottom: 20px;
+  }
+  .quiz-options.two-col {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .quiz-option {
+    background: var(--dark3);
+    border: 1px solid var(--white-faint);
+    padding: 20px 16px;
+    text-align: center;
+    cursor: none;
+    transition: all 0.3s ease;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    color: var(--white-dim);
+    position: relative;
+  }
+  .quiz-option:hover {
+    border-color: rgba(201,168,76,0.3);
+    color: var(--white);
+  }
+  .quiz-option.selected {
+    border-color: var(--gold);
+    color: var(--gold);
+    background: rgba(201,168,76,0.06);
+  }
+  .quiz-option.selected::after {
+    content: '\2713';
+    position: absolute;
+    top: 6px;
+    right: 8px;
+    font-size: 12px;
+    color: var(--gold);
+  }
+
+  /* Multi-select pain points */
+  .quiz-options-multi {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  .quiz-check {
+    background: var(--dark3);
+    border: 1px solid var(--white-faint);
+    padding: 16px 16px;
+    cursor: none;
+    transition: all 0.3s ease;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 13px;
+    font-weight: 300;
+    color: var(--white-dim);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .quiz-check:hover {
+    border-color: rgba(201,168,76,0.3);
+    color: var(--white);
+  }
+  .quiz-check.selected {
+    border-color: var(--gold);
+    color: var(--white);
+    background: rgba(201,168,76,0.06);
+  }
+  .quiz-checkbox {
+    width: 18px;
+    height: 18px;
+    border: 1px solid var(--white-faint);
+    flex-shrink: 0;
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-shrink: 0;
+    font-size: 11px;
+    color: var(--gold);
+    transition: all 0.3s;
   }
-  .contact-icon svg { width: 18px; height: 18px; stroke: var(--gold); fill: none; stroke-width: 1.5; }
+  .quiz-check.selected .quiz-checkbox {
+    border-color: var(--gold);
+    background: var(--gold);
+    color: var(--black);
+  }
 
-  /* Form */
-  .contact-form {
+  /* Quiz nav buttons */
+  .quiz-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 36px;
+  }
+  .quiz-back {
+    background: none;
+    border: none;
+    color: var(--white-dim);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    cursor: none;
+    transition: color 0.3s;
+    padding: 10px 0;
+  }
+  .quiz-back:hover { color: var(--gold); }
+
+  /* Contact form fields inside quiz */
+  .quiz-form-fields {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 16px;
   }
-  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
-  .form-group { display: flex; flex-direction: column; }
-  .form-group label {
+  .quiz-form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+  .quiz-field {
+    display: flex;
+    flex-direction: column;
+  }
+  .quiz-field label {
     font-size: 10px;
     letter-spacing: 2px;
     text-transform: uppercase;
     color: var(--white-dim);
     margin-bottom: 8px;
   }
-  .form-group input,
-  .form-group select,
-  .form-group textarea {
-    background: var(--dark2);
+  .quiz-field input,
+  .quiz-field textarea {
+    background: var(--dark3);
     border: 1px solid var(--white-faint);
     color: var(--white);
     padding: 14px 18px;
@@ -1185,21 +995,151 @@
     cursor: none;
     border-radius: 0;
   }
-  .form-group input:focus,
-  .form-group select:focus,
-  .form-group textarea:focus {
+  .quiz-field input:focus,
+  .quiz-field textarea:focus {
     border-color: var(--gold);
   }
-  .form-group textarea { min-height: 120px; resize: vertical; }
-  .form-group select { appearance: none; }
-  .form-group select option { background: var(--dark2); color: var(--white); }
-  .form-submit {
-    align-self: flex-start;
+  .quiz-field textarea { min-height: 80px; resize: vertical; }
+
+  /* Day/time picker */
+  .quiz-days {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  .quiz-day {
+    background: var(--dark3);
+    border: 1px solid var(--white-faint);
+    padding: 14px 20px;
+    cursor: none;
+    transition: all 0.3s ease;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    color: var(--white-dim);
+    text-align: center;
+    flex: 1;
+    min-width: 80px;
+  }
+  .quiz-day:hover {
+    border-color: rgba(201,168,76,0.3);
+    color: var(--white);
+  }
+  .quiz-day.selected {
+    border-color: var(--gold);
+    color: var(--gold);
+    background: rgba(201,168,76,0.06);
+  }
+  .quiz-times {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+  }
+  .quiz-time {
+    background: var(--dark3);
+    border: 1px solid var(--white-faint);
+    padding: 16px 24px;
+    cursor: none;
+    transition: all 0.3s ease;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    color: var(--white-dim);
+    text-align: center;
+    flex: 1;
+  }
+  .quiz-time:hover {
+    border-color: rgba(201,168,76,0.3);
+    color: var(--white);
+  }
+  .quiz-time.selected {
+    border-color: var(--gold);
+    color: var(--gold);
+    background: rgba(201,168,76,0.06);
+  }
+  .quiz-time .time-label {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--white);
+    margin-bottom: 4px;
+  }
+  .quiz-time.selected .time-label { color: var(--gold); }
+  .quiz-time .time-range {
+    font-size: 11px;
+    color: var(--white-dim);
   }
 
-  /* ═══════════════════════════════════════
-     FOOTER
-     ═══════════════════════════════════════ */
+  /* Quiz confirmation */
+  .quiz-confirmation {
+    display: none;
+    text-align: center;
+    padding: 40px 0;
+  }
+  .quiz-confirmation.active { display: block; }
+  .quiz-confirmation h2 { margin-bottom: 16px; }
+  .quiz-confirmation p { margin-bottom: 24px; }
+  .quiz-recommendations {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    margin: 28px 0;
+  }
+  .quiz-rec-tag {
+    padding: 8px 20px;
+    border: 1px solid var(--gold);
+    color: var(--gold);
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+
+  /* -- CONTACT (simplified) -- */
+  .contact {
+    padding: var(--section-pad);
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .contact h2 { margin-bottom: 16px; }
+  .contact > p { margin-bottom: 40px; }
+  .contact-details {
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+    flex-wrap: wrap;
+  }
+  .contact-item {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+  .contact-icon {
+    width: 40px; height: 40px;
+    border: 1px solid var(--gold-dim);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  .contact-icon svg { width: 18px; height: 18px; stroke: var(--gold); fill: none; stroke-width: 1.5; }
+  .contact-item .label {
+    font-size: 10px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 2px;
+  }
+  .contact-item .value {
+    font-size: 15px;
+    color: var(--white);
+    font-weight: 400;
+  }
+
+  /* -- FOOTER -- */
   footer {
     padding: 60px;
     border-top: 1px solid var(--white-faint);
@@ -1227,18 +1167,14 @@
   }
   .footer-links a:hover { color: var(--gold); }
 
-  /* ═══════════════════════════════════════
-     RESPONSIVE
-     ═══════════════════════════════════════ */
+  /* -- RESPONSIVE -- */
   @media (max-width: 1024px) {
     :root { --section-pad: 100px 40px; }
     .hero-content { grid-template-columns: 1fr; gap: 60px; }
     .phone-mockup { order: -1; }
-    .ai-layout { grid-template-columns: 1fr; gap: 60px; }
+    .difference-layout { grid-template-columns: 1fr; gap: 60px; }
     .about-layout { grid-template-columns: 1fr; gap: 48px; }
-    .contact-layout { grid-template-columns: 1fr; gap: 48px; }
-    .aria-features { grid-template-columns: repeat(2, 1fr); }
-    .team-grid { grid-template-columns: repeat(2, 1fr); }
+    .services-grid { grid-template-columns: repeat(2, 1fr); }
   }
 
   @media (max-width: 768px) {
@@ -1253,24 +1189,24 @@
       gap: 40px;
     }
     .process-steps::before { display: none; }
-    .verticals-grid { grid-template-columns: 1fr; }
     .services-grid { grid-template-columns: 1fr; }
     .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 32px; }
-    .aria-features { grid-template-columns: 1fr; }
-    .team-grid { grid-template-columns: repeat(2, 1fr); }
-    .aria-pricing { flex-direction: column; align-items: center; }
-    .form-row { grid-template-columns: 1fr; }
-    footer { flex-direction: column; gap: 20px; text-align: center; }
+    .quiz-options { grid-template-columns: 1fr 1fr; }
+    .quiz-options-multi { grid-template-columns: 1fr; }
+    .quiz-form-row { grid-template-columns: 1fr; }
+    .contact-details { flex-direction: column; align-items: center; }
+    .footer { flex-direction: column; gap: 20px; text-align: center; }
     .footer-links { flex-wrap: wrap; justify-content: center; }
-    .iphone-frame { width: 250px; }
+    .hs-phone { width: 240px; height: 480px; }
+    .aria-waitlist { flex-direction: column; }
   }
 
   @media (max-width: 480px) {
     .process-steps { grid-template-columns: 1fr; }
     .stats-grid { grid-template-columns: 1fr; }
-    .team-grid { grid-template-columns: 1fr; }
     .hero-buttons { flex-direction: column; }
     .hero-buttons .btn { width: 100%; justify-content: center; }
+    .quiz-options { grid-template-columns: 1fr; }
   }
 </style>
 </head>
@@ -1280,14 +1216,14 @@
 <div class="cursor"></div>
 <div class="cursor-ring"></div>
 
-<!-- ═══ NAV ═══ -->
+<!-- NAV -->
 <nav>
   <a href="#" class="nav-logo">BABYLON <span>Consulting</span></a>
   <ul class="nav-links">
     <li><a href="#services">Services</a></li>
-    <li><a href="#aria">ARIA</a></li>
+    <li><a href="#process">How It Works</a></li>
     <li><a href="#about">About</a></li>
-    <li><a href="#contact">Contact</a></li>
+    <li><a href="#quiz" class="nav-cta">Get Started</a></li>
   </ul>
   <button class="nav-mobile" aria-label="Menu">
     <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5">
@@ -1298,300 +1234,252 @@
   </button>
 </nav>
 
-<!-- ═══ HERO ═══ -->
+<!-- HERO -->
 <section class="hero">
   <div class="hero-bg"></div>
   <div class="hero-grid parallax-slow"></div>
   <div class="hero-content">
     <div class="hero-text">
-      <p class="eyebrow">AI Automation &bull; Industrial Assets &bull; Medical Growth</p>
-      <h1>Your Business Should Run <em class="italic gold">Without You.</em></h1>
-      <p class="hero-subtitle">Babylon Consulting designs, builds, deploys, and maintains AI agents and automated workflows so you can finally step away &mdash; and everything still runs.</p>
+      <p class="eyebrow">AI Workflow Automation</p>
+      <h1>Hire Your Own <em class="italic gold">AI Team.</em><br>Maintained by Babylon.</h1>
+      <p class="hero-subtitle">Stop drowning in manual work. We build, deploy, and maintain AI-powered teams that handle your lead gen, sales, marketing, content, and operations &mdash; for a fixed monthly retainer.</p>
       <div class="hero-buttons">
-        <a href="#process" class="btn btn-gold">See How It Works</a>
-        <a href="#contact" class="btn btn-outline">Book a Call</a>
+        <a href="#quiz" class="btn btn-gold">Book Your Discovery Call</a>
+        <a href="#process" class="btn btn-outline">See How It Works</a>
       </div>
     </div>
 
-    <!-- Realistic iPhone Mockup -->
+    <!-- iPhone Mockup - Babylon AI -->
     <div class="phone-mockup">
-      <div class="iphone-frame">
-        <div class="iphone-inner">
-          <div class="dynamic-island"></div>
-
-          <!-- Status Bar -->
-          <div class="status-bar">
-            <span class="status-time">9:41</span>
-            <div class="status-icons">
-              <svg viewBox="0 0 18 12"><path d="M1 8.5h2v3H1zM5 6h2v5.5H5zM9 3.5h2v8H9zM13 1h2v10.5h-2z"/></svg>
-              <svg viewBox="0 0 16 12"><path d="M8 2.4C5.36 2.4 3.05 3.55 1.46 5.36L0 3.82C1.96 1.64 4.81 0.25 8 0.25s6.04 1.39 8 3.57l-1.46 1.54C13 3.55 10.64 2.4 8 2.4zM4.43 7.52L8 11.75l3.57-4.23C10.5 6.34 9.32 5.7 8 5.7s-2.5.64-3.57 1.82z"/></svg>
-              <span class="battery-icon"><span class="battery-fill"></span></span>
-            </div>
+      <div class="hs-phone">
+        <!-- Status bar with Dynamic Island -->
+        <div class="ip-status">
+          <div class="ip-status-left"><span class="ip-status-time">9:41</span></div>
+          <div class="ip-status-center"><div class="ip-di"></div></div>
+          <div class="ip-status-icons">
+            <svg width="17" height="12" viewBox="0 0 17 12" fill="white"><rect x="0" y="7" width="3" height="5" rx=".5"/><rect x="4.5" y="5" width="3" height="7" rx=".5"/><rect x="9" y="2.5" width="3" height="9.5" rx=".5"/><rect x="13.5" y="0" width="3" height="12" rx=".5"/></svg>
+            <svg width="16" height="12" viewBox="0 0 24 18" fill="white"><path d="M12 14.5a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3z"/><path d="M12 9.5c-1.8 0-3.4.7-4.6 1.9l1.5 1.5c.8-.8 1.9-1.3 3.1-1.3s2.3.5 3.1 1.3l1.5-1.5C15.4 10.2 13.8 9.5 12 9.5z"/><path d="M12 4.5C8.7 4.5 5.7 5.9 3.5 8.1l1.5 1.5C6.8 7.8 9.3 6.5 12 6.5s5.2 1.3 7 3.1l1.5-1.5C18.3 5.9 15.3 4.5 12 4.5z"/><path d="M12 0C7.3 0 3.1 1.9 0 5l1.5 1.5C4.3 3.7 8 2 12 2s7.7 1.7 10.5 4.5L24 5C20.9 1.9 16.7 0 12 0z" opacity=".4"/></svg>
+            <svg width="25" height="12" viewBox="0 0 25 12" fill="none"><rect x=".5" y=".5" width="21" height="11" rx="3.5" stroke="white" stroke-opacity=".35"/><rect x="2" y="2" width="17" height="8" rx="2" fill="white"/><path d="M23 4v4a2 2 0 0 0 0-4z" fill="white" fill-opacity=".4"/></svg>
           </div>
-
-          <!-- WhatsApp Header -->
-          <div class="wa-header">
-            <span class="wa-back">&lsaquo;</span>
-            <div class="wa-avatar">A</div>
-            <div class="wa-contact-info">
-              <div class="wa-contact-name">ARIA</div>
-              <div class="wa-contact-status">online</div>
-            </div>
-            <div class="wa-header-icons">
-              <svg viewBox="0 0 24 24"><path d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7z" fill="none" stroke="#8696A0" stroke-width="1.5"/></svg>
-              <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" fill="none" stroke="#8696A0" stroke-width="1.5"/></svg>
-            </div>
-          </div>
-
-          <!-- WhatsApp Chat -->
-          <div class="wa-chat">
-            <div class="wa-date-chip">Today</div>
-
-            <div class="wa-bubble incoming">
-              <span class="wa-text">Good morning. You have 3 urgent emails &mdash; I've drafted replies. Your 2pm with Dr. Patel is confirmed.</span>
-              <span class="wa-meta">
-                <span class="wa-time">8:02 AM</span>
-              </span>
-            </div>
-
-            <div class="wa-bubble incoming">
-              <span class="wa-text">Should I run today's market brief?</span>
-              <span class="wa-meta">
-                <span class="wa-time">8:02 AM</span>
-              </span>
-            </div>
-
-            <div class="wa-bubble outgoing">
-              <span class="wa-text">Yes, run the brief. Also reschedule my 4pm.</span>
-              <span class="wa-meta">
-                <span class="wa-time">8:04 AM</span>
-                <span class="wa-checks"><svg viewBox="0 0 16 11"><path d="M11.071.653a.457.457 0 0 0-.304-.102.493.493 0 0 0-.381.178l-6.19 7.636-2.011-2.175a.463.463 0 0 0-.336-.153.457.457 0 0 0-.343.144.461.461 0 0 0-.109.69l2.32 2.508c.103.112.23.169.381.169h.04c.152-.013.274-.073.381-.178l6.532-8.055a.47.47 0 0 0 .02-.674z"/><path d="M14.757.653a.457.457 0 0 0-.304-.102.493.493 0 0 0-.381.178L7.882 8.365 7.57 8.04l-.454.56 .685.74c.103.112.23.169.381.169h.04c.152-.013.274-.073.381-.178l6.532-8.055a.47.47 0 0 0 .02-.674z"/></svg></span>
-              </span>
-            </div>
-
-            <div class="wa-bubble incoming">
-              <span class="wa-text">Done. Brief is generating now. I've moved your 4pm to tomorrow at 10am and notified all parties.</span>
-              <span class="wa-meta">
-                <span class="wa-time">8:04 AM</span>
-              </span>
-            </div>
-
-            <div class="wa-bubble outgoing">
-              <span class="wa-text">That's it. Thanks ARIA.</span>
-              <span class="wa-meta">
-                <span class="wa-time">8:05 AM</span>
-                <span class="wa-checks"><svg viewBox="0 0 16 11"><path d="M11.071.653a.457.457 0 0 0-.304-.102.493.493 0 0 0-.381.178l-6.19 7.636-2.011-2.175a.463.463 0 0 0-.336-.153.457.457 0 0 0-.343.144.461.461 0 0 0-.109.69l2.32 2.508c.103.112.23.169.381.169h.04c.152-.013.274-.073.381-.178l6.532-8.055a.47.47 0 0 0 .02-.674z"/><path d="M14.757.653a.457.457 0 0 0-.304-.102.493.493 0 0 0-.381.178L7.882 8.365 7.57 8.04l-.454.56 .685.74c.103.112.23.169.381.169h.04c.152-.013.274-.073.381-.178l6.532-8.055a.47.47 0 0 0 .02-.674z"/></svg></span>
-              </span>
-            </div>
-
-            <div class="wa-bubble incoming">
-              <span class="wa-text">You're all set. Enjoy your morning &mdash; I'll flag anything urgent.</span>
-              <span class="wa-meta">
-                <span class="wa-time">8:05 AM</span>
-              </span>
-            </div>
-          </div>
-
-          <!-- Input Bar -->
-          <div class="wa-input-bar">
-            <div class="wa-input-field">
-              <span class="wa-emoji">&#128578;</span>
-              <span class="wa-placeholder">Message</span>
-              <div class="wa-input-icons">
-                <svg viewBox="0 0 24 24"><path d="M15.17 11l-3.88-3.88a1 1 0 1 1 1.41-1.41l4.59 4.59a1 1 0 0 1 0 1.41l-4.59 4.59a1 1 0 0 1-1.41-1.41L15.17 11z"/></svg>
-              </div>
-            </div>
-            <div class="wa-mic">
-              <svg viewBox="0 0 24 24"><path d="M12 1a4 4 0 0 0-4 4v6a4 4 0 0 0 8 0V5a4 4 0 0 0-4-4z"/><path d="M19 10v1a7 7 0 0 1-14 0v-1" fill="none" stroke="#fff" stroke-width="2"/><line x1="12" y1="19" x2="12" y2="23" stroke="#fff" stroke-width="2"/></svg>
-            </div>
-          </div>
-
         </div>
+        <!-- WhatsApp Header -->
+        <div class="wa-hdr">
+          <span class="wa-hdr-back">&#8249;</span>
+          <div class="wa-hdr-avatar"><span>B</span></div>
+          <div class="wa-hdr-info">
+            <span class="wa-hdr-name">Babylon AI</span>
+            <span class="wa-hdr-status">online</span>
+          </div>
+          <div class="wa-hdr-icons">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.38 2 2 0 0 1 3.6 1.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.77a16 16 0 0 0 6.29 6.29l.95-.95a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          </div>
+        </div>
+        <!-- Chat Area -->
+        <div class="hs-chat-body">
+          <div class="hs-msglist">
+            <div class="hs-bub incoming"><span class="nm">BABYLON AI</span>Morning update: I've sent 47 outreach emails, booked 3 demo calls, and updated your CRM.<div class="bub-time">8:02 AM</div></div>
+            <div class="hs-bub outgoing">What about the blog and social posts?<div class="bub-time">8:04 AM <span class="bub-checks">&#10003;&#10003;</span></div></div>
+            <div class="hs-bub incoming"><span class="nm">BABYLON AI</span>Blog post is live. 3 social posts scheduled across LinkedIn, X, and Instagram. Engagement up 23%.<div class="bub-time">8:04 AM</div></div>
+            <div class="hs-bub outgoing">How many leads came in overnight?<div class="bub-time">8:05 AM <span class="bub-checks">&#10003;&#10003;</span></div></div>
+            <div class="hs-bub incoming"><span class="nm">BABYLON AI</span>12 new leads. 4 qualified &mdash; follow-up started. Pipeline grew $38K while you slept.<div class="bub-time">8:05 AM</div></div>
+          </div>
+        </div>
+        <!-- Input Bar -->
+        <div class="wa-input">
+          <span class="wa-input-plus">+</span>
+          <div class="wa-input-field"><span class="wa-emoji">&#128578;</span><span class="wa-placeholder">Message</span></div>
+          <div class="wa-input-icons">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><rect x="9" y="2" width="6" height="11" rx="3"/><path d="M19 10v2a7 7 0 0 1-14 0v-2M12 19v4M8 23h8"/></svg>
+          </div>
+        </div>
+        <!-- Home Indicator -->
+        <div class="wa-home"><div class="wa-home-bar"></div></div>
       </div>
     </div>
-
   </div>
 </section>
 
 <div class="divider"></div>
 
-<!-- ═══ PROBLEM STATEMENT ═══ -->
+<!-- PROBLEM STATEMENT -->
 <section class="problem">
   <div class="reveal">
     <p class="eyebrow">The Problem</p>
-    <h2>You Built a Business.<br><span class="gold italic">Now It Runs You.</span></h2>
+    <h2>Your Business Is <span class="gold italic">Leaking Revenue.</span><br>Every Single Day.</h2>
   </div>
-  <p class="reveal">Every missed call is a missed deal. Every unanswered email costs trust. You're buried in scheduling, follow-ups, inbox triage, and operational fires &mdash; so deep that stepping away for a single day feels impossible.</p>
-  <p class="reveal">You don't need another tool. You don't need another dashboard. You need a team that works around the clock, never forgets a task, and gets smarter every single day.</p>
-  <p class="transition-text reveal">What if you had exactly that?</p>
+  <p class="reveal">Leads go cold because nobody follows up. Hours vanish on manual data entry. Your social media is inconsistent. Your website doesn't convert. There's no systematic outreach process, and content creation is always the thing that gets pushed to "next week."</p>
+  <p class="reveal">You're too busy working <em>in</em> your business to work <em>on</em> it. Every hour spent on repetitive tasks is an hour you're not closing deals.</p>
+  <p class="transition-text reveal">What if you had a full AI team handling all of this &mdash; for less than one employee?</p>
 </section>
 
 <div class="divider"></div>
 
-<!-- ═══ HOW WE WORK ═══ -->
+<!-- SERVICES -->
+<section class="services" id="services">
+  <div class="services-header reveal">
+    <p class="eyebrow">What We Build For You</p>
+    <h2>Your AI Team. <span class="gold italic">Your Competitive Edge.</span></h2>
+  </div>
+  <div class="services-grid stagger-children">
+    <div class="service-card reveal">
+      <div class="service-icon">
+        <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+      </div>
+      <h3>AI Sales Agents</h3>
+      <p>Automated lead generation, prospecting, outreach sequences, follow-ups, and CRM updates. Your AI sales team works 24/7 so deals never go cold.</p>
+    </div>
+    <div class="service-card reveal">
+      <div class="service-icon">
+        <svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+      </div>
+      <h3>Website Design &amp; Development</h3>
+      <p>High-converting websites built for lead capture. Sites that don't just look good &mdash; they generate revenue.</p>
+    </div>
+    <div class="service-card reveal">
+      <div class="service-icon">
+        <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+      </div>
+      <h3>SEO &amp; Search Marketing</h3>
+      <p>Technical SEO, content strategy, local SEO, and Google Business optimization. Get found by the people already searching for what you sell.</p>
+    </div>
+    <div class="service-card reveal">
+      <div class="service-icon">
+        <svg viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+      </div>
+      <h3>Content Creation</h3>
+      <p>Blog posts, email newsletters, case studies, and whitepapers. Consistent, high-quality content without hiring a writer.</p>
+    </div>
+    <div class="service-card reveal">
+      <div class="service-icon">
+        <svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+      </div>
+      <h3>Social Media Management</h3>
+      <p>Posting, engagement, scheduling, and analytics across all platforms. Stay visible and relevant without lifting a finger.</p>
+    </div>
+    <div class="service-card reveal">
+      <div class="service-icon">
+        <svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 4 10 8 10-8"/></svg>
+      </div>
+      <h3>Marketing Automation</h3>
+      <p>Email campaigns, drip sequences, retargeting, and funnel optimization. Turn cold traffic into warm leads on autopilot.</p>
+    </div>
+    <div class="service-card reveal">
+      <div class="service-icon">
+        <svg viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+      </div>
+      <h3>App Development</h3>
+      <p>Custom web and mobile applications. From MVP to production &mdash; apps built to solve your specific problems.</p>
+    </div>
+    <div class="service-card reveal">
+      <div class="service-icon">
+        <svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+      </div>
+      <h3>CRM &amp; Sales Cycle Automation</h3>
+      <p>Pipeline management, deal tracking, automated follow-ups, and reporting. Never lose track of a deal again.</p>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- HOW WE WORK -->
 <section class="process" id="process">
   <div class="process-header reveal">
-    <p class="eyebrow">How We Work</p>
-    <h2>Four Steps to <span class="gold italic">Freedom.</span></h2>
+    <p class="eyebrow">How It Works</p>
+    <h2>Four Steps to Your <span class="gold italic">AI Team.</span></h2>
   </div>
   <div class="process-steps stagger-children">
     <div class="step reveal">
       <div class="step-number">1</div>
       <h3>Discover</h3>
-      <p>We audit your operations, map your bottlenecks, and identify every task that doesn't need you.</p>
+      <p>Take our 2-minute assessment. We identify exactly where you're losing time and money.</p>
     </div>
     <div class="step reveal">
       <div class="step-number">2</div>
       <h3>Design</h3>
-      <p>We architect custom AI agents and automated workflows built specifically for your business.</p>
+      <p>We architect your custom AI team and automation workflows, tailored to your business.</p>
     </div>
     <div class="step reveal">
       <div class="step-number">3</div>
       <h3>Deploy</h3>
-      <p>We build, test, and launch everything into your operations. No setup on your end. No code required.</p>
+      <p>We build, test, and launch everything. You don't touch a line of code.</p>
     </div>
     <div class="step reveal">
       <div class="step-number">4</div>
       <h3>Maintain</h3>
-      <p>We monitor, optimize, and evolve your system continuously. It gets sharper every day &mdash; so do you.</p>
+      <p>We monitor, optimize, and improve your systems every month. Your AI team gets smarter over time.</p>
     </div>
   </div>
 </section>
 
 <div class="divider"></div>
 
-<!-- ═══ VERTICALS ═══ -->
-<section class="verticals" id="services">
-  <div class="verticals-header reveal">
-    <p class="eyebrow">Our Verticals</p>
-    <h2>Three Ways We <span class="gold italic">Execute.</span></h2>
-  </div>
-  <div class="verticals-grid stagger-children">
-    <!-- AI Automation -->
-    <div class="vertical-card reveal">
-      <div class="vertical-icon">
-        <svg viewBox="0 0 24 24"><path d="M12 2a4 4 0 0 1 4 4v1a4 4 0 0 1-8 0V6a4 4 0 0 1 4-4z"/><path d="M12 14c-4 0-7 2-7 4v2h14v-2c0-2-3-4-7-4z"/><circle cx="18" cy="8" r="2"/><path d="M20 14c1.5.5 2.5 1.5 2.5 3v1H20"/><circle cx="6" cy="8" r="2"/><path d="M4 14c-1.5.5-2.5 1.5-2.5 3v1H4"/></svg>
-      </div>
-      <div class="card-label">Primary Vertical</div>
-      <h3>AI Agents &amp; Automation</h3>
-      <p>Custom AI assistants, agentic workflows, and end-to-end automation powered by n8n, Claude, and voice AI. We build the systems that answer your calls, triage your inbox, manage your CRM, and run your operations while you sleep.</p>
-      <div class="card-tags">
-        <span class="card-tag">WhatsApp Bots</span>
-        <span class="card-tag">Voice Agents</span>
-        <span class="card-tag">Email AI</span>
-        <span class="card-tag">n8n Workflows</span>
-        <span class="card-tag">CRM Automation</span>
-      </div>
-    </div>
-    <!-- Industrial -->
-    <div class="vertical-card reveal">
-      <div class="vertical-icon">
-        <svg viewBox="0 0 24 24"><path d="M2 20h20"/><path d="M5 20V8l4-4v16"/><path d="M9 20V8h4v12"/><path d="M13 20V4h4v16"/><path d="M17 20V10l4 2v8"/></svg>
-      </div>
-      <div class="card-label">Vertical Two</div>
-      <h3>Industrial Asset Acquisition</h3>
-      <p>Sourcing, vetting, and facilitating transactions on large-scale industrial equipment &mdash; gas and steam turbines, combined cycle units, heavy machinery for AI data centers and energy infrastructure. Deals from $50M to $750M+.</p>
-      <div class="card-tags">
-        <span class="card-tag">100MW+ Units</span>
-        <span class="card-tag">GE / Siemens</span>
-        <span class="card-tag">Global Buyers</span>
-        <span class="card-tag">Fast Close</span>
-      </div>
-    </div>
-    <!-- Medical -->
-    <div class="vertical-card reveal">
-      <div class="vertical-icon">
-        <svg viewBox="0 0 24 24"><path d="M12 2v8m0 0v8m0-8h8m-8 0H4"/><rect x="3" y="3" width="18" height="18" rx="3"/></svg>
-      </div>
-      <div class="card-label">Vertical Three</div>
-      <h3>Medical Practice Growth</h3>
-      <p>Partnering with independent medical practices and med spas to introduce and manage high-margin, cash-based service lines &mdash; GLP-1 weight management, aesthetics, and more. We bring the infrastructure; you provide the clinical environment. Zero upfront cost.</p>
-      <div class="card-tags">
-        <span class="card-tag">GLP-1 Programs</span>
-        <span class="card-tag">Zero Upfront</span>
-        <span class="card-tag">Revenue Share</span>
-        <span class="card-tag">Turnkey</span>
-      </div>
-    </div>
-  </div>
-</section>
-
-<div class="divider"></div>
-
-<!-- ═══ AI CAPABILITIES ═══ -->
-<section class="ai-capabilities">
-  <div class="ai-layout">
-    <div class="ai-phone-wrapper reveal-scale">
-      <div class="ai-phone">
-        <div class="ai-phone-inner">
-          <div class="dynamic-island"></div>
-          <div class="status-bar">
-            <span class="status-time">9:41</span>
-            <div class="status-icons">
-              <svg viewBox="0 0 18 12"><path d="M1 8.5h2v3H1zM5 6h2v5.5H5zM9 3.5h2v8H9zM13 1h2v10.5h-2z"/></svg>
-              <svg viewBox="0 0 16 12"><path d="M8 2.4C5.36 2.4 3.05 3.55 1.46 5.36L0 3.82C1.96 1.64 4.81 0.25 8 0.25s6.04 1.39 8 3.57l-1.46 1.54C13 3.55 10.64 2.4 8 2.4zM4.43 7.52L8 11.75l3.57-4.23C10.5 6.34 9.32 5.7 8 5.7s-2.5.64-3.57 1.82z"/></svg>
-              <span class="battery-icon"><span class="battery-fill"></span></span>
-            </div>
-          </div>
-          <div class="wa-header">
-            <span class="wa-back">&lsaquo;</span>
-            <div class="wa-avatar">A</div>
-            <div class="wa-contact-info">
-              <div class="wa-contact-name">ARIA</div>
-              <div class="wa-contact-status">online</div>
-            </div>
-            <div class="wa-header-icons">
-              <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" fill="none" stroke="#8696A0" stroke-width="1.5"/></svg>
-            </div>
-          </div>
-          <div class="wa-chat">
-            <div class="wa-date-chip">Today</div>
-            <div class="wa-bubble incoming">
-              <span class="wa-text">I've screened 4 calls this morning. One was a potential client &mdash; I've scheduled them for your 3pm. Two were spam.</span>
-              <span class="wa-meta"><span class="wa-time">8:12 AM</span></span>
-            </div>
-            <div class="wa-bubble outgoing">
-              <span class="wa-text">Perfect. What's my inbox look like?</span>
-              <span class="wa-meta"><span class="wa-time">8:14 AM</span><span class="wa-checks"><svg viewBox="0 0 16 11"><path d="M11.071.653a.457.457 0 0 0-.304-.102.493.493 0 0 0-.381.178l-6.19 7.636-2.011-2.175a.463.463 0 0 0-.336-.153.457.457 0 0 0-.343.144.461.461 0 0 0-.109.69l2.32 2.508c.103.112.23.169.381.169h.04c.152-.013.274-.073.381-.178l6.532-8.055a.47.47 0 0 0 .02-.674z"/><path d="M14.757.653a.457.457 0 0 0-.304-.102.493.493 0 0 0-.381.178L7.882 8.365 7.57 8.04l-.454.56 .685.74c.103.112.23.169.381.169h.04c.152-.013.274-.073.381-.178l6.532-8.055a.47.47 0 0 0 .02-.674z"/></svg></span></span>
-            </div>
-            <div class="wa-bubble incoming">
-              <span class="wa-text">47 new emails. 3 need your eyes &mdash; flagged. 12 routine &mdash; replied in your voice. Rest archived.</span>
-              <span class="wa-meta"><span class="wa-time">8:14 AM</span></span>
-            </div>
-            <div class="wa-bubble outgoing">
-              <span class="wa-text">Send me the flagged ones.</span>
-              <span class="wa-meta"><span class="wa-time">8:15 AM</span><span class="wa-checks"><svg viewBox="0 0 16 11"><path d="M11.071.653a.457.457 0 0 0-.304-.102.493.493 0 0 0-.381.178l-6.19 7.636-2.011-2.175a.463.463 0 0 0-.336-.153.457.457 0 0 0-.343.144.461.461 0 0 0-.109.69l2.32 2.508c.103.112.23.169.381.169h.04c.152-.013.274-.073.381-.178l6.532-8.055a.47.47 0 0 0 .02-.674z"/><path d="M14.757.653a.457.457 0 0 0-.304-.102.493.493 0 0 0-.381.178L7.882 8.365 7.57 8.04l-.454.56 .685.74c.103.112.23.169.381.169h.04c.152-.013.274-.073.381-.178l6.532-8.055a.47.47 0 0 0 .02-.674z"/></svg></span></span>
-            </div>
-            <div class="wa-bubble incoming">
-              <span class="wa-text">Sent. Also &mdash; your supplier contract expires Friday. Want me to draft a renewal with updated terms?</span>
-              <span class="wa-meta"><span class="wa-time">8:15 AM</span></span>
-            </div>
-          </div>
-          <div class="wa-input-bar">
-            <div class="wa-input-field">
-              <span class="wa-emoji">&#128578;</span>
-              <span class="wa-placeholder">Message</span>
-            </div>
-            <div class="wa-mic">
-              <svg viewBox="0 0 24 24"><path d="M12 1a4 4 0 0 0-4 4v6a4 4 0 0 0 8 0V5a4 4 0 0 0-4-4z"/><path d="M19 10v1a7 7 0 0 1-14 0v-1" fill="none" stroke="#fff" stroke-width="2"/><line x1="12" y1="19" x2="12" y2="23" stroke="#fff" stroke-width="2"/></svg>
-            </div>
+<!-- THE BABYLON DIFFERENCE -->
+<section class="difference">
+  <div class="difference-layout">
+    <div class="difference-phone reveal-scale">
+      <div class="hs-phone">
+        <!-- Status bar with Dynamic Island -->
+        <div class="ip-status">
+          <div class="ip-status-left"><span class="ip-status-time">2:15</span></div>
+          <div class="ip-status-center"><div class="ip-di"></div></div>
+          <div class="ip-status-icons">
+            <svg width="17" height="12" viewBox="0 0 17 12" fill="white"><rect x="0" y="7" width="3" height="5" rx=".5"/><rect x="4.5" y="5" width="3" height="7" rx=".5"/><rect x="9" y="2.5" width="3" height="9.5" rx=".5"/><rect x="13.5" y="0" width="3" height="12" rx=".5"/></svg>
+            <svg width="16" height="12" viewBox="0 0 24 18" fill="white"><path d="M12 14.5a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3z"/><path d="M12 9.5c-1.8 0-3.4.7-4.6 1.9l1.5 1.5c.8-.8 1.9-1.3 3.1-1.3s2.3.5 3.1 1.3l1.5-1.5C15.4 10.2 13.8 9.5 12 9.5z"/><path d="M12 4.5C8.7 4.5 5.7 5.9 3.5 8.1l1.5 1.5C6.8 7.8 9.3 6.5 12 6.5s5.2 1.3 7 3.1l1.5-1.5C18.3 5.9 15.3 4.5 12 4.5z"/><path d="M12 0C7.3 0 3.1 1.9 0 5l1.5 1.5C4.3 3.7 8 2 12 2s7.7 1.7 10.5 4.5L24 5C20.9 1.9 16.7 0 12 0z" opacity=".4"/></svg>
+            <svg width="25" height="12" viewBox="0 0 25 12" fill="none"><rect x=".5" y=".5" width="21" height="11" rx="3.5" stroke="white" stroke-opacity=".35"/><rect x="2" y="2" width="17" height="8" rx="2" fill="white"/><path d="M23 4v4a2 2 0 0 0 0-4z" fill="white" fill-opacity=".4"/></svg>
           </div>
         </div>
+        <!-- WhatsApp Header -->
+        <div class="wa-hdr">
+          <span class="wa-hdr-back">&#8249;</span>
+          <div class="wa-hdr-avatar"><span>B</span></div>
+          <div class="wa-hdr-info">
+            <span class="wa-hdr-name">Babylon AI</span>
+            <span class="wa-hdr-status">online</span>
+          </div>
+          <div class="wa-hdr-icons">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.38 2 2 0 0 1 3.6 1.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.77a16 16 0 0 0 6.29 6.29l.95-.95a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          </div>
+        </div>
+        <!-- Chat Area -->
+        <div class="hs-chat-body">
+          <div class="hs-msglist">
+            <div class="hs-bub incoming"><span class="nm">BABYLON AI</span>Weekly: 312 outreach emails sent. 28 responses. 9 qualified leads. 4 demos booked.<div class="bub-time">2:00 PM</div></div>
+            <div class="hs-bub incoming"><span class="nm">BABYLON AI</span>Content: 2 blog posts, 14 social posts, 1 newsletter. Reach: 12.4K impressions.<div class="bub-time">2:01 PM</div></div>
+            <div class="hs-bub outgoing">What's the pipeline looking like?<div class="bub-time">2:03 PM <span class="bub-checks">&#10003;&#10003;</span></div></div>
+            <div class="hs-bub incoming"><span class="nm">BABYLON AI</span>Pipeline grew $127K. 3 deals in proposal. Close rate up 18%. SEO traffic +34%.<div class="bub-time">2:03 PM</div></div>
+            <div class="hs-bub outgoing">This is incredible. Keep going.<div class="bub-time">2:04 PM <span class="bub-checks">&#10003;&#10003;</span></div></div>
+          </div>
+        </div>
+        <!-- Input Bar -->
+        <div class="wa-input">
+          <span class="wa-input-plus">+</span>
+          <div class="wa-input-field"><span class="wa-emoji">&#128578;</span><span class="wa-placeholder">Message</span></div>
+          <div class="wa-input-icons">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><rect x="9" y="2" width="6" height="11" rx="3"/><path d="M19 10v2a7 7 0 0 1-14 0v-2M12 19v4M8 23h8"/></svg>
+          </div>
+        </div>
+        <!-- Home Indicator -->
+        <div class="wa-home"><div class="wa-home-bar"></div></div>
       </div>
     </div>
-    <div class="ai-features reveal-right">
-      <p class="eyebrow">What Your AI Can Do</p>
-      <h2>Built for Your <span class="gold italic">Reality.</span></h2>
-      <p>Every AI system we deploy is configured for your specific business, voice, and workflows. Not a template. Not a chatbot. A real operational layer.</p>
+    <div class="difference-features reveal-right">
+      <p class="eyebrow">The Babylon Difference</p>
+      <h2>Not a Tool. <span class="gold italic">A Team.</span></h2>
+      <p>Most automation platforms give you a dashboard and wish you luck. We give you a dedicated AI team &mdash; built, deployed, and maintained by Babylon. You get the output of a 10-person team at a fraction of the cost.</p>
       <ul class="capability-list">
-        <li><span class="check">&#10003;</span><span><strong>Voice Agents</strong> &mdash; Answer calls, screen callers, book appointments, escalate only what matters</span></li>
-        <li><span class="check">&#10003;</span><span><strong>Email Intelligence</strong> &mdash; Triage, draft, send, and archive in your voice. Urgent items surface immediately</span></li>
-        <li><span class="check">&#10003;</span><span><strong>Calendar &amp; Scheduling</strong> &mdash; Coordinates across calendars, protects your time, sends reminders</span></li>
-        <li><span class="check">&#10003;</span><span><strong>CRM Automation</strong> &mdash; Pipeline management, follow-ups, lead scoring, deal tracking</span></li>
-        <li><span class="check">&#10003;</span><span><strong>Sales Workflows</strong> &mdash; Outreach sequences, scripts, follow-up cadences, lead nurturing</span></li>
-        <li><span class="check">&#10003;</span><span><strong>Research &amp; Briefings</strong> &mdash; Daily market intel, competitor monitoring, regulatory alerts</span></li>
-        <li><span class="check">&#10003;</span><span><strong>Document Generation</strong> &mdash; Proposals, reports, pitch decks, contracts on demand</span></li>
-        <li><span class="check">&#10003;</span><span><strong>Workflow Orchestration</strong> &mdash; n8n-powered multi-step automations across 5,000+ apps</span></li>
+        <li><span class="check">&#10003;</span><span><strong>Lead Generation</strong> &mdash; Automated prospecting, outreach, and qualification running 24/7</span></li>
+        <li><span class="check">&#10003;</span><span><strong>Outreach Automation</strong> &mdash; Personalized email sequences, follow-ups, and meeting booking</span></li>
+        <li><span class="check">&#10003;</span><span><strong>Content Production</strong> &mdash; Blogs, newsletters, case studies created and published on schedule</span></li>
+        <li><span class="check">&#10003;</span><span><strong>Social Media</strong> &mdash; Daily posts, engagement monitoring, and analytics across all platforms</span></li>
+        <li><span class="check">&#10003;</span><span><strong>CRM Management</strong> &mdash; Pipeline tracking, deal updates, and automated follow-up cadences</span></li>
+        <li><span class="check">&#10003;</span><span><strong>SEO Optimization</strong> &mdash; Technical audits, keyword tracking, and content strategy execution</span></li>
+        <li><span class="check">&#10003;</span><span><strong>Website Maintenance</strong> &mdash; Updates, A/B testing, conversion optimization, and lead capture</span></li>
+        <li><span class="check">&#10003;</span><span><strong>Reporting &amp; Analytics</strong> &mdash; Weekly insights on performance, ROI, and growth metrics</span></li>
       </ul>
     </div>
   </div>
@@ -1599,160 +1487,58 @@
 
 <div class="divider"></div>
 
-<!-- ═══ ARIA SHOWCASE ═══ -->
-<section class="aria-showcase" id="aria">
-  <div class="aria-showcase-bg"></div>
-  <div class="aria-inner">
-    <div class="reveal-scale">
-      <p class="eyebrow">Our Flagship Product</p>
-      <div class="founding-badge">Founding 100 &mdash; 30% Off for Life</div>
-      <div class="aria-logo">ARIA<span class="dot">.</span></div>
-      <div class="aria-tagline">Your AI Chief of Staff. Ready in 60 seconds.</div>
-      <p class="aria-sub">No downloads. No setup. No code. Lives in WhatsApp. Works immediately. <a href="https://youraria.ai" target="_blank">Learn more &rarr;</a></p>
-    </div>
-
-    <div class="aria-features stagger-children">
-      <div class="aria-feature reveal">
-        <h4>Always On</h4>
-        <p>24/7 availability. ARIA never sleeps, never forgets, never drops the ball. She works nights, weekends, and holidays.</p>
-      </div>
-      <div class="aria-feature reveal">
-        <h4>Self-Improving</h4>
-        <p>ARIA learns your preferences, voice, and patterns. Every interaction makes her sharper and more aligned to you.</p>
-      </div>
-      <div class="aria-feature reveal">
-        <h4>Proactive</h4>
-        <p>She doesn't wait for instructions. She flags issues, surfaces opportunities, and anticipates your needs before you ask.</p>
-      </div>
-    </div>
-
-    <div class="reveal">
-      <p class="eyebrow" style="margin-bottom: 32px;">The Elite Team</p>
-    </div>
-    <div class="team-grid stagger-children">
-      <div class="team-agent reveal">
-        <div class="agent-avatar">A</div>
-        <h4>ARIA</h4>
-        <div class="role">Chief of Staff</div>
-      </div>
-      <div class="team-agent reveal">
-        <div class="agent-avatar">M</div>
-        <h4>MARIAM</h4>
-        <div class="role">CMO</div>
-      </div>
-      <div class="team-agent reveal">
-        <div class="agent-avatar">S</div>
-        <h4>SAM</h4>
-        <div class="role">Sales Director</div>
-      </div>
-      <div class="team-agent reveal">
-        <div class="agent-avatar">R</div>
-        <h4>RACHEL</h4>
-        <div class="role">Intelligence</div>
-      </div>
-    </div>
-
-    <div class="aria-pricing stagger-children">
-      <div class="price-card reveal">
-        <div class="tier">Personal</div>
-        <div class="price"><s>$997</s> $697</div>
-        <div class="per">/month &bull; founding rate</div>
-      </div>
-      <div class="price-card featured reveal">
-        <div class="tier">Business</div>
-        <div class="price"><s>$2,997</s> $2,097</div>
-        <div class="per">/month &bull; founding rate</div>
-      </div>
-      <div class="price-card reveal">
-        <div class="tier">Enterprise</div>
-        <div class="price">Custom</div>
-        <div class="per">dedicated infrastructure</div>
-      </div>
-    </div>
-
-    <a href="https://youraria.ai" target="_blank" class="btn btn-gold reveal">Try ARIA &rarr;</a>
+<!-- ARIA COMING SOON -->
+<section class="aria-teaser">
+  <div class="aria-teaser-bg"></div>
+  <div class="aria-teaser-inner reveal-scale">
+    <p class="eyebrow">Coming Soon</p>
+    <div class="aria-logo">ARIA<span class="dot">.</span></div>
+    <div class="aria-tagline">Your AI Chief of Staff. Launching soon.</div>
+    <form class="aria-waitlist" action="https://formspree.io/f/xnjgkzng" method="POST">
+      <input type="hidden" name="source" value="aria_waitlist">
+      <input type="email" name="email" placeholder="Enter your email for early access" required>
+      <button type="submit" class="btn btn-gold">Notify Me</button>
+    </form>
   </div>
 </section>
 
-<div class="divider"></div>
-
-<!-- ═══ SERVICES GRID ═══ -->
-<section class="services">
-  <div class="services-header reveal">
-    <p class="eyebrow">Full-Service Capabilities</p>
-    <h2>Everything You Need. <span class="gold italic">Nothing You Don't.</span></h2>
-  </div>
-  <div class="services-grid stagger-children">
-    <div class="service-card reveal">
-      <span class="service-num">01</span>
-      <h3>AI Agent Development</h3>
-      <p>Custom AI assistants built on Claude, GPT, and open-source models. Deployed to WhatsApp, voice, email, and any channel your business uses.</p>
-    </div>
-    <div class="service-card reveal">
-      <span class="service-num">02</span>
-      <h3>Workflow Automation</h3>
-      <p>End-to-end process automation using n8n, Zapier, and custom integrations. We connect your tools and eliminate manual work across your stack.</p>
-    </div>
-    <div class="service-card reveal">
-      <span class="service-num">03</span>
-      <h3>Deal Sourcing &amp; Brokerage</h3>
-      <p>Identifying qualified buyers and sellers for industrial assets. Structuring back-to-back transactions with institutional-grade discipline.</p>
-    </div>
-    <div class="service-card reveal">
-      <span class="service-num">04</span>
-      <h3>Practice Revenue Consulting</h3>
-      <p>Auditing medical practices, identifying untapped revenue streams, and implementing cash-based service lines on a performance basis.</p>
-    </div>
-    <div class="service-card reveal">
-      <span class="service-num">05</span>
-      <h3>Sales Infrastructure</h3>
-      <p>Building and operating complete sales systems &mdash; scripts, CRM, outreach sequences, follow-up cadences, and pipeline management.</p>
-    </div>
-    <div class="service-card reveal">
-      <span class="service-num">06</span>
-      <h3>Strategic BD</h3>
-      <p>Identifying high-value partnerships, distribution channels, and collaboration opportunities that accelerate growth across all verticals.</p>
-    </div>
-  </div>
-</section>
-
-<!-- ═══ STATS ═══ -->
+<!-- STATS -->
 <section class="stats">
   <div class="stats-grid stagger-children">
-    <div class="reveal">
-      <div class="stat-number">$585M+</div>
-      <div class="stat-label">Deal Volume</div>
-    </div>
-    <div class="reveal">
-      <div class="stat-number">3</div>
-      <div class="stat-label">Core Verticals</div>
-    </div>
     <div class="reveal">
       <div class="stat-number">24/7</div>
       <div class="stat-label">AI Availability</div>
     </div>
     <div class="reveal">
+      <div class="stat-number">10x</div>
+      <div class="stat-label">Faster Than Manual</div>
+    </div>
+    <div class="reveal">
       <div class="stat-number">100%</div>
-      <div class="stat-label">Performance-Based</div>
+      <div class="stat-label">Done-For-You</div>
+    </div>
+    <div class="reveal">
+      <div class="stat-number">0</div>
+      <div class="stat-label">Missed Leads</div>
     </div>
   </div>
 </section>
 
 <div class="divider"></div>
 
-<!-- ═══ ABOUT ═══ -->
+<!-- ABOUT -->
 <section class="about" id="about">
   <div class="about-layout">
     <div class="about-text reveal-left">
-      <p class="eyebrow">Our Philosophy</p>
+      <p class="eyebrow">Who We Are</p>
       <h2>We Don't Just <span class="gold italic">Advise.</span><br>We Execute.</h2>
-      <p>Babylon Consulting was built on one principle: we only win when you win. Every engagement is performance-based. We don't bill for decks, strategy sessions, or reports that sit in a drawer. We build systems, close deals, and generate revenue.</p>
-      <p>Our network spans North America, Europe, and the Middle East. We've facilitated hundreds of millions in industrial asset transactions, scaled medical practices across South Florida and internationally, and now we're deploying AI systems that give small business owners the same operational leverage as Fortune 500 companies.</p>
-      <p>Speed. Discretion. Institutional-grade execution. That's what we deliver &mdash; whether we're moving a $200M turbine or deploying an AI agent that handles your inbox at 3am.</p>
-      <a href="#contact" class="btn btn-outline" style="margin-top: 32px;">Start a Conversation</a>
+      <p>Babylon Consulting builds and maintains AI-powered teams for businesses that are tired of doing everything manually. We're not a SaaS platform. We're not a chatbot company. We're an execution partner.</p>
+      <p>We build your systems, run your workflows, and deliver results &mdash; for a fixed monthly retainer. By hiring Babylon, you're hiring your very own team of AI that will be trained and maintained by us. It only gets better over time.</p>
+      <p>The businesses that win aren't the ones that work harder. They're the ones that automate smarter. That's what we help you do.</p>
+      <a href="#quiz" class="btn btn-outline" style="margin-top: 32px;">Book Your Discovery Call</a>
     </div>
     <div class="about-visual reveal-right">
-      <div class="about-quote">The best deals are the ones nobody else saw coming.</div>
+      <div class="about-quote">The businesses that win aren't the ones that work harder. They're the ones that automate smarter.</div>
       <div class="about-location">Est. Fort Lauderdale</div>
     </div>
   </div>
@@ -1760,104 +1546,300 @@
 
 <div class="divider"></div>
 
-<!-- ═══ CONTACT ═══ -->
-<section class="contact" id="contact">
-  <div class="contact-layout">
-    <div class="contact-info reveal-left">
-      <p class="eyebrow">Get in Touch</p>
-      <h2>Let's Talk <span class="gold italic">Business.</span></h2>
-      <p>Whether you need an AI agent deployed by next week, a turbine deal facilitated, or a practice revenue line launched &mdash; we want to hear from you.</p>
-      <div class="contact-detail">
-        <div class="contact-icon">
-          <svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 4 10 8 10-8"/></svg>
-        </div>
-        <div>
-          <div class="label">Email</div>
-          <div class="value">ahmed@babylonconsulting.us</div>
-        </div>
-      </div>
-      <div class="contact-detail">
-        <div class="contact-icon">
-          <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-        </div>
-        <div>
-          <div class="label">Phone</div>
-          <div class="value">+1 (313) 247-2008</div>
-        </div>
-      </div>
-      <div class="contact-detail">
-        <div class="contact-icon">
-          <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-        </div>
-        <div>
-          <div class="label">Location</div>
-          <div class="value">Fort Lauderdale, Florida</div>
-        </div>
-      </div>
-      <div class="contact-detail">
-        <div class="contact-icon">
-          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
-        </div>
-        <div>
-          <div class="label">Markets</div>
-          <div class="value">North America &bull; Middle East &bull; Europe</div>
-        </div>
-      </div>
+<!-- ONBOARDING QUIZ -->
+<section class="quiz-section" id="quiz">
+  <div class="quiz-inner">
+    <div class="quiz-header reveal">
+      <p class="eyebrow">Book Your Discovery Call</p>
+      <h2>Let's Build Your <span class="gold italic">AI Team.</span></h2>
+      <p style="margin-top: 12px;">Tell us about your business and workflow, and we'll come prepared with a custom plan for your discovery call.</p>
     </div>
-    <form class="contact-form reveal-right" action="https://formspree.io/f/xnjgkzng" method="POST">
-      <div class="form-row">
-        <div class="form-group">
-          <label for="first">First Name</label>
-          <input type="text" id="first" name="first_name" required>
+
+    <div class="quiz-progress">
+      <div class="quiz-progress-bar active" data-step="1"></div>
+      <div class="quiz-progress-bar" data-step="2"></div>
+      <div class="quiz-progress-bar" data-step="3"></div>
+      <div class="quiz-progress-bar" data-step="4"></div>
+      <div class="quiz-progress-bar" data-step="5"></div>
+      <div class="quiz-progress-bar" data-step="6"></div>
+    </div>
+
+    <form id="quizForm" action="https://formspree.io/f/xnjgkzng" method="POST">
+      <input type="hidden" name="source" value="discovery_call_booking">
+      <input type="hidden" name="quiz_business_type" id="h_business_type">
+      <input type="hidden" name="quiz_team_size" id="h_team_size">
+      <input type="hidden" name="quiz_current_tools" id="h_current_tools">
+      <input type="hidden" name="quiz_lead_source" id="h_lead_source">
+      <input type="hidden" name="quiz_sales_bottleneck" id="h_sales_bottleneck">
+      <input type="hidden" name="quiz_tried_automation" id="h_tried_automation">
+      <input type="hidden" name="quiz_pain_points" id="h_pain_points">
+      <input type="hidden" name="quiz_goal" id="h_goal">
+      <input type="hidden" name="quiz_available_days" id="h_available_days">
+      <input type="hidden" name="quiz_available_times" id="h_available_times">
+
+      <!-- STEP 1: Business Context -->
+      <div class="quiz-step active" data-step="1">
+        <div class="quiz-question">What best describes your business?</div>
+        <div class="quiz-subtext">Select one.</div>
+        <div class="quiz-options" data-field="business_type">
+          <div class="quiz-option" data-value="Service Business">Service Business</div>
+          <div class="quiz-option" data-value="E-commerce / Product">E-commerce / Product</div>
+          <div class="quiz-option" data-value="Agency / Consultancy">Agency / Consultancy</div>
+          <div class="quiz-option" data-value="Healthcare / Medical">Healthcare / Medical</div>
+          <div class="quiz-option" data-value="Real Estate">Real Estate</div>
+          <div class="quiz-option" data-value="Other">Other</div>
         </div>
-        <div class="form-group">
-          <label for="last">Last Name</label>
-          <input type="text" id="last" name="last_name" required>
+
+        <div class="quiz-question" style="margin-top: 32px;">How many people are on your team?</div>
+        <div class="quiz-subtext">Select one.</div>
+        <div class="quiz-options two-col" data-field="team_size">
+          <div class="quiz-option" data-value="Just me">Just me</div>
+          <div class="quiz-option" data-value="2-5">2&ndash;5</div>
+          <div class="quiz-option" data-value="6-20">6&ndash;20</div>
+          <div class="quiz-option" data-value="21-50">21&ndash;50</div>
+          <div class="quiz-option" data-value="50+">50+</div>
+        </div>
+
+        <div class="quiz-nav">
+          <div></div>
+          <button type="button" class="btn btn-gold quiz-next">Next &rarr;</button>
         </div>
       </div>
-      <div class="form-group">
-        <label for="email">Email</label>
-        <input type="email" id="email" name="email" required>
+
+      <!-- STEP 2: Current Workflow & Tools -->
+      <div class="quiz-step" data-step="2">
+        <div class="quiz-question">What tools do you currently use?</div>
+        <div class="quiz-subtext">Select all that apply.</div>
+        <div class="quiz-options-multi" data-field="current_tools">
+          <div class="quiz-check" data-value="CRM (HubSpot, Salesforce, etc.)"><div class="quiz-checkbox"></div>CRM (HubSpot, Salesforce, etc.)</div>
+          <div class="quiz-check" data-value="Email marketing (Mailchimp, etc.)"><div class="quiz-checkbox"></div>Email marketing (Mailchimp, etc.)</div>
+          <div class="quiz-check" data-value="Social media tools"><div class="quiz-checkbox"></div>Social media tools (Buffer, Hootsuite, etc.)</div>
+          <div class="quiz-check" data-value="Project management (Asana, Trello, etc.)"><div class="quiz-checkbox"></div>Project management (Asana, Trello, etc.)</div>
+          <div class="quiz-check" data-value="Spreadsheets / Google Sheets"><div class="quiz-checkbox"></div>Spreadsheets / Google Sheets</div>
+          <div class="quiz-check" data-value="Accounting software"><div class="quiz-checkbox"></div>Accounting software (QuickBooks, etc.)</div>
+          <div class="quiz-check" data-value="Website builder (WordPress, Wix, etc.)"><div class="quiz-checkbox"></div>Website builder (WordPress, Wix, etc.)</div>
+          <div class="quiz-check" data-value="Nothing - pen and paper / manual"><div class="quiz-checkbox"></div>Nothing &mdash; pen and paper / mostly manual</div>
+        </div>
+
+        <div class="quiz-question" style="margin-top: 32px;">How do you currently get leads?</div>
+        <div class="quiz-subtext">Select all that apply.</div>
+        <div class="quiz-options-multi" data-field="lead_source">
+          <div class="quiz-check" data-value="Word of mouth / referrals"><div class="quiz-checkbox"></div>Word of mouth / referrals</div>
+          <div class="quiz-check" data-value="Social media"><div class="quiz-checkbox"></div>Social media</div>
+          <div class="quiz-check" data-value="Paid ads (Google, Meta, etc.)"><div class="quiz-checkbox"></div>Paid ads (Google, Meta, etc.)</div>
+          <div class="quiz-check" data-value="Cold outreach (email/calls)"><div class="quiz-checkbox"></div>Cold outreach (email/calls)</div>
+          <div class="quiz-check" data-value="Organic / SEO"><div class="quiz-checkbox"></div>Organic / SEO</div>
+          <div class="quiz-check" data-value="Not sure / inconsistent"><div class="quiz-checkbox"></div>Not sure / inconsistent</div>
+        </div>
+
+        <div class="quiz-nav">
+          <button type="button" class="quiz-back">&larr; Back</button>
+          <button type="button" class="btn btn-gold quiz-next">Next &rarr;</button>
+        </div>
       </div>
-      <div class="form-group">
-        <label for="interest">I'm interested in</label>
-        <select id="interest" name="interest" required>
-          <option value="" disabled selected>Select an option</option>
-          <option value="ai-agents">AI Agents & Automation</option>
-          <option value="workflow-automation">Workflow Automation (n8n)</option>
-          <option value="industrial">Industrial Asset Acquisition</option>
-          <option value="medical">Medical Practice Revenue Growth</option>
-          <option value="sales">Sales Infrastructure</option>
-          <option value="partnership">Strategic Partnership</option>
-          <option value="other">Other</option>
-        </select>
+
+      <!-- STEP 3: Sales Process & Automation Experience -->
+      <div class="quiz-step" data-step="3">
+        <div class="quiz-question">What are the biggest bottlenecks in your sales process?</div>
+        <div class="quiz-subtext">Select all that apply.</div>
+        <div class="quiz-options-multi" data-field="sales_bottleneck">
+          <div class="quiz-check" data-value="Not enough leads coming in"><div class="quiz-checkbox"></div>Not enough leads coming in</div>
+          <div class="quiz-check" data-value="Leads go cold - no follow-up system"><div class="quiz-checkbox"></div>Leads go cold &mdash; no follow-up system</div>
+          <div class="quiz-check" data-value="Too much manual work to close deals"><div class="quiz-checkbox"></div>Too much manual work to close deals</div>
+          <div class="quiz-check" data-value="Can't track pipeline or deals"><div class="quiz-checkbox"></div>Can't track my pipeline or deals</div>
+          <div class="quiz-check" data-value="No time for marketing or content"><div class="quiz-checkbox"></div>No time for marketing or content</div>
+          <div class="quiz-check" data-value="Everything - I need help across the board"><div class="quiz-checkbox"></div>Everything &mdash; I need help across the board</div>
+        </div>
+
+        <div class="quiz-question" style="margin-top: 32px;">Have you tried any automation before?</div>
+        <div class="quiz-subtext">Select one.</div>
+        <div class="quiz-options" data-field="tried_automation">
+          <div class="quiz-option" data-value="No, this is new to me">No, this is new to me</div>
+          <div class="quiz-option" data-value="Yes, but it didn't work well">Yes, but it didn't work well</div>
+          <div class="quiz-option" data-value="Yes, and I want to scale it">Yes, and I want to scale it</div>
+        </div>
+
+        <div class="quiz-nav">
+          <button type="button" class="quiz-back">&larr; Back</button>
+          <button type="button" class="btn btn-gold quiz-next">Next &rarr;</button>
+        </div>
       </div>
-      <div class="form-group">
-        <label for="message">Tell us about your situation</label>
-        <textarea id="message" name="message" placeholder="What are you working on? What's keeping you up at night?"></textarea>
+
+      <!-- STEP 4: Pain Points & Goal -->
+      <div class="quiz-step" data-step="4">
+        <div class="quiz-question">Where are you losing the most time?</div>
+        <div class="quiz-subtext">Select all that apply.</div>
+        <div class="quiz-options-multi" data-field="pain_points">
+          <div class="quiz-check" data-value="Lead generation & prospecting"><div class="quiz-checkbox"></div>Lead generation &amp; prospecting</div>
+          <div class="quiz-check" data-value="Following up with leads/clients"><div class="quiz-checkbox"></div>Following up with leads / clients</div>
+          <div class="quiz-check" data-value="Managing CRM/pipeline"><div class="quiz-checkbox"></div>Managing my CRM / pipeline</div>
+          <div class="quiz-check" data-value="Creating content"><div class="quiz-checkbox"></div>Creating content (blogs, social, emails)</div>
+          <div class="quiz-check" data-value="Social media management"><div class="quiz-checkbox"></div>Social media management</div>
+          <div class="quiz-check" data-value="Website doesn't generate leads"><div class="quiz-checkbox"></div>My website doesn't generate leads</div>
+          <div class="quiz-check" data-value="SEO / getting found online"><div class="quiz-checkbox"></div>SEO / getting found online</div>
+          <div class="quiz-check" data-value="Manual data entry & repetitive tasks"><div class="quiz-checkbox"></div>Manual data entry &amp; repetitive tasks</div>
+          <div class="quiz-check" data-value="Email marketing & campaigns"><div class="quiz-checkbox"></div>Email marketing &amp; campaigns</div>
+          <div class="quiz-check" data-value="No system - everything is manual"><div class="quiz-checkbox"></div>I don't have a system &mdash; everything is manual</div>
+        </div>
+
+        <div class="quiz-question" style="margin-top: 32px;">What would make the biggest impact?</div>
+        <div class="quiz-subtext">Pick your top priority.</div>
+        <div class="quiz-options two-col" data-field="goal">
+          <div class="quiz-option" data-value="Get more leads & sales">Get more leads &amp; sales</div>
+          <div class="quiz-option" data-value="Save time on daily operations">Save time on daily operations</div>
+          <div class="quiz-option" data-value="Build a better online presence">Build a better online presence</div>
+          <div class="quiz-option" data-value="Launch a new website or app">Launch a new website or app</div>
+          <div class="quiz-option" data-value="Automate my sales process end-to-end">Automate my sales process end-to-end</div>
+          <div class="quiz-option" data-value="All of the above">All of the above &mdash; I need a full AI team</div>
+        </div>
+
+        <div class="quiz-nav">
+          <button type="button" class="quiz-back">&larr; Back</button>
+          <button type="button" class="btn btn-gold quiz-next">Next &rarr;</button>
+        </div>
       </div>
-      <div class="form-submit">
-        <button type="submit" class="btn btn-gold">Send Inquiry &rarr;</button>
+
+      <!-- STEP 5: Availability -->
+      <div class="quiz-step" data-step="5">
+        <div class="quiz-question">When are you available for a discovery call?</div>
+        <div class="quiz-subtext">Select all the days that work for you.</div>
+        <div class="quiz-days" data-field="available_days">
+          <div class="quiz-day" data-value="Monday">Mon</div>
+          <div class="quiz-day" data-value="Tuesday">Tue</div>
+          <div class="quiz-day" data-value="Wednesday">Wed</div>
+          <div class="quiz-day" data-value="Thursday">Thu</div>
+          <div class="quiz-day" data-value="Friday">Fri</div>
+        </div>
+
+        <div class="quiz-question" style="margin-top: 28px;">What time of day works best?</div>
+        <div class="quiz-subtext">Select all that apply.</div>
+        <div class="quiz-times" data-field="available_times">
+          <div class="quiz-time" data-value="Morning (9am-12pm)">
+            <div class="time-label">Morning</div>
+            <div class="time-range">9:00 AM &ndash; 12:00 PM</div>
+          </div>
+          <div class="quiz-time" data-value="Afternoon (12pm-4pm)">
+            <div class="time-label">Afternoon</div>
+            <div class="time-range">12:00 PM &ndash; 4:00 PM</div>
+          </div>
+          <div class="quiz-time" data-value="Evening (4pm-7pm)">
+            <div class="time-label">Evening</div>
+            <div class="time-range">4:00 PM &ndash; 7:00 PM</div>
+          </div>
+        </div>
+
+        <div class="quiz-nav">
+          <button type="button" class="quiz-back">&larr; Back</button>
+          <button type="button" class="btn btn-gold quiz-next">Next &rarr;</button>
+        </div>
+      </div>
+
+      <!-- STEP 6: Contact Info -->
+      <div class="quiz-step" data-step="6">
+        <div class="quiz-question">Almost there. How should we reach you?</div>
+        <div class="quiz-subtext">We'll confirm your discovery call within 24 hours.</div>
+        <div class="quiz-form-fields">
+          <div class="quiz-form-row">
+            <div class="quiz-field">
+              <label>First Name *</label>
+              <input type="text" name="first_name" required>
+            </div>
+            <div class="quiz-field">
+              <label>Last Name *</label>
+              <input type="text" name="last_name" required>
+            </div>
+          </div>
+          <div class="quiz-field">
+            <label>Email *</label>
+            <input type="email" name="email" required>
+          </div>
+          <div class="quiz-form-row">
+            <div class="quiz-field">
+              <label>Phone *</label>
+              <input type="tel" name="phone" required>
+            </div>
+            <div class="quiz-field">
+              <label>Company (optional)</label>
+              <input type="text" name="company">
+            </div>
+          </div>
+          <div class="quiz-field">
+            <label>Anything else we should know?</label>
+            <textarea name="message" placeholder="Tell us about your business, goals, or challenges..."></textarea>
+          </div>
+        </div>
+        <div class="quiz-nav">
+          <button type="button" class="quiz-back">&larr; Back</button>
+          <button type="submit" class="btn btn-gold">Book My Discovery Call &rarr;</button>
+        </div>
       </div>
     </form>
+
+    <!-- Confirmation -->
+    <div class="quiz-confirmation" id="quizConfirmation">
+      <h2>Your Discovery Call Is <span class="gold italic">Almost Booked.</span></h2>
+      <p>Based on your answers, here's what we'll focus on during your call:</p>
+      <div class="quiz-recommendations" id="quizRecs"></div>
+      <p>A member of the Babylon team will confirm your discovery call time within 24 hours. We'll come prepared with a custom plan for your business.</p>
+    </div>
   </div>
 </section>
 
-<!-- ═══ FOOTER ═══ -->
+<div class="divider"></div>
+
+<!-- CONTACT (simplified) -->
+<section class="contact" id="contact">
+  <div class="reveal">
+    <p class="eyebrow">Get In Touch</p>
+    <h2>Prefer to Reach Out <span class="gold italic">Directly?</span></h2>
+    <p>We're always available for a conversation.</p>
+  </div>
+  <div class="contact-details reveal">
+    <div class="contact-item">
+      <div class="contact-icon">
+        <svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 4 10 8 10-8"/></svg>
+      </div>
+      <div>
+        <div class="label">Email</div>
+        <div class="value">ahmed@babylonconsulting.us</div>
+      </div>
+    </div>
+    <div class="contact-item">
+      <div class="contact-icon">
+        <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      </div>
+      <div>
+        <div class="label">Phone</div>
+        <div class="value">+1 (313) 247-2008</div>
+      </div>
+    </div>
+    <div class="contact-item">
+      <div class="contact-icon">
+        <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+      </div>
+      <div>
+        <div class="label">Location</div>
+        <div class="value">Fort Lauderdale, Florida</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
 <footer>
   <div class="footer-logo">BABYLON</div>
   <div class="footer-copy">&copy; 2026 Babylon Consulting LLC &mdash; All rights reserved &mdash; Fort Lauderdale, FL</div>
   <div class="footer-links">
     <a href="#services">Services</a>
-    <a href="#aria">ARIA</a>
+    <a href="#process">How It Works</a>
     <a href="#about">About</a>
-    <a href="#contact">Contact</a>
+    <a href="#quiz">Get Started</a>
     <a href="privacy-policy.html">Privacy</a>
     <a href="terms-and-conditions.html">Terms</a>
   </div>
 </footer>
 
-<!-- ═══ JAVASCRIPT ═══ -->
+<!-- JAVASCRIPT -->
 <script>
   // Custom Cursor
   const cursor = document.querySelector('.cursor');
@@ -1880,7 +1862,7 @@
   animateRing();
 
   // Cursor hover effect
-  document.querySelectorAll('a, button, .vertical-card, .service-card, .aria-feature, .team-agent, .price-card').forEach(el => {
+  document.querySelectorAll('a, button, .service-card, .quiz-option, .quiz-check, .quiz-day, .quiz-time').forEach(el => {
     el.addEventListener('mouseenter', () => {
       cursor.style.transform = 'scale(2.5)';
       ring.style.transform = 'scale(1.5)';
@@ -1899,8 +1881,7 @@
     nav.classList.toggle('scrolled', window.scrollY > 80);
   });
 
-  // ═══ LOVI-STYLE SCROLL REVEAL ═══
-  // IntersectionObserver with staggered timing
+  // Scroll Reveal
   const revealObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
@@ -1916,7 +1897,7 @@
     revealObserver.observe(el);
   });
 
-  // ═══ PARALLAX SCROLLING ═══
+  // Parallax
   const parallaxElements = document.querySelectorAll('.parallax-slow, .parallax-medium');
   let ticking = false;
 
@@ -1924,7 +1905,7 @@
     const scrollY = window.scrollY;
     parallaxElements.forEach(el => {
       const speed = el.classList.contains('parallax-slow') ? 0.15 : 0.3;
-      el.style.transform = `translateY(${scrollY * speed}px)`;
+      el.style.transform = 'translateY(' + (scrollY * speed) + 'px)';
     });
     ticking = false;
   }
@@ -1936,19 +1917,17 @@
     }
   });
 
-  // ═══ SMOOTH COUNTER ANIMATION ═══
+  // Stat Counter Animation
   const statNumbers = document.querySelectorAll('.stat-number');
   const statObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         const el = entry.target;
         const text = el.textContent;
-        // Only animate pure numbers
         if (/^\d+$/.test(text.replace(/[,$+%M]/g, ''))) {
           const finalVal = parseInt(text.replace(/[^0-9]/g, ''));
           const prefix = text.match(/^[^0-9]*/)[0] || '';
           const suffix = text.match(/[^0-9]*$/)[0] || '';
-          let start = 0;
           const duration = 1500;
           const startTime = performance.now();
 
@@ -1969,18 +1948,6 @@
   }, { threshold: 0.5 });
 
   statNumbers.forEach(el => statObserver.observe(el));
-
-  // Form submission
-  const form = document.querySelector('.contact-form');
-  form.addEventListener('submit', function(e) {
-    const btn = form.querySelector('.form-submit button');
-    setTimeout(() => {
-      btn.textContent = 'Sent \u2014 We\'ll be in touch.';
-      btn.style.background = 'var(--dark2)';
-      btn.style.color = 'var(--gold)';
-      btn.style.border = '1px solid var(--gold)';
-    }, 500);
-  });
 
   // Mobile nav toggle
   const mobileBtn = document.querySelector('.nav-mobile');
@@ -2005,7 +1972,6 @@
     }
   });
 
-  // Close mobile nav on link click
   navLinks.querySelectorAll('a').forEach(a => {
     a.addEventListener('click', () => {
       if (window.innerWidth <= 768) {
@@ -2014,6 +1980,206 @@
       }
     });
   });
+
+  // ═══ ONBOARDING QUIZ ═══
+  const quizData = {
+    business_type: '',
+    team_size: '',
+    current_tools: [],
+    lead_source: [],
+    sales_bottleneck: [],
+    tried_automation: '',
+    pain_points: [],
+    goal: '',
+    available_days: [],
+    available_times: []
+  };
+
+  let currentStep = 1;
+  const totalSteps = 6;
+
+  // Single-select options
+  document.querySelectorAll('.quiz-options .quiz-option').forEach(opt => {
+    opt.addEventListener('click', () => {
+      const parent = opt.closest('.quiz-options');
+      parent.querySelectorAll('.quiz-option').forEach(o => o.classList.remove('selected'));
+      opt.classList.add('selected');
+      const field = parent.dataset.field;
+      quizData[field] = opt.dataset.value;
+    });
+  });
+
+  // Multi-select checkboxes
+  document.querySelectorAll('.quiz-check').forEach(chk => {
+    chk.addEventListener('click', () => {
+      chk.classList.toggle('selected');
+      const cb = chk.querySelector('.quiz-checkbox');
+      cb.textContent = chk.classList.contains('selected') ? '\u2713' : '';
+      // Rebuild the array for the parent field
+      const parent = chk.closest('.quiz-options-multi');
+      const field = parent.dataset.field;
+      quizData[field] = [];
+      parent.querySelectorAll('.quiz-check.selected').forEach(s => {
+        quizData[field].push(s.dataset.value);
+      });
+    });
+  });
+
+  // Day multi-select
+  document.querySelectorAll('.quiz-day').forEach(day => {
+    day.addEventListener('click', () => {
+      day.classList.toggle('selected');
+      quizData.available_days = [];
+      document.querySelectorAll('.quiz-day.selected').forEach(d => {
+        quizData.available_days.push(d.dataset.value);
+      });
+    });
+  });
+
+  // Time multi-select
+  document.querySelectorAll('.quiz-time').forEach(time => {
+    time.addEventListener('click', () => {
+      time.classList.toggle('selected');
+      quizData.available_times = [];
+      document.querySelectorAll('.quiz-time.selected').forEach(t => {
+        quizData.available_times.push(t.dataset.value);
+      });
+    });
+  });
+
+  // Navigation
+  function showStep(n) {
+    document.querySelectorAll('.quiz-step').forEach(s => s.classList.remove('active'));
+    const step = document.querySelector('.quiz-step[data-step="' + n + '"]');
+    if (step) {
+      step.classList.remove('active');
+      void step.offsetWidth;
+      step.classList.add('active');
+    }
+
+    document.querySelectorAll('.quiz-progress-bar').forEach(bar => {
+      const barStep = parseInt(bar.dataset.step);
+      bar.classList.remove('active', 'done');
+      if (barStep < n) bar.classList.add('done');
+      else if (barStep === n) bar.classList.add('active');
+    });
+
+    currentStep = n;
+  }
+
+  document.querySelectorAll('.quiz-next').forEach(btn => {
+    btn.addEventListener('click', () => {
+      if (currentStep === 1) {
+        if (!quizData.business_type || !quizData.team_size) {
+          alert('Please select your business type and team size.');
+          return;
+        }
+      } else if (currentStep === 2) {
+        if (quizData.current_tools.length === 0 || quizData.lead_source.length === 0) {
+          alert('Please select your tools and how you currently get leads.');
+          return;
+        }
+      } else if (currentStep === 3) {
+        if (quizData.sales_bottleneck.length === 0 || !quizData.tried_automation) {
+          alert('Please select at least one bottleneck and your automation experience.');
+          return;
+        }
+      } else if (currentStep === 4) {
+        if (quizData.pain_points.length === 0 || !quizData.goal) {
+          alert('Please select at least one pain point and your top priority.');
+          return;
+        }
+      } else if (currentStep === 5) {
+        if (quizData.available_days.length === 0 || quizData.available_times.length === 0) {
+          alert('Please select at least one day and time slot.');
+          return;
+        }
+      }
+      showStep(currentStep + 1);
+    });
+  });
+
+  document.querySelectorAll('.quiz-back').forEach(btn => {
+    btn.addEventListener('click', () => {
+      showStep(currentStep - 1);
+    });
+  });
+
+  // Service recommendation mapping
+  const painToService = {
+    'Lead generation & prospecting': 'AI Sales Agents',
+    'Following up with leads/clients': 'CRM & Sales Automation',
+    'Managing CRM/pipeline': 'CRM & Sales Automation',
+    'Creating content': 'Content Creation',
+    'Social media management': 'Social Media Management',
+    'Website doesn\'t generate leads': 'Website Design & Development',
+    'SEO / getting found online': 'SEO & Search Marketing',
+    'Manual data entry & repetitive tasks': 'Workflow Automation',
+    'Email marketing & campaigns': 'Marketing Automation',
+    'No system - everything is manual': 'Full AI Team'
+  };
+
+  // Form submission
+  const quizForm = document.getElementById('quizForm');
+  quizForm.addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    // Populate hidden fields
+    document.getElementById('h_business_type').value = quizData.business_type;
+    document.getElementById('h_team_size').value = quizData.team_size;
+    document.getElementById('h_current_tools').value = quizData.current_tools.join(', ');
+    document.getElementById('h_lead_source').value = quizData.lead_source.join(', ');
+    document.getElementById('h_sales_bottleneck').value = quizData.sales_bottleneck.join(', ');
+    document.getElementById('h_tried_automation').value = quizData.tried_automation;
+    document.getElementById('h_pain_points').value = quizData.pain_points.join(', ');
+    document.getElementById('h_goal').value = quizData.goal;
+    document.getElementById('h_available_days').value = quizData.available_days.join(', ');
+    document.getElementById('h_available_times').value = quizData.available_times.join(', ');
+
+    // Submit via fetch
+    const formData = new FormData(quizForm);
+    fetch(quizForm.action, {
+      method: 'POST',
+      body: formData,
+      headers: { 'Accept': 'application/json' }
+    }).then(response => {
+      if (response.ok) {
+        quizForm.style.display = 'none';
+        document.querySelector('.quiz-progress').style.display = 'none';
+
+        const recs = new Set();
+        quizData.pain_points.forEach(p => {
+          if (painToService[p]) recs.add(painToService[p]);
+        });
+        const recsContainer = document.getElementById('quizRecs');
+        recsContainer.innerHTML = '';
+        recs.forEach(r => {
+          recsContainer.innerHTML += '<span class="quiz-rec-tag">' + r + '</span>';
+        });
+
+        document.getElementById('quizConfirmation').classList.add('active');
+      } else {
+        alert('Something went wrong. Please try again or email us directly at ahmed@babylonconsulting.us');
+      }
+    }).catch(() => {
+      alert('Something went wrong. Please try again or email us directly at ahmed@babylonconsulting.us');
+    });
+  });
+
+  // ARIA waitlist form
+  const ariaForm = document.querySelector('.aria-waitlist');
+  if (ariaForm) {
+    ariaForm.addEventListener('submit', function(e) {
+      const btn = ariaForm.querySelector('button');
+      setTimeout(() => {
+        btn.textContent = 'You\'re on the list!';
+        btn.style.background = 'var(--dark2)';
+        btn.style.color = 'var(--gold)';
+        btn.style.border = '1px solid var(--gold)';
+        ariaForm.querySelector('input[type="email"]').value = '';
+      }, 500);
+    });
+  }
 </script>
 
 </body>
