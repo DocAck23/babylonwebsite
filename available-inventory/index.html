@@ -46,6 +46,22 @@ tailwind.config = {
   .gold-line { height: 1px; background: linear-gradient(90deg, transparent, #C9A84C, transparent); }
   .gold-line-left { height: 1px; background: linear-gradient(90deg, #C9A84C, transparent); }
   .spec-table td { border-bottom: 1px solid rgba(201,168,76,0.15); padding: 10px 12px; }
+
+  /* Mobile: make inventory table scroll horizontally */
+  .table-wrapper { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  .table-wrapper table { min-width: 700px; }
+
+  /* Mobile: spec table labels */
+  @media (max-width: 640px) {
+    .spec-table td { padding: 8px 6px; font-size: 12px; }
+    .spec-table td:first-child { width: auto; min-width: 120px; }
+    .cover-title { font-size: 2rem !important; }
+    .cover-gw { font-size: 3.5rem !important; }
+    .next-steps-grid { grid-template-columns: 1fr !important; }
+    .stats-grid-mobile { grid-template-columns: repeat(2, 1fr) !important; }
+    .photo-grid img { max-height: 250px; }
+  }
+
   .status-badge {
     display: inline-flex; align-items: center; gap: 6px; padding: 6px 16px;
     border: 1px solid #C9A84C; border-radius: 2px; font-size: 11px;
@@ -76,16 +92,16 @@ tailwind.config = {
       <span class="font-display text-babylon-white text-2xl tracking-[8px] font-light italic ml-1">CONSULTING</span>
     </div>
     <div class="w-24 gold-line mx-auto mb-16"></div>
-    <h1 class="font-display text-5xl md:text-7xl font-light tracking-wide mb-6 leading-tight">
+    <h1 class="font-display text-3xl sm:text-5xl md:text-7xl font-light tracking-wide mb-6 leading-tight cover-title">
       <span class="text-babylon-white">Exclusive Gas Turbine</span><br>
       <span class="gold-gradient">Package Offering</span>
     </h1>
     <p class="font-body text-sm tracking-[4px] uppercase text-babylon-white/50 mb-8">Multi-Site Global Availability</p>
     <div class="mt-12 mb-8">
-      <div class="font-display text-6xl md:text-8xl font-light gold-gradient">2.263</div>
+      <div class="font-display text-4xl sm:text-6xl md:text-8xl font-light gold-gradient cover-gw">2.263</div>
       <div class="font-body text-xs tracking-[6px] uppercase text-babylon-white/60 mt-2">Gigawatts &mdash; 8 Units &mdash; 4 Countries</div>
     </div>
-    <div class="mt-16 flex flex-wrap justify-center gap-8 text-[10px] tracking-[3px] uppercase text-babylon-white/40">
+    <div class="mt-16 flex flex-wrap justify-center gap-4 sm:gap-8 text-[9px] sm:text-[10px] tracking-[2px] sm:tracking-[3px] uppercase text-babylon-white/40 px-4">
       <span>Confirmed Available</span>
       <span class="text-gold/30">|</span>
       <span>Direct to Seller</span>
@@ -119,22 +135,22 @@ tailwind.config = {
     </p>
   </div>
 
-  <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-20">
-    <div class="unit-card p-6 text-center">
-      <div class="font-display text-4xl text-gold">96 GW</div>
-      <div class="font-body text-[10px] tracking-[2px] uppercase text-babylon-white/40 mt-2">Projected DC Demand 2026</div>
+  <div class="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 mb-20 stats-grid-mobile">
+    <div class="unit-card p-4 sm:p-6 text-center">
+      <div class="font-display text-2xl sm:text-4xl text-gold">96 GW</div>
+      <div class="font-body text-[9px] sm:text-[10px] tracking-[2px] uppercase text-babylon-white/40 mt-2">Projected DC Demand 2026</div>
     </div>
-    <div class="unit-card p-6 text-center">
-      <div class="font-display text-4xl text-gold">5&ndash;7 yr</div>
-      <div class="font-body text-[10px] tracking-[2px] uppercase text-babylon-white/40 mt-2">New Turbine Lead Time</div>
+    <div class="unit-card p-4 sm:p-6 text-center">
+      <div class="font-display text-2xl sm:text-4xl text-gold">5&ndash;7 yr</div>
+      <div class="font-body text-[9px] sm:text-[10px] tracking-[2px] uppercase text-babylon-white/40 mt-2">New Turbine Lead Time</div>
     </div>
-    <div class="unit-card p-6 text-center">
-      <div class="font-display text-4xl text-gold">195%</div>
-      <div class="font-body text-[10px] tracking-[2px] uppercase text-babylon-white/40 mt-2">Price Increase Since 2019</div>
+    <div class="unit-card p-4 sm:p-6 text-center">
+      <div class="font-display text-2xl sm:text-4xl text-gold">195%</div>
+      <div class="font-body text-[9px] sm:text-[10px] tracking-[2px] uppercase text-babylon-white/40 mt-2">Price Increase Since 2019</div>
     </div>
-    <div class="unit-card p-6 text-center">
-      <div class="font-display text-4xl text-gold">49 GW</div>
-      <div class="font-body text-[10px] tracking-[2px] uppercase text-babylon-white/40 mt-2">US Generation Shortfall 2028</div>
+    <div class="unit-card p-4 sm:p-6 text-center">
+      <div class="font-display text-2xl sm:text-4xl text-gold">49 GW</div>
+      <div class="font-body text-[9px] sm:text-[10px] tracking-[2px] uppercase text-babylon-white/40 mt-2">US Generation Shortfall 2028</div>
     </div>
   </div>
 
@@ -148,6 +164,11 @@ tailwind.config = {
       .map-pin-dot { width: 10px; height: 10px; background: #C9A84C; border-radius: 50%; border: 2px solid #0A0A0A; box-shadow: 0 0 0 2px rgba(201,168,76,0.4); }
       .map-pin-label { position: absolute; left: 16px; top: -8px; white-space: nowrap; }
       .map-pin-label-left { position: absolute; right: 16px; top: -8px; white-space: nowrap; text-align: right; }
+      @media (max-width: 640px) {
+        .map-pin-dot { width: 7px; height: 7px; }
+        .map-pin-label, .map-pin-label-left { display: none; }
+        .map-container { min-height: 200px; }
+      }
     </style>
     <div class="map-container bg-babylon-black">
       <img src="images/world-map-dark.jpg" alt="World Map">
@@ -201,15 +222,15 @@ tailwind.config = {
     <h2 class="font-display text-4xl md:text-5xl font-light text-babylon-white mb-2">Complete Unit Inventory</h2>
     <div class="w-16 gold-line-left mt-4"></div>
   </div>
-  <div>
+  <div class="table-wrapper">
     <table class="spec-table w-full text-left font-body text-xs">
       <thead>
         <tr class="border-b border-gold/30">
-          <th class="py-3 px-3 text-[9px] tracking-[2px] uppercase text-gold font-medium">Unit Type</th>
+          <th class="py-3 px-3 text-[9px] tracking-[2px] uppercase text-gold font-medium whitespace-nowrap">Unit Type</th>
           <th class="py-3 px-3 text-[9px] tracking-[2px] uppercase text-gold font-medium">Year</th>
           <th class="py-3 px-3 text-[9px] tracking-[2px] uppercase text-gold font-medium">Output</th>
           <th class="py-3 px-3 text-[9px] tracking-[2px] uppercase text-gold font-medium">Hours</th>
-          <th class="py-3 px-3 text-[9px] tracking-[2px] uppercase text-gold font-medium">Last MOH</th>
+          <th class="py-3 px-3 text-[9px] tracking-[2px] uppercase text-gold font-medium whitespace-nowrap">Last MOH</th>
           <th class="py-3 px-3 text-[9px] tracking-[2px] uppercase text-gold font-medium">Location</th>
           <th class="py-3 px-3 text-[9px] tracking-[2px] uppercase text-gold font-medium">Status</th>
         </tr>
@@ -295,7 +316,7 @@ tailwind.config = {
   <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
     <div>
       <table class="spec-table w-full text-sm font-body">
-        <tr><td class="text-gold/70 w-48">Manufacturer</td><td class="text-babylon-white">Siemens Energy</td></tr>
+        <tr><td class="text-gold/70 w-32 sm:w-48">Manufacturer</td><td class="text-babylon-white">Siemens Energy</td></tr>
         <tr><td class="text-gold/70">Model</td><td class="text-babylon-white">V94.2 (SGT5-2000E)</td></tr>
         <tr><td class="text-gold/70">Year of Manufacture</td><td class="text-babylon-white">1993</td></tr>
         <tr><td class="text-gold/70">Rated Power Output</td><td class="text-babylon-white font-medium">140 MW</td></tr>
@@ -340,7 +361,7 @@ tailwind.config = {
   <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
     <div>
       <table class="spec-table w-full text-sm font-body">
-        <tr><td class="text-gold/70 w-48">Manufacturer</td><td class="text-babylon-white">Siemens Energy</td></tr>
+        <tr><td class="text-gold/70 w-32 sm:w-48">Manufacturer</td><td class="text-babylon-white">Siemens Energy</td></tr>
         <tr><td class="text-gold/70">Model</td><td class="text-babylon-white">V94.2 (SGT5-2000E)</td></tr>
         <tr><td class="text-gold/70">Year of Manufacture</td><td class="text-babylon-white">1993</td></tr>
         <tr><td class="text-gold/70">Rated Power Output</td><td class="text-babylon-white font-medium">140 MW</td></tr>
@@ -388,7 +409,7 @@ tailwind.config = {
     <div>
       <p class="font-body text-[10px] tracking-[3px] uppercase text-gold mb-4">GT12 &mdash; 2003</p>
       <table class="spec-table w-full text-sm font-body">
-        <tr><td class="text-gold/70 w-48">Manufacturer</td><td class="text-babylon-white">Siemens Energy</td></tr>
+        <tr><td class="text-gold/70 w-32 sm:w-48">Manufacturer</td><td class="text-babylon-white">Siemens Energy</td></tr>
         <tr><td class="text-gold/70">Model</td><td class="text-babylon-white">SGT5-4000F (V94.3A(2))</td></tr>
         <tr><td class="text-gold/70">Year of Manufacture</td><td class="text-babylon-white">2003</td></tr>
         <tr><td class="text-gold/70">Rated Power Output</td><td class="text-babylon-white font-medium">298 MW</td></tr>
@@ -401,7 +422,7 @@ tailwind.config = {
     <div>
       <p class="font-body text-[10px] tracking-[3px] uppercase text-gold mb-4">GT11 &mdash; 2004</p>
       <table class="spec-table w-full text-sm font-body">
-        <tr><td class="text-gold/70 w-48">Manufacturer</td><td class="text-babylon-white">Siemens Energy</td></tr>
+        <tr><td class="text-gold/70 w-32 sm:w-48">Manufacturer</td><td class="text-babylon-white">Siemens Energy</td></tr>
         <tr><td class="text-gold/70">Model</td><td class="text-babylon-white">SGT5-4000F (V94.3A(2))</td></tr>
         <tr><td class="text-gold/70">Year of Manufacture</td><td class="text-babylon-white">2004</td></tr>
         <tr><td class="text-gold/70">Rated Power Output</td><td class="text-babylon-white font-medium">298 MW</td></tr>
@@ -450,7 +471,7 @@ tailwind.config = {
   <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
     <div>
       <table class="spec-table w-full text-sm font-body">
-        <tr><td class="text-gold/70 w-48">Manufacturer</td><td class="text-babylon-white">Siemens Energy</td></tr>
+        <tr><td class="text-gold/70 w-32 sm:w-48">Manufacturer</td><td class="text-babylon-white">Siemens Energy</td></tr>
         <tr><td class="text-gold/70">Model (Gas Turbine)</td><td class="text-babylon-white">SGT5-4000F</td></tr>
         <tr><td class="text-gold/70">Model (Generator)</td><td class="text-babylon-white">SGen5-1200A</td></tr>
         <tr><td class="text-gold/70">Year of Manufacture</td><td class="text-babylon-white">2016</td></tr>
@@ -502,7 +523,7 @@ tailwind.config = {
   <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
     <div>
       <table class="spec-table w-full text-sm font-body">
-        <tr><td class="text-gold/70 w-48">Manufacturer</td><td class="text-babylon-white">Siemens Energy</td></tr>
+        <tr><td class="text-gold/70 w-32 sm:w-48">Manufacturer</td><td class="text-babylon-white">Siemens Energy</td></tr>
         <tr><td class="text-gold/70">Model (Gas Turbine)</td><td class="text-babylon-white">SGT5-4000F</td></tr>
         <tr><td class="text-gold/70">Model (Generator)</td><td class="text-babylon-white">SGen6-1200A</td></tr>
         <tr><td class="text-gold/70">Year of Manufacture</td><td class="text-babylon-white">2016</td></tr>
@@ -560,7 +581,7 @@ tailwind.config = {
   <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
     <div>
       <table class="spec-table w-full text-sm font-body">
-        <tr><td class="text-gold/70 w-48">Manufacturer</td><td class="text-babylon-white">Ansaldo Energia</td></tr>
+        <tr><td class="text-gold/70 w-32 sm:w-48">Manufacturer</td><td class="text-babylon-white">Ansaldo Energia</td></tr>
         <tr><td class="text-gold/70">Model (Gas Turbine)</td><td class="text-babylon-white">AE94.3A</td></tr>
         <tr><td class="text-gold/70">Steam Turbine</td><td class="text-babylon-white">3-Cylinder Steam Turbine</td></tr>
         <tr><td class="text-gold/70">Year of Manufacture</td><td class="text-babylon-white">2018</td></tr>
@@ -629,7 +650,7 @@ tailwind.config = {
   <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
     <div>
       <table class="spec-table w-full text-sm font-body">
-        <tr><td class="text-gold/70 w-48">Manufacturer</td><td class="text-babylon-white">General Electric</td></tr>
+        <tr><td class="text-gold/70 w-32 sm:w-48">Manufacturer</td><td class="text-babylon-white">General Electric</td></tr>
         <tr><td class="text-gold/70">Model</td><td class="text-babylon-white">GE 9HA.01</td></tr>
         <tr><td class="text-gold/70">Type</td><td class="text-babylon-white">Aero-derivative Gas Turbine</td></tr>
         <tr><td class="text-gold/70">Year of Manufacture</td><td class="text-babylon-white">2015</td></tr>
@@ -676,7 +697,7 @@ tailwind.config = {
         Package discount applies to full portfolio acquisition.
       </p>
       <div class="gold-line mb-8"></div>
-      <div class="grid grid-cols-4 gap-4 mb-8 text-center">
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-8 text-center">
         <div><div class="font-display text-2xl text-gold">8</div><div class="text-[9px] tracking-[2px] uppercase text-babylon-white/40">Units</div></div>
         <div><div class="font-display text-2xl text-gold">4</div><div class="text-[9px] tracking-[2px] uppercase text-babylon-white/40">Countries</div></div>
         <div><div class="font-display text-2xl text-gold">3</div><div class="text-[9px] tracking-[2px] uppercase text-babylon-white/40">OEMs</div></div>
@@ -700,7 +721,7 @@ tailwind.config = {
   <h2 class="font-display text-4xl md:text-5xl font-light text-babylon-white mb-4">Next Steps</h2>
   <div class="w-16 gold-line mx-auto mb-10"></div>
   <div class="max-w-xl mx-auto space-y-8">
-    <div class="grid grid-cols-3 gap-6">
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 next-steps-grid">
       <div class="unit-card p-6 text-center">
         <div class="font-display text-3xl text-gold mb-2">01</div>
         <p class="font-body text-xs tracking-[2px] uppercase text-babylon-white/60">Schedule a Consultation</p>
