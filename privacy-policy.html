@@ -1,232 +1,164 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Privacy Policy | Babylon Consulting LLC</title>
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body {
-            font-family: Helvetica, Arial, sans-serif;
-            background-color: #0d0d1a;
-            color: #e0e0e0;
-            line-height: 1.7;
-            font-size: 15px;
-        }
-        a { color: #C9A84C; text-decoration: none; }
-        a:hover { text-decoration: underline; }
-
-        .header {
-            background-color: #1a1a2e;
-            border-bottom: 2px solid #C9A84C;
-            padding: 24px 0;
-            text-align: center;
-        }
-        .header h1 {
-            font-size: 22px;
-            font-weight: 700;
-            color: #C9A84C;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-        }
-
-        .hero {
-            background: linear-gradient(180deg, #1a1a2e 0%, #0d0d1a 100%);
-            text-align: center;
-            padding: 60px 20px 40px;
-        }
-        .hero h2 {
-            font-size: 36px;
-            font-weight: 700;
-            color: #ffffff;
-            margin-bottom: 12px;
-        }
-        .hero .gold-line {
-            width: 80px;
-            height: 3px;
-            background-color: #C9A84C;
-            margin: 0 auto 16px;
-        }
-        .hero p {
-            color: #888888;
-            font-size: 14px;
-        }
-
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 40px 24px 80px;
-        }
-
-        .section { margin-bottom: 36px; }
-        .section h3 {
-            font-size: 18px;
-            font-weight: 700;
-            color: #C9A84C;
-            margin-bottom: 12px;
-            padding-bottom: 8px;
-            border-bottom: 1px solid rgba(201, 168, 76, 0.2);
-        }
-        .section p, .section li {
-            color: #cccccc;
-            margin-bottom: 10px;
-        }
-        .section ul {
-            list-style: none;
-            padding-left: 0;
-        }
-        .section ul li::before {
-            content: "—";
-            color: #C9A84C;
-            margin-right: 10px;
-        }
-
-        .footer {
-            background-color: #1a1a2e;
-            border-top: 2px solid #C9A84C;
-            text-align: center;
-            padding: 32px 20px;
-            color: #888888;
-            font-size: 13px;
-        }
-        .footer a { color: #C9A84C; }
-        .footer .links { margin-top: 12px; }
-        .footer .links a { margin: 0 16px; }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Privacy Policy | Babylon Consulting</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-<div class="header">
-    <h1>Babylon Consulting LLC</h1>
-</div>
+<nav class="nav">
+  <a href="index.html" class="nav-brand">
+    <span class="nav-brand-mark"></span>
+    <span>Babylon<small>Consulting</small></span>
+  </a>
+  <div class="nav-links" id="navLinks">
+    <a href="index.html">Home</a>
+    <a href="sectors.html">Sectors</a>
+    <a href="capabilities.html">Capabilities</a>
+    <a href="about.html">About</a>
+    <a href="contact.html" class="nav-cta">Begin Dialogue</a>
+  </div>
+  <button class="nav-burger" aria-label="Menu" onclick="document.getElementById('navLinks').classList.toggle('open')">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
 
-<div class="hero">
-    <h2>Privacy Policy</h2>
-    <div class="gold-line"></div>
-    <p>Effective Date: March 24, 2026 &nbsp;|&nbsp; Last Updated: March 24, 2026</p>
-</div>
+<section class="page-hero">
+  <div class="container">
+    <span class="eyebrow">Legal</span>
+    <h1>Privacy Policy</h1>
+    <p>Effective Date: March 24, 2026 · Last Updated: March 24, 2026</p>
+  </div>
+</section>
 
-<div class="container">
+<section class="section">
+  <div class="prose">
 
-    <div class="section">
-        <h3>1. Introduction</h3>
-        <p>Babylon Consulting LLC ("Babylon Consulting," "we," "our," or "us") respects your privacy and is committed to protecting the personal information you share with us. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website <a href="https://www.babylonconsulting.us">www.babylonconsulting.us</a>, use our services, or otherwise interact with us.</p>
-        <p>By accessing our website or using our services, you agree to the terms of this Privacy Policy. If you do not agree, please do not use our services.</p>
+    <h3>1. Introduction</h3>
+    <p>Babylon Consulting LLC ("Babylon Consulting," "we," "our," or "us") respects your privacy and is committed to protecting the personal information you share with us. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website <a href="https://www.babylonconsulting.us">www.babylonconsulting.us</a>, use our services, or otherwise interact with us.</p>
+    <p>By accessing our website or using our services, you agree to the terms of this Privacy Policy. If you do not agree, please do not use our services.</p>
+
+    <h3>2. Information We Collect</h3>
+    <p><strong>Personal Information You Provide</strong></p>
+    <ul>
+      <li>Full name, email address, phone number, and mailing address</li>
+      <li>Organization, ministry, or company affiliation, title, and professional credentials</li>
+      <li>Information submitted through contact forms, consultations, or inquiries</li>
+      <li>Communications you send to us (emails, phone calls, messages)</li>
+    </ul>
+    <p><strong>Information Collected Automatically</strong></p>
+    <ul>
+      <li>IP address, browser type, operating system, and device information</li>
+      <li>Pages visited, time spent on pages, and referring URLs</li>
+      <li>Cookies and similar tracking technologies</li>
+    </ul>
+    <p><strong>Information from Third Parties</strong></p>
+    <ul>
+      <li>Business data from publicly available sources</li>
+      <li>Analytics data from service providers</li>
+    </ul>
+
+    <h3>3. How We Use Your Information</h3>
+    <ul>
+      <li>To provide, operate, and improve our advisory and consulting services</li>
+      <li>To communicate with you regarding inquiries, engagements, and service matters</li>
+      <li>To comply with legal obligations and enforce our agreements</li>
+      <li>To detect, prevent, and address fraud or security issues</li>
+    </ul>
+
+    <h3>4. How We Share Your Information</h3>
+    <p>We do not sell your personal information. We may share information in the following circumstances:</p>
+    <ul>
+      <li><strong>Service Providers:</strong> Third-party vendors who assist us in operating our business</li>
+      <li><strong>Engagement Partners:</strong> Where a mandate requires disclosure to counterparties, financiers, or regulators, and then only with appropriate confidentiality protections</li>
+      <li><strong>Legal Requirements:</strong> When required by law, regulation, subpoena, or court order</li>
+      <li><strong>Business Transfers:</strong> In connection with a merger, acquisition, or sale of assets</li>
+      <li><strong>With Your Consent:</strong> When you have given us explicit permission</li>
+    </ul>
+
+    <h3>5. Cookies and Tracking Technologies</h3>
+    <p>We use cookies and similar technologies to enhance your browsing experience and analyze site traffic. You can control cookie settings through your browser preferences.</p>
+
+    <h3>6. Data Security</h3>
+    <p>We implement reasonable administrative, technical, and physical safeguards to protect your personal information from unauthorized access, use, alteration, or disclosure. No method of transmission over the Internet or electronic storage is completely secure, and we cannot guarantee absolute security.</p>
+
+    <h3>7. Data Retention</h3>
+    <p>We retain personal information for as long as necessary to fulfill the purposes for which it was collected, comply with legal obligations, resolve disputes, and enforce our agreements.</p>
+
+    <h3>8. Your Rights and Choices</h3>
+    <ul>
+      <li><strong>Access:</strong> Request a copy of the personal information we hold about you</li>
+      <li><strong>Correction:</strong> Request correction of inaccurate or incomplete information</li>
+      <li><strong>Deletion:</strong> Request deletion, subject to legal exceptions</li>
+      <li><strong>Opt-Out:</strong> Unsubscribe from communications at any time</li>
+    </ul>
+    <p>To exercise any of these rights, contact us at <a href="mailto:ahmed@babylonconsulting.us">ahmed@babylonconsulting.us</a>.</p>
+
+    <h3>9. Third-Party Links</h3>
+    <p>Our website may contain links to third-party websites. We are not responsible for the privacy practices of those third parties.</p>
+
+    <h3>10. Children's Privacy</h3>
+    <p>Our services are not directed to individuals under the age of 18, and we do not knowingly collect personal information from children.</p>
+
+    <h3>11. Changes to This Privacy Policy</h3>
+    <p>We may update this Privacy Policy from time to time. Changes will be posted on this page with an updated "Last Updated" date.</p>
+
+    <h3>12. Contact Us</h3>
+    <p><strong>Babylon Consulting LLC</strong><br>
+      Email: <a href="mailto:ahmed@babylonconsulting.us">ahmed@babylonconsulting.us</a><br>
+      Website: <a href="https://www.babylonconsulting.us">www.babylonconsulting.us</a></p>
+
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <a href="index.html" class="nav-brand" style="color:var(--ivory);">
+        <span class="nav-brand-mark"></span>
+        <span>Babylon<small>Consulting</small></span>
+      </a>
+      <p>A global advisory and deal-facilitation firm. Headquartered in the United States, engaged worldwide.</p>
     </div>
-
-    <div class="section">
-        <h3>2. Information We Collect</h3>
-        <p>We may collect the following categories of information:</p>
-        <p><strong style="color:#ffffff;">Personal Information You Provide</strong></p>
-        <ul>
-            <li>Full name, email address, phone number, and mailing address</li>
-            <li>Business or practice name, title, and professional credentials</li>
-            <li>Payment and billing information</li>
-            <li>Information submitted through contact forms, consultations, or inquiries</li>
-            <li>Communications you send to us (emails, phone calls, SMS messages)</li>
-        </ul>
-        <p><strong style="color:#ffffff;">Information Collected Automatically</strong></p>
-        <ul>
-            <li>IP address, browser type, operating system, and device information</li>
-            <li>Pages visited, time spent on pages, and referring URLs</li>
-            <li>Cookies and similar tracking technologies</li>
-        </ul>
-        <p><strong style="color:#ffffff;">Information from Third Parties</strong></p>
-        <ul>
-            <li>Business data from publicly available sources</li>
-            <li>Analytics data from service providers</li>
-        </ul>
+    <div>
+      <h5>Firm</h5>
+      <ul>
+        <li><a href="about.html">About</a></li>
+        <li><a href="capabilities.html">Capabilities</a></li>
+        <li><a href="sectors.html">Sectors</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
     </div>
-
-    <div class="section">
-        <h3>3. How We Use Your Information</h3>
-        <p>We use the information we collect for the following purposes:</p>
-        <ul>
-            <li>To provide, operate, and improve our consulting services</li>
-            <li>To communicate with you regarding inquiries, appointments, and service updates</li>
-            <li>To process transactions and send related information</li>
-            <li>To send marketing communications (with your consent, where required)</li>
-            <li>To personalize your experience and deliver relevant content</li>
-            <li>To comply with legal obligations and enforce our agreements</li>
-            <li>To detect, prevent, and address fraud or security issues</li>
-        </ul>
+    <div>
+      <h5>Sectors</h5>
+      <ul>
+        <li><a href="sectors.html#energy">Energy</a></li>
+        <li><a href="sectors.html#mining">Mining</a></li>
+        <li><a href="sectors.html#agriculture">Agriculture</a></li>
+        <li><a href="sectors.html#health">Health</a></li>
+      </ul>
     </div>
-
-    <div class="section">
-        <h3>4. How We Share Your Information</h3>
-        <p>We do not sell your personal information. We may share your information in the following circumstances:</p>
-        <ul>
-            <li><strong style="color:#ffffff;">Service Providers:</strong> Third-party vendors who assist us in operating our business (e.g., payment processors, CRM platforms, email services, telecommunications providers)</li>
-            <li><strong style="color:#ffffff;">Partner Practices:</strong> If you engage with services offered through our medical practice partnerships, relevant information may be shared with the partnering practice for scheduling and care coordination</li>
-            <li><strong style="color:#ffffff;">Legal Requirements:</strong> When required by law, regulation, subpoena, or court order</li>
-            <li><strong style="color:#ffffff;">Business Transfers:</strong> In connection with a merger, acquisition, or sale of assets</li>
-            <li><strong style="color:#ffffff;">With Your Consent:</strong> When you have given us explicit permission</li>
-        </ul>
+    <div>
+      <h5>Contact</h5>
+      <ul>
+        <li><a href="mailto:ahmed@babylonconsulting.us">ahmed@babylonconsulting.us</a></li>
+        <li><a href="contact.html">Secure Inquiry</a></li>
+      </ul>
     </div>
-
-    <div class="section">
-        <h3>5. Cookies and Tracking Technologies</h3>
-        <p>We use cookies and similar technologies to enhance your browsing experience, analyze site traffic, and understand user behavior. You can control cookie settings through your browser preferences. Disabling cookies may affect the functionality of our website.</p>
-    </div>
-
-    <div class="section">
-        <h3>6. Data Security</h3>
-        <p>We implement reasonable administrative, technical, and physical safeguards to protect your personal information from unauthorized access, use, alteration, or disclosure. However, no method of transmission over the Internet or electronic storage is completely secure, and we cannot guarantee absolute security.</p>
-    </div>
-
-    <div class="section">
-        <h3>7. Data Retention</h3>
-        <p>We retain personal information for as long as necessary to fulfill the purposes for which it was collected, comply with legal obligations, resolve disputes, and enforce our agreements. When information is no longer needed, we securely delete or anonymize it.</p>
-    </div>
-
-    <div class="section">
-        <h3>8. Your Rights and Choices</h3>
-        <p>Depending on your jurisdiction, you may have the following rights:</p>
-        <ul>
-            <li><strong style="color:#ffffff;">Access:</strong> Request a copy of the personal information we hold about you</li>
-            <li><strong style="color:#ffffff;">Correction:</strong> Request correction of inaccurate or incomplete information</li>
-            <li><strong style="color:#ffffff;">Deletion:</strong> Request deletion of your personal information, subject to legal exceptions</li>
-            <li><strong style="color:#ffffff;">Opt-Out:</strong> Unsubscribe from marketing communications at any time</li>
-            <li><strong style="color:#ffffff;">Do Not Sell:</strong> We do not sell personal information; however, you may submit a request to confirm this</li>
-        </ul>
-        <p>To exercise any of these rights, contact us at <a href="mailto:ahmed@babylonconsulting.us">ahmed@babylonconsulting.us</a>.</p>
-    </div>
-
-    <div class="section">
-        <h3>9. Third-Party Links</h3>
-        <p>Our website may contain links to third-party websites or services. We are not responsible for the privacy practices or content of those third parties. We encourage you to review the privacy policies of any third-party sites you visit.</p>
-    </div>
-
-    <div class="section">
-        <h3>10. Children's Privacy</h3>
-        <p>Our services are not directed to individuals under the age of 18. We do not knowingly collect personal information from children. If we become aware that we have collected information from a child, we will take steps to delete it promptly.</p>
-    </div>
-
-    <div class="section">
-        <h3>11. Changes to This Privacy Policy</h3>
-        <p>We may update this Privacy Policy from time to time. Changes will be posted on this page with an updated "Last Updated" date. Your continued use of our services after any modifications constitutes acceptance of the revised policy.</p>
-    </div>
-
-    <div class="section">
-        <h3>12. Contact Us</h3>
-        <p>If you have questions or concerns about this Privacy Policy or our data practices, please contact us:</p>
-        <p style="margin-top: 16px;">
-            <strong style="color:#ffffff;">Babylon Consulting LLC</strong><br>
-            Email: <a href="mailto:ahmed@babylonconsulting.us">ahmed@babylonconsulting.us</a><br>
-            Phone: +1 (313) 247-2008<br>
-            Website: <a href="https://www.babylonconsulting.us">www.babylonconsulting.us</a>
-        </p>
-    </div>
-
-</div>
-
-<div class="footer">
-    <p>&copy; 2026 Babylon Consulting LLC. All rights reserved.</p>
-    <div class="links">
-        <a href="privacy-policy.html">Privacy Policy</a>
-        <a href="terms-and-conditions.html">Terms &amp; Conditions</a>
-    </div>
-</div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Babylon Consulting LLC. All rights reserved.</span>
+    <span>
+      <a href="privacy-policy.html" style="margin-right:24px;">Privacy Policy</a>
+      <a href="terms-and-conditions.html">Terms</a>
+    </span>
+  </div>
+</footer>
 
 </body>
 </html>

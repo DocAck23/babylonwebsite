@@ -3,2184 +3,247 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Babylon Consulting | AI Workflow Automation & Done-For-You AI Teams</title>
-<meta name="description" content="Hire your own AI team maintained by Babylon for a monthly retainer. AI-powered lead gen, sales automation, website building, SEO, content creation, and more.">
-<meta property="og:title" content="Babylon Consulting | Hire Your Own AI Team">
-<meta property="og:description" content="Done-for-you AI workflow automation. Lead gen, sales, marketing, content, SEO, websites, and apps — maintained by Babylon for a monthly retainer.">
+<title>Babylon Consulting | Global Partner for Governments & Enterprise</title>
+<meta name="description" content="Babylon Consulting is a global advisory and deal-facilitation firm partnering with governments and enterprises across energy, mining, agriculture, health, industrial manufacturing, and trade.">
+<meta property="og:title" content="Babylon Consulting — Global Partner for Governments & Enterprise">
+<meta property="og:description" content="Advisory, deal origination, project facilitation, and cross-border execution for large-scale initiatives across strategic sectors.">
 <meta property="og:type" content="website">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Montserrat:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
-<style>
-  :root {
-    --gold: #C9A84C;
-    --gold-light: #E8C96A;
-    --gold-dim: #8B6F2E;
-    --black: #0A0A0A;
-    --dark: #111111;
-    --dark2: #161616;
-    --dark3: #1E1E1E;
-    --white: #F5F0E8;
-    --white-dim: rgba(245,240,232,0.6);
-    --white-faint: rgba(245,240,232,0.12);
-    --section-pad: 140px 60px;
-  }
-
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  html { scroll-behavior: smooth; }
-  body {
-    background: var(--black);
-    color: var(--white);
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 300;
-    overflow-x: hidden;
-    cursor: none;
-    -webkit-font-smoothing: antialiased;
-  }
-  a { color: inherit; text-decoration: none; }
-  img { max-width: 100%; }
-
-  /* -- Custom Cursor -- */
-  .cursor {
-    width: 8px; height: 8px;
-    background: var(--gold);
-    border-radius: 50%;
-    position: fixed;
-    pointer-events: none;
-    z-index: 9999;
-    transition: transform 0.15s ease;
-    mix-blend-mode: difference;
-  }
-  .cursor-ring {
-    width: 32px; height: 32px;
-    border: 1px solid var(--gold);
-    border-radius: 50%;
-    position: fixed;
-    pointer-events: none;
-    z-index: 9998;
-    transition: all 0.3s ease;
-    opacity: 0.5;
-  }
-
-  /* -- Typography -- */
-  .eyebrow {
-    font-size: 11px;
-    letter-spacing: 4px;
-    text-transform: uppercase;
-    color: var(--gold);
-    margin-bottom: 20px;
-    font-weight: 500;
-  }
-  h1, h2, h3 { font-family: 'Cormorant Garamond', serif; font-weight: 300; }
-  h1 { font-size: clamp(42px, 5vw, 72px); line-height: 1.1; }
-  h2 { font-size: clamp(32px, 3.5vw, 52px); line-height: 1.2; }
-  h3 { font-size: 26px; line-height: 1.3; }
-  .gold { color: var(--gold); }
-  .italic { font-style: italic; }
-  p { line-height: 1.8; color: var(--white-dim); font-size: 15px; }
-  p + p { margin-top: 16px; }
-
-  /* -- Section Divider -- */
-  .divider {
-    width: 100%;
-    height: 1px;
-    background: linear-gradient(90deg, transparent, var(--gold-dim), transparent);
-    opacity: 0.3;
-  }
-
-  /* -- Buttons -- */
-  .btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    padding: 16px 36px;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 11px;
-    font-weight: 500;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    border: none;
-    cursor: none;
-    transition: all 0.4s ease;
-  }
-  .btn-gold {
-    background: var(--gold);
-    color: var(--black);
-  }
-  .btn-gold:hover {
-    background: var(--gold-light);
-    transform: translateY(-2px);
-    box-shadow: 0 8px 30px rgba(201,168,76,0.25);
-  }
-  .btn-outline {
-    background: transparent;
-    color: var(--gold);
-    border: 1px solid var(--gold);
-  }
-  .btn-outline:hover {
-    background: rgba(201,168,76,0.08);
-    transform: translateY(-2px);
-  }
-
-  /* -- Scroll Animations -- */
-  .reveal {
-    opacity: 0;
-    transform: translateY(60px);
-    transition: opacity 1s cubic-bezier(0.16, 1, 0.3, 1), transform 1s cubic-bezier(0.16, 1, 0.3, 1);
-  }
-  .reveal.visible {
-    opacity: 1;
-    transform: translateY(0);
-  }
-  .stagger-children .reveal { transition-delay: 0s; }
-  .stagger-children .reveal:nth-child(1) { transition-delay: 0s; }
-  .stagger-children .reveal:nth-child(2) { transition-delay: 0.12s; }
-  .stagger-children .reveal:nth-child(3) { transition-delay: 0.24s; }
-  .stagger-children .reveal:nth-child(4) { transition-delay: 0.36s; }
-  .stagger-children .reveal:nth-child(5) { transition-delay: 0.48s; }
-  .stagger-children .reveal:nth-child(6) { transition-delay: 0.6s; }
-  .stagger-children .reveal:nth-child(7) { transition-delay: 0.72s; }
-  .stagger-children .reveal:nth-child(8) { transition-delay: 0.84s; }
-
-  .parallax-slow { will-change: transform; }
-  .parallax-medium { will-change: transform; }
-
-  .reveal-scale {
-    opacity: 0;
-    transform: scale(0.92);
-    transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1), transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
-  }
-  .reveal-scale.visible { opacity: 1; transform: scale(1); }
-
-  .reveal-fade {
-    opacity: 0;
-    transition: opacity 1.2s ease;
-  }
-  .reveal-fade.visible { opacity: 1; }
-
-  .reveal-left {
-    opacity: 0;
-    transform: translateX(-60px);
-    transition: opacity 1s cubic-bezier(0.16, 1, 0.3, 1), transform 1s cubic-bezier(0.16, 1, 0.3, 1);
-  }
-  .reveal-left.visible { opacity: 1; transform: translateX(0); }
-
-  .reveal-right {
-    opacity: 0;
-    transform: translateX(60px);
-    transition: opacity 1s cubic-bezier(0.16, 1, 0.3, 1), transform 1s cubic-bezier(0.16, 1, 0.3, 1);
-  }
-  .reveal-right.visible { opacity: 1; transform: translateX(0); }
-
-  /* -- NAV -- */
-  nav {
-    position: fixed; top: 0; left: 0; right: 0;
-    z-index: 100;
-    padding: 28px 60px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background: linear-gradient(to bottom, rgba(10,10,10,0.95), transparent);
-    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-  }
-  nav.scrolled {
-    background: rgba(10,10,10,0.97);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    padding: 18px 60px;
-  }
-  .nav-logo {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 22px;
-    font-weight: 300;
-    letter-spacing: 4px;
-    color: var(--gold);
-  }
-  .nav-logo span { font-style: italic; color: var(--white); font-size: 16px; letter-spacing: 1px; }
-  .nav-links { display: flex; gap: 48px; list-style: none; align-items: center; }
-  .nav-links a {
-    font-size: 11px;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    color: var(--white-dim);
-    transition: color 0.3s;
-  }
-  .nav-links a:hover { color: var(--gold); }
-  .nav-links .nav-cta {
-    background: var(--gold);
-    color: var(--black);
-    padding: 10px 24px;
-    font-weight: 500;
-    transition: all 0.3s;
-  }
-  .nav-links .nav-cta:hover {
-    background: var(--gold-light);
-    color: var(--black);
-  }
-  .nav-mobile { display: none; background: none; border: none; cursor: none; }
-  .nav-mobile svg { width: 24px; height: 24px; stroke: var(--gold); }
-
-  /* -- HERO -- */
-  .hero {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    position: relative;
-    overflow: hidden;
-    padding: 140px 60px 100px;
-  }
-  .hero-bg {
-    position: absolute; inset: 0;
-    background:
-      radial-gradient(ellipse at 20% 50%, rgba(201,168,76,0.06) 0%, transparent 60%),
-      radial-gradient(ellipse at 80% 30%, rgba(201,168,76,0.04) 0%, transparent 50%);
-  }
-  .hero-grid {
-    position: absolute; inset: 0;
-    background-image:
-      linear-gradient(rgba(201,168,76,0.03) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(201,168,76,0.03) 1px, transparent 1px);
-    background-size: 80px 80px;
-  }
-  .hero-content {
-    position: relative;
-    max-width: 1400px;
-    margin: 0 auto;
-    width: 100%;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 80px;
-    align-items: center;
-  }
-  .hero-text { animation: fadeUp 1s ease forwards; }
-  .hero-subtitle {
-    font-size: 17px;
-    color: var(--white-dim);
-    margin: 28px 0 44px;
-    max-width: 520px;
-    line-height: 1.9;
-  }
-  .hero-buttons { display: flex; gap: 20px; flex-wrap: wrap; }
-
-  @keyframes fadeUp {
-    from { opacity: 0; transform: translateY(30px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-
-  /* -- iPhone Mockup (youraria.ai exact) -- */
-  .phone-mockup {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    animation: phoneFloat 4s ease-in-out infinite alternate, fadeUp 1s ease 0.3s forwards;
-    opacity: 0;
-  }
-  @keyframes phoneFloat {
-    from { transform: translateY(0); }
-    to { transform: translateY(-10px); }
-  }
-
-  .hs-phone {
-    position: relative;
-    width: 280px;
-    height: 560px;
-    background: #1F2C34;
-    border: 8px solid #222;
-    border-radius: 40px;
-    box-shadow: 0 25px 60px rgba(0,0,0,0.3);
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-  }
-
-  /* iOS Status Bar */
-  .ip-status {
-    height: 44px;
-    background: #1F2C34;
-    display: grid;
-    grid-template-columns: 1fr 90px 1fr;
-    align-items: center;
-    padding: 0 14px;
-    flex-shrink: 0;
-    border-radius: 32px 32px 0 0;
-  }
-  .ip-status-left { display: flex; align-items: center; justify-content: center; }
-  .ip-status-center { display: flex; align-items: center; justify-content: center; }
-  .ip-di { width: 90px; height: 28px; background: #000; border-radius: 20px; }
-  .ip-status-icons { display: flex; align-items: center; justify-content: center; gap: 5px; }
-  .ip-status-icons svg { display: block; }
-  .ip-status-time { font-family: system-ui, sans-serif; font-size: 12px; font-weight: 500; color: #fff; }
-
-  /* WhatsApp Header */
-  .wa-hdr {
-    height: 52px;
-    background: #1F2C34;
-    display: flex;
-    align-items: center;
-    padding: 0 12px;
-    gap: 8px;
-    border-bottom: 1px solid rgba(255,255,255,0.06);
-    flex-shrink: 0;
-  }
-  .wa-hdr-back {
-    font-size: 16px;
-    font-weight: 500;
-    color: white;
-    margin-right: 4px;
-  }
-  .wa-hdr-avatar {
-    width: 36px;
-    height: 36px;
-    border-radius: 50%;
-    background: var(--gold);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-  }
-  .wa-hdr-avatar span {
-    color: white;
-    font-size: 15px;
-    font-weight: 600;
-  }
-  .wa-hdr-info {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
-  .wa-hdr-name {
-    font-size: 14px;
-    font-weight: 600;
-    color: white;
-    line-height: 1.2;
-    font-family: system-ui, -apple-system, sans-serif;
-  }
-  .wa-hdr-status {
-    font-size: 11px;
-    color: #25D366;
-    line-height: 1.2;
-    font-family: system-ui, -apple-system, sans-serif;
-  }
-  .wa-hdr-icons {
-    margin-left: auto;
-    display: flex;
-    align-items: center;
-    gap: 16px;
-  }
-  .wa-hdr-icons svg { display: block; }
-
-  /* Chat Body */
-  .hs-chat-body {
-    position: relative;
-    flex: 1;
-    overflow: hidden;
-    background: #0B141A;
-    padding-top: 12px;
-  }
-  .hs-msglist {
-    position: absolute;
-    bottom: 10px;
-    left: 8px;
-    right: 8px;
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-  }
-
-  /* Message Bubbles */
-  .hs-bub {
-    padding: 8px 12px;
-    font-size: 13px;
-    line-height: 1.5;
-    color: #E9EDEF;
-    font-family: system-ui, -apple-system, sans-serif;
-    opacity: 0;
-    transform: translateY(8px);
-    animation: bubbleReveal 0.4s ease forwards;
-    margin-bottom: 0;
-  }
-  .hs-bub:nth-child(1) { animation-delay: 0.5s; }
-  .hs-bub:nth-child(2) { animation-delay: 1.0s; }
-  .hs-bub:nth-child(3) { animation-delay: 1.8s; }
-  .hs-bub:nth-child(4) { animation-delay: 2.4s; }
-  .hs-bub:nth-child(5) { animation-delay: 3.0s; }
-  .hs-bub:nth-child(6) { animation-delay: 3.6s; }
-  .hs-bub:nth-child(7) { animation-delay: 4.2s; }
-
-  @keyframes bubbleReveal {
-    from { opacity: 0; transform: translateY(8px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-
-  .hs-bub.outgoing {
-    background: #005C4B;
-    align-self: flex-end;
-    border-radius: 18px 18px 4px 18px;
-    max-width: 220px;
-    margin-left: auto;
-  }
-  .hs-bub.incoming {
-    background: #2A3942;
-    align-self: flex-start;
-    border-radius: 18px 18px 18px 4px;
-    max-width: 230px;
-  }
-  .hs-bub .nm {
-    font-size: 10px;
-    color: #8696A0;
-    font-weight: 600;
-    letter-spacing: 0.03em;
-    display: block;
-    margin-bottom: 3px;
-    margin-left: 2px;
-  }
-  .hs-bub .bub-time {
-    font-size: 10px;
-    color: #8696A0;
-    text-align: right;
-    margin-top: 2px;
-  }
-  .hs-bub .bub-checks {
-    color: #53BDEB;
-    font-size: 10px;
-    margin-left: 3px;
-    letter-spacing: -2px;
-  }
-
-  /* WhatsApp Input Bar */
-  .wa-input {
-    height: 52px;
-    background: #1F2C34;
-    display: flex;
-    align-items: center;
-    padding: 0 12px;
-    gap: 8px;
-    flex-shrink: 0;
-  }
-  .wa-input-plus {
-    font-size: 22px;
-    color: white;
-    font-weight: 300;
-    line-height: 1;
-  }
-  .wa-input-field {
-    flex: 1;
-    height: 34px;
-    background: #2A3942;
-    border-radius: 20px;
-    display: flex;
-    align-items: center;
-    padding: 0 12px;
-    gap: 8px;
-  }
-  .wa-input-field .wa-emoji { font-size: 16px; }
-  .wa-input-field .wa-placeholder {
-    font-size: 13px;
-    color: rgba(255,255,255,0.35);
-    font-family: system-ui, sans-serif;
-  }
-  .wa-input-icons { display: flex; gap: 12px; align-items: center; }
-  .wa-input-icons svg { display: block; }
-
-  /* Home Indicator */
-  .wa-home {
-    height: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: #1F2C34;
-    border-radius: 0 0 32px 32px;
-    flex-shrink: 0;
-  }
-  .wa-home-bar {
-    width: 120px;
-    height: 5px;
-    background: rgba(255,255,255,0.3);
-    border-radius: 3px;
-  }
-
-  /* -- PROBLEM SECTION -- */
-  .problem {
-    padding: var(--section-pad);
-    text-align: center;
-    max-width: 800px;
-    margin: 0 auto;
-  }
-  .problem h2 { margin-bottom: 32px; }
-  .problem p { font-size: 17px; max-width: 640px; margin: 0 auto; }
-  .problem .transition-text {
-    color: var(--gold);
-    font-size: 20px;
-    font-family: 'Cormorant Garamond', serif;
-    font-style: italic;
-    margin-top: 48px;
-    font-weight: 400;
-  }
-
-  /* -- SERVICES GRID (8 cards) -- */
-  .services {
-    padding: var(--section-pad);
-    max-width: 1400px;
-    margin: 0 auto;
-  }
-  .services-header { text-align: center; margin-bottom: 80px; }
-  .services-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 24px;
-  }
-  .service-card {
-    padding: 40px 28px;
-    border: 1px solid var(--white-faint);
-    background: var(--dark2);
-    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-    position: relative;
-    overflow: hidden;
-  }
-  .service-card::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 0;
-    width: 3px; height: 0;
-    background: var(--gold);
-    transition: height 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-  }
-  .service-card:hover { border-color: rgba(201,168,76,0.2); transform: translateY(-6px); box-shadow: 0 30px 80px rgba(0,0,0,0.4); }
-  .service-card:hover::before { height: 100%; }
-  .service-icon {
-    width: 48px; height: 48px;
-    border: 1px solid var(--gold-dim);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 24px;
-    transition: all 0.4s ease;
-  }
-  .service-card:hover .service-icon {
-    background: rgba(201,168,76,0.08);
-    border-color: var(--gold);
-  }
-  .service-icon svg { width: 22px; height: 22px; stroke: var(--gold); fill: none; stroke-width: 1.5; }
-  .service-card h3 { font-size: 20px; margin-bottom: 12px; color: var(--white); }
-  .service-card p { font-size: 13px; }
-
-  /* -- HOW WE WORK -- */
-  .process {
-    padding: var(--section-pad);
-    max-width: 1200px;
-    margin: 0 auto;
-  }
-  .process-header { text-align: center; margin-bottom: 80px; }
-  .process-steps {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 0;
-    position: relative;
-  }
-  .process-steps::before {
-    content: '';
-    position: absolute;
-    top: 36px;
-    left: 10%;
-    right: 10%;
-    height: 1px;
-    background: linear-gradient(90deg, transparent, var(--gold-dim), var(--gold), var(--gold-dim), transparent);
-    opacity: 0.4;
-  }
-  .step {
-    text-align: center;
-    padding: 0 24px;
-    position: relative;
-  }
-  .step-number {
-    width: 72px;
-    height: 72px;
-    border-radius: 50%;
-    border: 1px solid var(--gold);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto 28px;
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 28px;
-    color: var(--gold);
-    background: var(--black);
-    position: relative;
-    z-index: 2;
-    transition: all 0.4s ease;
-  }
-  .step:hover .step-number {
-    background: var(--gold);
-    color: var(--black);
-    box-shadow: 0 0 30px rgba(201,168,76,0.2);
-  }
-  .step h3 { color: var(--white); margin-bottom: 14px; font-size: 22px; }
-  .step p { font-size: 13px; line-height: 1.7; }
-
-  /* -- BABYLON DIFFERENCE (two-column) -- */
-  .difference {
-    padding: var(--section-pad);
-    max-width: 1200px;
-    margin: 0 auto;
-  }
-  .difference-layout {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 80px;
-    align-items: center;
-  }
-  .difference-phone {
-    display: flex;
-    justify-content: center;
-  }
-  .difference-features h2 { margin-bottom: 24px; }
-  .difference-features > p { margin-bottom: 36px; }
-  .capability-list { list-style: none; display: flex; flex-direction: column; gap: 16px; }
-  .capability-list li {
-    display: flex;
-    align-items: flex-start;
-    gap: 14px;
-    font-size: 14px;
-    color: var(--white-dim);
-    line-height: 1.6;
-    transition: all 0.3s ease;
-  }
-  .capability-list li:hover {
-    color: var(--white);
-    transform: translateX(4px);
-  }
-  .capability-list li .check {
-    color: var(--gold);
-    font-size: 16px;
-    flex-shrink: 0;
-    margin-top: 2px;
-  }
-  .capability-list li strong { color: var(--white); font-weight: 500; }
-
-  /* -- ARIA COMING SOON -- */
-  .aria-teaser {
-    padding: 100px 60px;
-    text-align: center;
-    position: relative;
-    overflow: hidden;
-  }
-  .aria-teaser-bg {
-    position: absolute; inset: 0;
-    background: radial-gradient(ellipse at 50% 50%, rgba(201,168,76,0.04) 0%, transparent 60%);
-  }
-  .aria-teaser-inner {
-    position: relative;
-    max-width: 600px;
-    margin: 0 auto;
-  }
-  .aria-logo {
-    font-family: 'Playfair Display', serif;
-    font-size: 52px;
-    color: var(--white);
-    letter-spacing: 2px;
-    margin-bottom: 8px;
-  }
-  .aria-logo .dot { color: var(--gold); }
-  .aria-tagline {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 22px;
-    color: var(--white-dim);
-    font-style: italic;
-    margin-bottom: 32px;
-  }
-  .aria-waitlist {
-    display: flex;
-    gap: 12px;
-    max-width: 440px;
-    margin: 0 auto;
-    justify-content: center;
-  }
-  .aria-waitlist input {
-    flex: 1;
-    background: var(--dark2);
-    border: 1px solid var(--white-faint);
-    color: var(--white);
-    padding: 14px 18px;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 14px;
-    font-weight: 300;
-    outline: none;
-    transition: border-color 0.3s;
-    cursor: none;
-    min-width: 0;
-  }
-  .aria-waitlist input:focus { border-color: var(--gold); }
-  .aria-waitlist button { white-space: nowrap; }
-
-  /* -- STATS BAR -- */
-  .stats {
-    padding: 80px 60px;
-    background: var(--dark2);
-    border-top: 1px solid var(--white-faint);
-    border-bottom: 1px solid var(--white-faint);
-  }
-  .stats-grid {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 40px;
-    text-align: center;
-  }
-  .stat-number {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 52px;
-    color: var(--gold);
-    line-height: 1;
-    margin-bottom: 8px;
-  }
-  .stat-label {
-    font-size: 11px;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    color: var(--white-dim);
-  }
-
-  /* -- ABOUT -- */
-  .about {
-    padding: var(--section-pad);
-    max-width: 1200px;
-    margin: 0 auto;
-  }
-  .about-layout {
-    display: grid;
-    grid-template-columns: 1.2fr 0.8fr;
-    gap: 80px;
-    align-items: center;
-  }
-  .about-text h2 { margin-bottom: 32px; }
-  .about-text p { margin-bottom: 20px; }
-  .about-visual { position: relative; }
-  .about-quote {
-    background: var(--dark2);
-    border: 1px solid var(--white-faint);
-    padding: 48px 36px;
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 26px;
-    font-style: italic;
-    color: var(--white);
-    line-height: 1.5;
-    position: relative;
-  }
-  .about-quote::before {
-    content: '\201C';
-    position: absolute;
-    top: 20px; left: 20px;
-    font-size: 80px;
-    color: var(--gold);
-    opacity: 0.2;
-    line-height: 1;
-  }
-  .about-location {
-    background: var(--gold);
-    color: var(--black);
-    padding: 20px 28px;
-    font-size: 11px;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    font-weight: 500;
-    display: inline-block;
-    margin-top: 20px;
-  }
-
-  /* -- ONBOARDING QUIZ -- */
-  .quiz-section {
-    padding: var(--section-pad);
-    background: var(--dark2);
-    border-top: 2px solid var(--gold);
-    position: relative;
-  }
-  .quiz-inner {
-    max-width: 720px;
-    margin: 0 auto;
-  }
-  .quiz-header {
-    text-align: center;
-    margin-bottom: 48px;
-  }
-
-  /* Progress bar */
-  .quiz-progress {
-    display: flex;
-    gap: 8px;
-    margin-bottom: 48px;
-  }
-  .quiz-progress-bar {
-    flex: 1;
-    height: 3px;
-    background: var(--white-faint);
-    position: relative;
-    overflow: hidden;
-  }
-  .quiz-progress-bar.active,
-  .quiz-progress-bar.done {
-    background: var(--gold);
-  }
-  .quiz-progress-bar.active {
-    background: linear-gradient(90deg, var(--gold), var(--gold-dim));
-  }
-
-  /* Steps */
-  .quiz-step {
-    display: none;
-    animation: quizFadeIn 0.4s ease;
-  }
-  .quiz-step.active { display: block; }
-
-  @keyframes quizFadeIn {
-    from { opacity: 0; transform: translateY(16px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-
-  .quiz-question {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 24px;
-    color: var(--white);
-    margin-bottom: 8px;
-    font-weight: 400;
-  }
-  .quiz-subtext {
-    font-size: 14px;
-    color: var(--white-dim);
-    margin-bottom: 28px;
-  }
-
-  /* Option cards */
-  .quiz-options {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 12px;
-    margin-bottom: 20px;
-  }
-  .quiz-options.two-col {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  .quiz-option {
-    background: var(--dark3);
-    border: 1px solid var(--white-faint);
-    padding: 20px 16px;
-    text-align: center;
-    cursor: none;
-    transition: all 0.3s ease;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 13px;
-    font-weight: 400;
-    color: var(--white-dim);
-    position: relative;
-  }
-  .quiz-option:hover {
-    border-color: rgba(201,168,76,0.3);
-    color: var(--white);
-  }
-  .quiz-option.selected {
-    border-color: var(--gold);
-    color: var(--gold);
-    background: rgba(201,168,76,0.06);
-  }
-  .quiz-option.selected::after {
-    content: '\2713';
-    position: absolute;
-    top: 6px;
-    right: 8px;
-    font-size: 12px;
-    color: var(--gold);
-  }
-
-  /* Multi-select pain points */
-  .quiz-options-multi {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 10px;
-    margin-bottom: 20px;
-  }
-  .quiz-check {
-    background: var(--dark3);
-    border: 1px solid var(--white-faint);
-    padding: 16px 16px;
-    cursor: none;
-    transition: all 0.3s ease;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 13px;
-    font-weight: 300;
-    color: var(--white-dim);
-    display: flex;
-    align-items: center;
-    gap: 12px;
-  }
-  .quiz-check:hover {
-    border-color: rgba(201,168,76,0.3);
-    color: var(--white);
-  }
-  .quiz-check.selected {
-    border-color: var(--gold);
-    color: var(--white);
-    background: rgba(201,168,76,0.06);
-  }
-  .quiz-checkbox {
-    width: 18px;
-    height: 18px;
-    border: 1px solid var(--white-faint);
-    flex-shrink: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 11px;
-    color: var(--gold);
-    transition: all 0.3s;
-  }
-  .quiz-check.selected .quiz-checkbox {
-    border-color: var(--gold);
-    background: var(--gold);
-    color: var(--black);
-  }
-
-  /* Quiz nav buttons */
-  .quiz-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 36px;
-  }
-  .quiz-back {
-    background: none;
-    border: none;
-    color: var(--white-dim);
-    font-family: 'Montserrat', sans-serif;
-    font-size: 12px;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    cursor: none;
-    transition: color 0.3s;
-    padding: 10px 0;
-  }
-  .quiz-back:hover { color: var(--gold); }
-
-  /* Contact form fields inside quiz */
-  .quiz-form-fields {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-  }
-  .quiz-form-row {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 16px;
-  }
-  .quiz-field {
-    display: flex;
-    flex-direction: column;
-  }
-  .quiz-field label {
-    font-size: 10px;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    color: var(--white-dim);
-    margin-bottom: 8px;
-  }
-  .quiz-field input,
-  .quiz-field textarea {
-    background: var(--dark3);
-    border: 1px solid var(--white-faint);
-    color: var(--white);
-    padding: 14px 18px;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 14px;
-    font-weight: 300;
-    outline: none;
-    transition: border-color 0.3s;
-    cursor: none;
-    border-radius: 0;
-  }
-  .quiz-field input:focus,
-  .quiz-field textarea:focus {
-    border-color: var(--gold);
-  }
-  .quiz-field textarea { min-height: 80px; resize: vertical; }
-
-  /* Day/time picker */
-  .quiz-days {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    margin-bottom: 20px;
-  }
-  .quiz-day {
-    background: var(--dark3);
-    border: 1px solid var(--white-faint);
-    padding: 14px 20px;
-    cursor: none;
-    transition: all 0.3s ease;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 13px;
-    font-weight: 400;
-    color: var(--white-dim);
-    text-align: center;
-    flex: 1;
-    min-width: 80px;
-  }
-  .quiz-day:hover {
-    border-color: rgba(201,168,76,0.3);
-    color: var(--white);
-  }
-  .quiz-day.selected {
-    border-color: var(--gold);
-    color: var(--gold);
-    background: rgba(201,168,76,0.06);
-  }
-  .quiz-times {
-    display: flex;
-    gap: 12px;
-    margin-bottom: 20px;
-    flex-wrap: wrap;
-  }
-  .quiz-time {
-    background: var(--dark3);
-    border: 1px solid var(--white-faint);
-    padding: 16px 24px;
-    cursor: none;
-    transition: all 0.3s ease;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 13px;
-    font-weight: 400;
-    color: var(--white-dim);
-    text-align: center;
-    flex: 1;
-  }
-  .quiz-time:hover {
-    border-color: rgba(201,168,76,0.3);
-    color: var(--white);
-  }
-  .quiz-time.selected {
-    border-color: var(--gold);
-    color: var(--gold);
-    background: rgba(201,168,76,0.06);
-  }
-  .quiz-time .time-label {
-    font-size: 14px;
-    font-weight: 500;
-    color: var(--white);
-    margin-bottom: 4px;
-  }
-  .quiz-time.selected .time-label { color: var(--gold); }
-  .quiz-time .time-range {
-    font-size: 11px;
-    color: var(--white-dim);
-  }
-
-  /* Quiz confirmation */
-  .quiz-confirmation {
-    display: none;
-    text-align: center;
-    padding: 40px 0;
-  }
-  .quiz-confirmation.active { display: block; }
-  .quiz-confirmation h2 { margin-bottom: 16px; }
-  .quiz-confirmation p { margin-bottom: 24px; }
-  .quiz-recommendations {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    justify-content: center;
-    margin: 28px 0;
-  }
-  .quiz-rec-tag {
-    padding: 8px 20px;
-    border: 1px solid var(--gold);
-    color: var(--gold);
-    font-size: 11px;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    font-weight: 500;
-  }
-
-  /* -- CONTACT (simplified) -- */
-  .contact {
-    padding: var(--section-pad);
-    max-width: 800px;
-    margin: 0 auto;
-    text-align: center;
-  }
-  .contact h2 { margin-bottom: 16px; }
-  .contact > p { margin-bottom: 40px; }
-  .contact-details {
-    display: flex;
-    justify-content: center;
-    gap: 60px;
-    flex-wrap: wrap;
-  }
-  .contact-item {
-    display: flex;
-    align-items: center;
-    gap: 14px;
-  }
-  .contact-icon {
-    width: 40px; height: 40px;
-    border: 1px solid var(--gold-dim);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-  }
-  .contact-icon svg { width: 18px; height: 18px; stroke: var(--gold); fill: none; stroke-width: 1.5; }
-  .contact-item .label {
-    font-size: 10px;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    color: var(--gold);
-    margin-bottom: 2px;
-  }
-  .contact-item .value {
-    font-size: 15px;
-    color: var(--white);
-    font-weight: 400;
-  }
-
-  /* -- FOOTER -- */
-  footer {
-    padding: 60px;
-    border-top: 1px solid var(--white-faint);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  .footer-logo {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 18px;
-    letter-spacing: 4px;
-    color: var(--gold);
-  }
-  .footer-copy {
-    font-size: 11px;
-    color: var(--white-dim);
-  }
-  .footer-links { display: flex; gap: 32px; }
-  .footer-links a {
-    font-size: 11px;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    color: var(--white-dim);
-    transition: color 0.3s;
-  }
-  .footer-links a:hover { color: var(--gold); }
-
-  /* -- RESPONSIVE -- */
-  @media (max-width: 1024px) {
-    :root { --section-pad: 100px 40px; }
-    .hero-content { grid-template-columns: 1fr; gap: 60px; }
-    .phone-mockup { order: -1; }
-    .difference-layout { grid-template-columns: 1fr; gap: 60px; }
-    .about-layout { grid-template-columns: 1fr; gap: 48px; }
-    .services-grid { grid-template-columns: repeat(2, 1fr); }
-  }
-
-  @media (max-width: 768px) {
-    :root { --section-pad: 80px 24px; }
-    nav { padding: 20px 24px; }
-    nav.scrolled { padding: 14px 24px; }
-    .nav-links { display: none; }
-    .nav-mobile { display: block; }
-    .hero { padding: 120px 24px 80px; }
-    .process-steps {
-      grid-template-columns: 1fr 1fr;
-      gap: 40px;
-    }
-    .process-steps::before { display: none; }
-    .services-grid { grid-template-columns: 1fr; }
-    .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 32px; }
-    .quiz-options { grid-template-columns: 1fr 1fr; }
-    .quiz-options-multi { grid-template-columns: 1fr; }
-    .quiz-form-row { grid-template-columns: 1fr; }
-    .contact-details { flex-direction: column; align-items: center; }
-    .footer { flex-direction: column; gap: 20px; text-align: center; }
-    .footer-links { flex-wrap: wrap; justify-content: center; }
-    .hs-phone { width: 240px; height: 480px; }
-    .aria-waitlist { flex-direction: column; }
-  }
-
-  @media (max-width: 480px) {
-    .process-steps { grid-template-columns: 1fr; }
-    .stats-grid { grid-template-columns: 1fr; }
-    .hero-buttons { flex-direction: column; }
-    .hero-buttons .btn { width: 100%; justify-content: center; }
-    .quiz-options { grid-template-columns: 1fr; }
-  }
-</style>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-<!-- Custom Cursor -->
-<div class="cursor"></div>
-<div class="cursor-ring"></div>
-
-<!-- NAV -->
-<nav>
-  <a href="#" class="nav-logo">BABYLON <span>Consulting</span></a>
-  <ul class="nav-links">
-    <li><a href="#services">Services</a></li>
-    <li><a href="#process">How It Works</a></li>
-    <li><a href="#about">About</a></li>
-    <li><a href="#quiz" class="nav-cta">Get Started</a></li>
-  </ul>
-  <button class="nav-mobile" aria-label="Menu">
-    <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5">
-      <line x1="4" y1="7" x2="20" y2="7"/>
-      <line x1="4" y1="12" x2="20" y2="12"/>
-      <line x1="4" y1="17" x2="20" y2="17"/>
-    </svg>
+<nav class="nav">
+  <a href="index.html" class="nav-brand">
+    <span class="nav-brand-mark"></span>
+    <span>Babylon<small>Consulting</small></span>
+  </a>
+  <div class="nav-links" id="navLinks">
+    <a href="index.html" class="active">Home</a>
+    <a href="sectors.html">Sectors</a>
+    <a href="capabilities.html">Capabilities</a>
+    <a href="about.html">About</a>
+    <a href="contact.html" class="nav-cta">Begin Dialogue</a>
+  </div>
+  <button class="nav-burger" aria-label="Menu" onclick="document.getElementById('navLinks').classList.toggle('open')">
+    <span></span><span></span><span></span>
   </button>
 </nav>
 
-<!-- HERO -->
 <section class="hero">
-  <div class="hero-bg"></div>
-  <div class="hero-grid parallax-slow"></div>
-  <div class="hero-content">
-    <div class="hero-text">
-      <p class="eyebrow">AI Workflow Automation</p>
-      <h1>Hire Your Own <em class="italic gold">AI Team.</em><br>Maintained by Babylon.</h1>
-      <p class="hero-subtitle">Stop drowning in manual work. We build, deploy, and maintain AI-powered teams that handle your lead gen, sales, marketing, content, and operations &mdash; for a fixed monthly retainer.</p>
-      <div class="hero-buttons">
-        <a href="#quiz" class="btn btn-gold">Book Your Discovery Call</a>
-        <a href="#process" class="btn btn-outline">See How It Works</a>
+  <svg class="hero-globe" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <circle cx="200" cy="200" r="198" stroke="#C87A4B" stroke-width="0.5" opacity="0.6"/>
+    <ellipse cx="200" cy="200" rx="198" ry="80" stroke="#C87A4B" stroke-width="0.4" opacity="0.5"/>
+    <ellipse cx="200" cy="200" rx="198" ry="140" stroke="#C87A4B" stroke-width="0.4" opacity="0.4"/>
+    <ellipse cx="200" cy="200" rx="140" ry="198" stroke="#C87A4B" stroke-width="0.4" opacity="0.5"/>
+    <ellipse cx="200" cy="200" rx="80" ry="198" stroke="#C87A4B" stroke-width="0.4" opacity="0.4"/>
+    <line x1="2" y1="200" x2="398" y2="200" stroke="#C87A4B" stroke-width="0.4" opacity="0.5"/>
+    <line x1="200" y1="2" x2="200" y2="398" stroke="#C87A4B" stroke-width="0.4" opacity="0.3"/>
+    <circle cx="140" cy="150" r="2" fill="#E09160"/>
+    <circle cx="260" cy="180" r="2" fill="#E09160"/>
+    <circle cx="220" cy="260" r="2" fill="#E09160"/>
+    <circle cx="170" cy="220" r="2" fill="#E09160"/>
+    <circle cx="280" cy="110" r="2" fill="#E09160"/>
+  </svg>
+  <div class="hero-inner">
+    <span class="eyebrow reveal">Global Advisory · Est. Babylon Consulting LLC</span>
+    <h1 class="reveal delay-1">
+      A global partner for <em class="italic copper">nations</em> and <em class="italic copper">enterprise</em>—structuring the deals that shape tomorrow.
+    </h1>
+    <p class="hero-lede reveal delay-2">
+      Babylon Consulting advises governments, sovereign entities, and large-scale enterprises on strategic initiatives across energy, mining, agriculture, health, industrial manufacturing, and cross-border trade. We originate, structure, and facilitate the projects that move economies forward.
+    </p>
+    <div class="hero-actions reveal delay-3">
+      <a href="capabilities.html" class="btn btn-primary">Our Capabilities <span class="arrow"></span></a>
+      <a href="contact.html" class="btn btn-ghost">Begin a Dialogue</a>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="thesis">
+      <div class="reveal">
+        <span class="eyebrow">The Thesis</span>
+        <h2 style="margin-top:24px;">The deals that matter are never simple.</h2>
+      </div>
+      <div class="reveal delay-1">
+        <p>Great undertakings—powering a region, moving commodities across borders, bringing healthcare to scale, standing up an industrial base—do not fail for lack of capital or ambition. They fail at the seams: between jurisdictions, between technical partners and political realities, between what is possible and what is permitted.</p>
+        <p>Babylon Consulting exists at those seams. We are the partner governments and enterprises bring in when the stakes, geographies, and counterparties are too serious for a generalist. We translate intent into structure, and structure into completion.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="padding-top:0;">
+  <div class="container">
+    <div class="stats reveal">
+      <div class="stat">
+        <div class="stat-num">6</div>
+        <div class="stat-label">Strategic Sectors</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">4</div>
+        <div class="stat-label">Continents Engaged</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">7</div>
+        <div class="stat-label">Core Capabilities</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">1</div>
+        <div class="stat-label">Standard: Discretion</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="sectors">
+  <div class="container">
+    <div class="reveal" style="max-width:760px; margin-bottom:64px;">
+      <span class="eyebrow">Sectors</span>
+      <h2 style="margin-top:24px;">Where we operate.</h2>
+      <p style="margin-top:18px; font-size:17px;">Our mandates concentrate in sectors where capital, policy, and technical execution must move as one. Each requires a different fluency. We maintain all of them.</p>
+    </div>
+
+    <div class="grid grid-3 reveal">
+      <div class="card">
+        <span class="card-num">01 / Energy</span>
+        <h3>Power, Turbines &amp; Transition</h3>
+        <p>Gas and renewable generation, turbine procurement, transmission infrastructure, and energy-security mandates for national and industrial clients.</p>
+      </div>
+      <div class="card">
+        <span class="card-num">02 / Mining</span>
+        <h3>Extractives &amp; Critical Minerals</h3>
+        <p>Licensing, offtake structuring, and partner introductions across precious metals, industrial minerals, and the inputs that modern supply chains depend on.</p>
+      </div>
+      <div class="card">
+        <span class="card-num">03 / Agriculture</span>
+        <h3>Food Security &amp; Agribusiness</h3>
+        <p>Large-scale agricultural development, processing infrastructure, commodity trade, and food-security programs for nations and regional blocs.</p>
+      </div>
+      <div class="card">
+        <span class="card-num">04 / Health</span>
+        <h3>Healthcare Systems</h3>
+        <p>Hospital build-outs, supply and equipment procurement, public-health programs, and specialty service partnerships with vetted global providers.</p>
+      </div>
+      <div class="card">
+        <span class="card-num">05 / Industrial</span>
+        <h3>Manufacturing &amp; Heavy Industry</h3>
+        <p>Greenfield facility planning, capital equipment sourcing, technology transfer, and industrialization strategies for emerging and established economies.</p>
+      </div>
+      <div class="card">
+        <span class="card-num">06 / Trade</span>
+        <h3>Import, Export &amp; Logistics</h3>
+        <p>Cross-border commercial facilitation, customs and compliance architecture, freight and trade corridors, and bilateral commercial frameworks.</p>
       </div>
     </div>
 
-    <!-- iPhone Mockup - Babylon AI -->
-    <div class="phone-mockup">
-      <div class="hs-phone">
-        <!-- Status bar with Dynamic Island -->
-        <div class="ip-status">
-          <div class="ip-status-left"><span class="ip-status-time">9:41</span></div>
-          <div class="ip-status-center"><div class="ip-di"></div></div>
-          <div class="ip-status-icons">
-            <svg width="17" height="12" viewBox="0 0 17 12" fill="white"><rect x="0" y="7" width="3" height="5" rx=".5"/><rect x="4.5" y="5" width="3" height="7" rx=".5"/><rect x="9" y="2.5" width="3" height="9.5" rx=".5"/><rect x="13.5" y="0" width="3" height="12" rx=".5"/></svg>
-            <svg width="16" height="12" viewBox="0 0 24 18" fill="white"><path d="M12 14.5a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3z"/><path d="M12 9.5c-1.8 0-3.4.7-4.6 1.9l1.5 1.5c.8-.8 1.9-1.3 3.1-1.3s2.3.5 3.1 1.3l1.5-1.5C15.4 10.2 13.8 9.5 12 9.5z"/><path d="M12 4.5C8.7 4.5 5.7 5.9 3.5 8.1l1.5 1.5C6.8 7.8 9.3 6.5 12 6.5s5.2 1.3 7 3.1l1.5-1.5C18.3 5.9 15.3 4.5 12 4.5z"/><path d="M12 0C7.3 0 3.1 1.9 0 5l1.5 1.5C4.3 3.7 8 2 12 2s7.7 1.7 10.5 4.5L24 5C20.9 1.9 16.7 0 12 0z" opacity=".4"/></svg>
-            <svg width="25" height="12" viewBox="0 0 25 12" fill="none"><rect x=".5" y=".5" width="21" height="11" rx="3.5" stroke="white" stroke-opacity=".35"/><rect x="2" y="2" width="17" height="8" rx="2" fill="white"/><path d="M23 4v4a2 2 0 0 0 0-4z" fill="white" fill-opacity=".4"/></svg>
-          </div>
-        </div>
-        <!-- WhatsApp Header -->
-        <div class="wa-hdr">
-          <span class="wa-hdr-back">&#8249;</span>
-          <div class="wa-hdr-avatar"><span>B</span></div>
-          <div class="wa-hdr-info">
-            <span class="wa-hdr-name">Babylon AI</span>
-            <span class="wa-hdr-status">online</span>
-          </div>
-          <div class="wa-hdr-icons">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg>
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.38 2 2 0 0 1 3.6 1.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.77a16 16 0 0 0 6.29 6.29l.95-.95a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-          </div>
-        </div>
-        <!-- Chat Area -->
-        <div class="hs-chat-body">
-          <div class="hs-msglist">
-            <div class="hs-bub incoming"><span class="nm">BABYLON AI</span>Morning update: I've sent 47 outreach emails, booked 3 demo calls, and updated your CRM.<div class="bub-time">8:02 AM</div></div>
-            <div class="hs-bub outgoing">What about the blog and social posts?<div class="bub-time">8:04 AM <span class="bub-checks">&#10003;&#10003;</span></div></div>
-            <div class="hs-bub incoming"><span class="nm">BABYLON AI</span>Blog post is live. 3 social posts scheduled across LinkedIn, X, and Instagram. Engagement up 23%.<div class="bub-time">8:04 AM</div></div>
-            <div class="hs-bub outgoing">How many leads came in overnight?<div class="bub-time">8:05 AM <span class="bub-checks">&#10003;&#10003;</span></div></div>
-            <div class="hs-bub incoming"><span class="nm">BABYLON AI</span>12 new leads. 4 qualified &mdash; follow-up started. Pipeline grew $38K while you slept.<div class="bub-time">8:05 AM</div></div>
-          </div>
-        </div>
-        <!-- Input Bar -->
-        <div class="wa-input">
-          <span class="wa-input-plus">+</span>
-          <div class="wa-input-field"><span class="wa-emoji">&#128578;</span><span class="wa-placeholder">Message</span></div>
-          <div class="wa-input-icons">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><rect x="9" y="2" width="6" height="11" rx="3"/><path d="M19 10v2a7 7 0 0 1-14 0v-2M12 19v4M8 23h8"/></svg>
-          </div>
-        </div>
-        <!-- Home Indicator -->
-        <div class="wa-home"><div class="wa-home-bar"></div></div>
-      </div>
+    <div style="margin-top:56px;" class="reveal">
+      <a href="sectors.html" class="btn btn-ghost">Explore Sectors <span class="arrow"></span></a>
     </div>
   </div>
 </section>
 
 <div class="divider"></div>
 
-<!-- PROBLEM STATEMENT -->
-<section class="problem">
+<section class="section">
+  <div class="container">
+    <div class="reveal" style="max-width:760px;">
+      <span class="eyebrow">Capabilities</span>
+      <h2 style="margin-top:24px;">What we are retained to do.</h2>
+      <p style="margin-top:18px; font-size:17px;">We are not a research house. Our value is operational—turning strategic intent into executed outcomes.</p>
+    </div>
+
+    <div class="approach reveal">
+      <div class="step">
+        <span class="step-num">01</span>
+        <h4>Strategic Advisory</h4>
+        <p>Sector strategy, market entry, and policy-aware planning for heads of state, ministries, and enterprise leadership.</p>
+      </div>
+      <div class="step">
+        <span class="step-num">02</span>
+        <h4>Deal Origination</h4>
+        <p>Sourcing and structuring mandates—from concession negotiations to joint ventures to offtake agreements.</p>
+      </div>
+      <div class="step">
+        <span class="step-num">03</span>
+        <h4>Project Facilitation</h4>
+        <p>Managing the long arc from feasibility through financial close and commissioning, with on-the-ground orchestration.</p>
+      </div>
+      <div class="step">
+        <span class="step-num">04</span>
+        <h4>Capital Introduction</h4>
+        <p>Connecting projects to sovereign, institutional, and family-office capital aligned to mandate and risk profile.</p>
+      </div>
+    </div>
+
+    <div style="margin-top:56px;" class="reveal">
+      <a href="capabilities.html" class="btn btn-ghost">All Capabilities <span class="arrow"></span></a>
+    </div>
+  </div>
+</section>
+
+<section class="cta-band">
   <div class="reveal">
-    <p class="eyebrow">The Problem</p>
-    <h2>Your Business Is <span class="gold italic">Leaking Revenue.</span><br>Every Single Day.</h2>
-  </div>
-  <p class="reveal">Leads go cold because nobody follows up. Hours vanish on manual data entry. Your social media is inconsistent. Your website doesn't convert. There's no systematic outreach process, and content creation is always the thing that gets pushed to "next week."</p>
-  <p class="reveal">You're too busy working <em>in</em> your business to work <em>on</em> it. Every hour spent on repetitive tasks is an hour you're not closing deals.</p>
-  <p class="transition-text reveal">What if you had a full AI team handling all of this &mdash; for less than one employee?</p>
-</section>
-
-<div class="divider"></div>
-
-<!-- SERVICES -->
-<section class="services" id="services">
-  <div class="services-header reveal">
-    <p class="eyebrow">What We Build For You</p>
-    <h2>Your AI Team. <span class="gold italic">Your Competitive Edge.</span></h2>
-  </div>
-  <div class="services-grid stagger-children">
-    <div class="service-card reveal">
-      <div class="service-icon">
-        <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-      </div>
-      <h3>AI Sales Agents</h3>
-      <p>Automated lead generation, prospecting, outreach sequences, follow-ups, and CRM updates. Your AI sales team works 24/7 so deals never go cold.</p>
-    </div>
-    <div class="service-card reveal">
-      <div class="service-icon">
-        <svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
-      </div>
-      <h3>Website Design &amp; Development</h3>
-      <p>High-converting websites built for lead capture. Sites that don't just look good &mdash; they generate revenue.</p>
-    </div>
-    <div class="service-card reveal">
-      <div class="service-icon">
-        <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
-      </div>
-      <h3>SEO &amp; Search Marketing</h3>
-      <p>Technical SEO, content strategy, local SEO, and Google Business optimization. Get found by the people already searching for what you sell.</p>
-    </div>
-    <div class="service-card reveal">
-      <div class="service-icon">
-        <svg viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
-      </div>
-      <h3>Content Creation</h3>
-      <p>Blog posts, email newsletters, case studies, and whitepapers. Consistent, high-quality content without hiring a writer.</p>
-    </div>
-    <div class="service-card reveal">
-      <div class="service-icon">
-        <svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
-      </div>
-      <h3>Social Media Management</h3>
-      <p>Posting, engagement, scheduling, and analytics across all platforms. Stay visible and relevant without lifting a finger.</p>
-    </div>
-    <div class="service-card reveal">
-      <div class="service-icon">
-        <svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 4 10 8 10-8"/></svg>
-      </div>
-      <h3>Marketing Automation</h3>
-      <p>Email campaigns, drip sequences, retargeting, and funnel optimization. Turn cold traffic into warm leads on autopilot.</p>
-    </div>
-    <div class="service-card reveal">
-      <div class="service-icon">
-        <svg viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
-      </div>
-      <h3>App Development</h3>
-      <p>Custom web and mobile applications. From MVP to production &mdash; apps built to solve your specific problems.</p>
-    </div>
-    <div class="service-card reveal">
-      <div class="service-icon">
-        <svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
-      </div>
-      <h3>CRM &amp; Sales Cycle Automation</h3>
-      <p>Pipeline management, deal tracking, automated follow-ups, and reporting. Never lose track of a deal again.</p>
-    </div>
+    <span class="eyebrow" style="justify-content:center; display:inline-flex;">Begin a Dialogue</span>
+    <h2 style="margin-top:24px;">Serious conversations <em class="italic copper">begin quietly.</em></h2>
+    <p>If your mandate requires a partner who can hold complexity, move across borders, and close—reach out. Every engagement begins with a private conversation.</p>
+    <a href="contact.html" class="btn btn-primary">Request a Meeting <span class="arrow"></span></a>
   </div>
 </section>
 
-<div class="divider"></div>
-
-<!-- HOW WE WORK -->
-<section class="process" id="process">
-  <div class="process-header reveal">
-    <p class="eyebrow">How It Works</p>
-    <h2>Four Steps to Your <span class="gold italic">AI Team.</span></h2>
-  </div>
-  <div class="process-steps stagger-children">
-    <div class="step reveal">
-      <div class="step-number">1</div>
-      <h3>Discover</h3>
-      <p>Take our 2-minute assessment. We identify exactly where you're losing time and money.</p>
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <a href="index.html" class="nav-brand" style="color:var(--ivory);">
+        <span class="nav-brand-mark"></span>
+        <span>Babylon<small>Consulting</small></span>
+      </a>
+      <p>A global advisory and deal-facilitation firm. Headquartered in the United States, engaged worldwide.</p>
     </div>
-    <div class="step reveal">
-      <div class="step-number">2</div>
-      <h3>Design</h3>
-      <p>We architect your custom AI team and automation workflows, tailored to your business.</p>
+    <div>
+      <h5>Firm</h5>
+      <ul>
+        <li><a href="about.html">About</a></li>
+        <li><a href="capabilities.html">Capabilities</a></li>
+        <li><a href="sectors.html">Sectors</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
     </div>
-    <div class="step reveal">
-      <div class="step-number">3</div>
-      <h3>Deploy</h3>
-      <p>We build, test, and launch everything. You don't touch a line of code.</p>
+    <div>
+      <h5>Sectors</h5>
+      <ul>
+        <li><a href="sectors.html#energy">Energy</a></li>
+        <li><a href="sectors.html#mining">Mining</a></li>
+        <li><a href="sectors.html#agriculture">Agriculture</a></li>
+        <li><a href="sectors.html#health">Health</a></li>
+      </ul>
     </div>
-    <div class="step reveal">
-      <div class="step-number">4</div>
-      <h3>Maintain</h3>
-      <p>We monitor, optimize, and improve your systems every month. Your AI team gets smarter over time.</p>
-    </div>
-  </div>
-</section>
-
-<div class="divider"></div>
-
-<!-- THE BABYLON DIFFERENCE -->
-<section class="difference">
-  <div class="difference-layout">
-    <div class="difference-phone reveal-scale">
-      <div class="hs-phone">
-        <!-- Status bar with Dynamic Island -->
-        <div class="ip-status">
-          <div class="ip-status-left"><span class="ip-status-time">2:15</span></div>
-          <div class="ip-status-center"><div class="ip-di"></div></div>
-          <div class="ip-status-icons">
-            <svg width="17" height="12" viewBox="0 0 17 12" fill="white"><rect x="0" y="7" width="3" height="5" rx=".5"/><rect x="4.5" y="5" width="3" height="7" rx=".5"/><rect x="9" y="2.5" width="3" height="9.5" rx=".5"/><rect x="13.5" y="0" width="3" height="12" rx=".5"/></svg>
-            <svg width="16" height="12" viewBox="0 0 24 18" fill="white"><path d="M12 14.5a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3z"/><path d="M12 9.5c-1.8 0-3.4.7-4.6 1.9l1.5 1.5c.8-.8 1.9-1.3 3.1-1.3s2.3.5 3.1 1.3l1.5-1.5C15.4 10.2 13.8 9.5 12 9.5z"/><path d="M12 4.5C8.7 4.5 5.7 5.9 3.5 8.1l1.5 1.5C6.8 7.8 9.3 6.5 12 6.5s5.2 1.3 7 3.1l1.5-1.5C18.3 5.9 15.3 4.5 12 4.5z"/><path d="M12 0C7.3 0 3.1 1.9 0 5l1.5 1.5C4.3 3.7 8 2 12 2s7.7 1.7 10.5 4.5L24 5C20.9 1.9 16.7 0 12 0z" opacity=".4"/></svg>
-            <svg width="25" height="12" viewBox="0 0 25 12" fill="none"><rect x=".5" y=".5" width="21" height="11" rx="3.5" stroke="white" stroke-opacity=".35"/><rect x="2" y="2" width="17" height="8" rx="2" fill="white"/><path d="M23 4v4a2 2 0 0 0 0-4z" fill="white" fill-opacity=".4"/></svg>
-          </div>
-        </div>
-        <!-- WhatsApp Header -->
-        <div class="wa-hdr">
-          <span class="wa-hdr-back">&#8249;</span>
-          <div class="wa-hdr-avatar"><span>B</span></div>
-          <div class="wa-hdr-info">
-            <span class="wa-hdr-name">Babylon AI</span>
-            <span class="wa-hdr-status">online</span>
-          </div>
-          <div class="wa-hdr-icons">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg>
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.38 2 2 0 0 1 3.6 1.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.77a16 16 0 0 0 6.29 6.29l.95-.95a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-          </div>
-        </div>
-        <!-- Chat Area -->
-        <div class="hs-chat-body">
-          <div class="hs-msglist">
-            <div class="hs-bub incoming"><span class="nm">BABYLON AI</span>Weekly: 312 outreach emails sent. 28 responses. 9 qualified leads. 4 demos booked.<div class="bub-time">2:00 PM</div></div>
-            <div class="hs-bub incoming"><span class="nm">BABYLON AI</span>Content: 2 blog posts, 14 social posts, 1 newsletter. Reach: 12.4K impressions.<div class="bub-time">2:01 PM</div></div>
-            <div class="hs-bub outgoing">What's the pipeline looking like?<div class="bub-time">2:03 PM <span class="bub-checks">&#10003;&#10003;</span></div></div>
-            <div class="hs-bub incoming"><span class="nm">BABYLON AI</span>Pipeline grew $127K. 3 deals in proposal. Close rate up 18%. SEO traffic +34%.<div class="bub-time">2:03 PM</div></div>
-            <div class="hs-bub outgoing">This is incredible. Keep going.<div class="bub-time">2:04 PM <span class="bub-checks">&#10003;&#10003;</span></div></div>
-          </div>
-        </div>
-        <!-- Input Bar -->
-        <div class="wa-input">
-          <span class="wa-input-plus">+</span>
-          <div class="wa-input-field"><span class="wa-emoji">&#128578;</span><span class="wa-placeholder">Message</span></div>
-          <div class="wa-input-icons">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><rect x="9" y="2" width="6" height="11" rx="3"/><path d="M19 10v2a7 7 0 0 1-14 0v-2M12 19v4M8 23h8"/></svg>
-          </div>
-        </div>
-        <!-- Home Indicator -->
-        <div class="wa-home"><div class="wa-home-bar"></div></div>
-      </div>
-    </div>
-    <div class="difference-features reveal-right">
-      <p class="eyebrow">The Babylon Difference</p>
-      <h2>Not a Tool. <span class="gold italic">A Team.</span></h2>
-      <p>Most automation platforms give you a dashboard and wish you luck. We give you a dedicated AI team &mdash; built, deployed, and maintained by Babylon. You get the output of a 10-person team at a fraction of the cost.</p>
-      <ul class="capability-list">
-        <li><span class="check">&#10003;</span><span><strong>Lead Generation</strong> &mdash; Automated prospecting, outreach, and qualification running 24/7</span></li>
-        <li><span class="check">&#10003;</span><span><strong>Outreach Automation</strong> &mdash; Personalized email sequences, follow-ups, and meeting booking</span></li>
-        <li><span class="check">&#10003;</span><span><strong>Content Production</strong> &mdash; Blogs, newsletters, case studies created and published on schedule</span></li>
-        <li><span class="check">&#10003;</span><span><strong>Social Media</strong> &mdash; Daily posts, engagement monitoring, and analytics across all platforms</span></li>
-        <li><span class="check">&#10003;</span><span><strong>CRM Management</strong> &mdash; Pipeline tracking, deal updates, and automated follow-up cadences</span></li>
-        <li><span class="check">&#10003;</span><span><strong>SEO Optimization</strong> &mdash; Technical audits, keyword tracking, and content strategy execution</span></li>
-        <li><span class="check">&#10003;</span><span><strong>Website Maintenance</strong> &mdash; Updates, A/B testing, conversion optimization, and lead capture</span></li>
-        <li><span class="check">&#10003;</span><span><strong>Reporting &amp; Analytics</strong> &mdash; Weekly insights on performance, ROI, and growth metrics</span></li>
+    <div>
+      <h5>Contact</h5>
+      <ul>
+        <li><a href="mailto:ahmed@babylonconsulting.us">ahmed@babylonconsulting.us</a></li>
+        <li><a href="contact.html">Secure Inquiry</a></li>
       </ul>
     </div>
   </div>
-</section>
-
-<div class="divider"></div>
-
-<!-- ARIA COMING SOON -->
-<section class="aria-teaser">
-  <div class="aria-teaser-bg"></div>
-  <div class="aria-teaser-inner reveal-scale">
-    <p class="eyebrow">Coming Soon</p>
-    <div class="aria-logo">ARIA<span class="dot">.</span></div>
-    <div class="aria-tagline">Your AI Chief of Staff. Launching soon.</div>
-    <form class="aria-waitlist" action="https://formspree.io/f/xnjgkzng" method="POST">
-      <input type="hidden" name="source" value="aria_waitlist">
-      <input type="email" name="email" placeholder="Enter your email for early access" required>
-      <button type="submit" class="btn btn-gold">Notify Me</button>
-    </form>
-  </div>
-</section>
-
-<!-- STATS -->
-<section class="stats">
-  <div class="stats-grid stagger-children">
-    <div class="reveal">
-      <div class="stat-number">24/7</div>
-      <div class="stat-label">AI Availability</div>
-    </div>
-    <div class="reveal">
-      <div class="stat-number">10x</div>
-      <div class="stat-label">Faster Than Manual</div>
-    </div>
-    <div class="reveal">
-      <div class="stat-number">100%</div>
-      <div class="stat-label">Done-For-You</div>
-    </div>
-    <div class="reveal">
-      <div class="stat-number">0</div>
-      <div class="stat-label">Missed Leads</div>
-    </div>
-  </div>
-</section>
-
-<div class="divider"></div>
-
-<!-- ABOUT -->
-<section class="about" id="about">
-  <div class="about-layout">
-    <div class="about-text reveal-left">
-      <p class="eyebrow">Who We Are</p>
-      <h2>We Don't Just <span class="gold italic">Advise.</span><br>We Execute.</h2>
-      <p>Babylon Consulting builds and maintains AI-powered teams for businesses that are tired of doing everything manually. We're not a SaaS platform. We're not a chatbot company. We're an execution partner.</p>
-      <p>We build your systems, run your workflows, and deliver results &mdash; for a fixed monthly retainer. By hiring Babylon, you're hiring your very own team of AI that will be trained and maintained by us. It only gets better over time.</p>
-      <p>The businesses that win aren't the ones that work harder. They're the ones that automate smarter. That's what we help you do.</p>
-      <a href="#quiz" class="btn btn-outline" style="margin-top: 32px;">Book Your Discovery Call</a>
-    </div>
-    <div class="about-visual reveal-right">
-      <div class="about-quote">The businesses that win aren't the ones that work harder. They're the ones that automate smarter.</div>
-      <div class="about-location">Est. Fort Lauderdale</div>
-    </div>
-  </div>
-</section>
-
-<div class="divider"></div>
-
-<!-- ONBOARDING QUIZ -->
-<section class="quiz-section" id="quiz">
-  <div class="quiz-inner">
-    <div class="quiz-header reveal">
-      <p class="eyebrow">Book Your Discovery Call</p>
-      <h2>Let's Build Your <span class="gold italic">AI Team.</span></h2>
-      <p style="margin-top: 12px;">Tell us about your business and workflow, and we'll come prepared with a custom plan for your discovery call.</p>
-    </div>
-
-    <div class="quiz-progress">
-      <div class="quiz-progress-bar active" data-step="1"></div>
-      <div class="quiz-progress-bar" data-step="2"></div>
-      <div class="quiz-progress-bar" data-step="3"></div>
-      <div class="quiz-progress-bar" data-step="4"></div>
-      <div class="quiz-progress-bar" data-step="5"></div>
-      <div class="quiz-progress-bar" data-step="6"></div>
-    </div>
-
-    <form id="quizForm" action="https://formspree.io/f/xnjgkzng" method="POST">
-      <input type="hidden" name="source" value="discovery_call_booking">
-      <input type="hidden" name="quiz_business_type" id="h_business_type">
-      <input type="hidden" name="quiz_team_size" id="h_team_size">
-      <input type="hidden" name="quiz_current_tools" id="h_current_tools">
-      <input type="hidden" name="quiz_lead_source" id="h_lead_source">
-      <input type="hidden" name="quiz_sales_bottleneck" id="h_sales_bottleneck">
-      <input type="hidden" name="quiz_tried_automation" id="h_tried_automation">
-      <input type="hidden" name="quiz_pain_points" id="h_pain_points">
-      <input type="hidden" name="quiz_goal" id="h_goal">
-      <input type="hidden" name="quiz_available_days" id="h_available_days">
-      <input type="hidden" name="quiz_available_times" id="h_available_times">
-
-      <!-- STEP 1: Business Context -->
-      <div class="quiz-step active" data-step="1">
-        <div class="quiz-question">What best describes your business?</div>
-        <div class="quiz-subtext">Select one.</div>
-        <div class="quiz-options" data-field="business_type">
-          <div class="quiz-option" data-value="Service Business">Service Business</div>
-          <div class="quiz-option" data-value="E-commerce / Product">E-commerce / Product</div>
-          <div class="quiz-option" data-value="Agency / Consultancy">Agency / Consultancy</div>
-          <div class="quiz-option" data-value="Healthcare / Medical">Healthcare / Medical</div>
-          <div class="quiz-option" data-value="Real Estate">Real Estate</div>
-          <div class="quiz-option" data-value="Other">Other</div>
-        </div>
-
-        <div class="quiz-question" style="margin-top: 32px;">How many people are on your team?</div>
-        <div class="quiz-subtext">Select one.</div>
-        <div class="quiz-options two-col" data-field="team_size">
-          <div class="quiz-option" data-value="Just me">Just me</div>
-          <div class="quiz-option" data-value="2-5">2&ndash;5</div>
-          <div class="quiz-option" data-value="6-20">6&ndash;20</div>
-          <div class="quiz-option" data-value="21-50">21&ndash;50</div>
-          <div class="quiz-option" data-value="50+">50+</div>
-        </div>
-
-        <div class="quiz-nav">
-          <div></div>
-          <button type="button" class="btn btn-gold quiz-next">Next &rarr;</button>
-        </div>
-      </div>
-
-      <!-- STEP 2: Current Workflow & Tools -->
-      <div class="quiz-step" data-step="2">
-        <div class="quiz-question">What tools do you currently use?</div>
-        <div class="quiz-subtext">Select all that apply.</div>
-        <div class="quiz-options-multi" data-field="current_tools">
-          <div class="quiz-check" data-value="CRM (HubSpot, Salesforce, etc.)"><div class="quiz-checkbox"></div>CRM (HubSpot, Salesforce, etc.)</div>
-          <div class="quiz-check" data-value="Email marketing (Mailchimp, etc.)"><div class="quiz-checkbox"></div>Email marketing (Mailchimp, etc.)</div>
-          <div class="quiz-check" data-value="Social media tools"><div class="quiz-checkbox"></div>Social media tools (Buffer, Hootsuite, etc.)</div>
-          <div class="quiz-check" data-value="Project management (Asana, Trello, etc.)"><div class="quiz-checkbox"></div>Project management (Asana, Trello, etc.)</div>
-          <div class="quiz-check" data-value="Spreadsheets / Google Sheets"><div class="quiz-checkbox"></div>Spreadsheets / Google Sheets</div>
-          <div class="quiz-check" data-value="Accounting software"><div class="quiz-checkbox"></div>Accounting software (QuickBooks, etc.)</div>
-          <div class="quiz-check" data-value="Website builder (WordPress, Wix, etc.)"><div class="quiz-checkbox"></div>Website builder (WordPress, Wix, etc.)</div>
-          <div class="quiz-check" data-value="Nothing - pen and paper / manual"><div class="quiz-checkbox"></div>Nothing &mdash; pen and paper / mostly manual</div>
-        </div>
-
-        <div class="quiz-question" style="margin-top: 32px;">How do you currently get leads?</div>
-        <div class="quiz-subtext">Select all that apply.</div>
-        <div class="quiz-options-multi" data-field="lead_source">
-          <div class="quiz-check" data-value="Word of mouth / referrals"><div class="quiz-checkbox"></div>Word of mouth / referrals</div>
-          <div class="quiz-check" data-value="Social media"><div class="quiz-checkbox"></div>Social media</div>
-          <div class="quiz-check" data-value="Paid ads (Google, Meta, etc.)"><div class="quiz-checkbox"></div>Paid ads (Google, Meta, etc.)</div>
-          <div class="quiz-check" data-value="Cold outreach (email/calls)"><div class="quiz-checkbox"></div>Cold outreach (email/calls)</div>
-          <div class="quiz-check" data-value="Organic / SEO"><div class="quiz-checkbox"></div>Organic / SEO</div>
-          <div class="quiz-check" data-value="Not sure / inconsistent"><div class="quiz-checkbox"></div>Not sure / inconsistent</div>
-        </div>
-
-        <div class="quiz-nav">
-          <button type="button" class="quiz-back">&larr; Back</button>
-          <button type="button" class="btn btn-gold quiz-next">Next &rarr;</button>
-        </div>
-      </div>
-
-      <!-- STEP 3: Sales Process & Automation Experience -->
-      <div class="quiz-step" data-step="3">
-        <div class="quiz-question">What are the biggest bottlenecks in your sales process?</div>
-        <div class="quiz-subtext">Select all that apply.</div>
-        <div class="quiz-options-multi" data-field="sales_bottleneck">
-          <div class="quiz-check" data-value="Not enough leads coming in"><div class="quiz-checkbox"></div>Not enough leads coming in</div>
-          <div class="quiz-check" data-value="Leads go cold - no follow-up system"><div class="quiz-checkbox"></div>Leads go cold &mdash; no follow-up system</div>
-          <div class="quiz-check" data-value="Too much manual work to close deals"><div class="quiz-checkbox"></div>Too much manual work to close deals</div>
-          <div class="quiz-check" data-value="Can't track pipeline or deals"><div class="quiz-checkbox"></div>Can't track my pipeline or deals</div>
-          <div class="quiz-check" data-value="No time for marketing or content"><div class="quiz-checkbox"></div>No time for marketing or content</div>
-          <div class="quiz-check" data-value="Everything - I need help across the board"><div class="quiz-checkbox"></div>Everything &mdash; I need help across the board</div>
-        </div>
-
-        <div class="quiz-question" style="margin-top: 32px;">Have you tried any automation before?</div>
-        <div class="quiz-subtext">Select one.</div>
-        <div class="quiz-options" data-field="tried_automation">
-          <div class="quiz-option" data-value="No, this is new to me">No, this is new to me</div>
-          <div class="quiz-option" data-value="Yes, but it didn't work well">Yes, but it didn't work well</div>
-          <div class="quiz-option" data-value="Yes, and I want to scale it">Yes, and I want to scale it</div>
-        </div>
-
-        <div class="quiz-nav">
-          <button type="button" class="quiz-back">&larr; Back</button>
-          <button type="button" class="btn btn-gold quiz-next">Next &rarr;</button>
-        </div>
-      </div>
-
-      <!-- STEP 4: Pain Points & Goal -->
-      <div class="quiz-step" data-step="4">
-        <div class="quiz-question">Where are you losing the most time?</div>
-        <div class="quiz-subtext">Select all that apply.</div>
-        <div class="quiz-options-multi" data-field="pain_points">
-          <div class="quiz-check" data-value="Lead generation & prospecting"><div class="quiz-checkbox"></div>Lead generation &amp; prospecting</div>
-          <div class="quiz-check" data-value="Following up with leads/clients"><div class="quiz-checkbox"></div>Following up with leads / clients</div>
-          <div class="quiz-check" data-value="Managing CRM/pipeline"><div class="quiz-checkbox"></div>Managing my CRM / pipeline</div>
-          <div class="quiz-check" data-value="Creating content"><div class="quiz-checkbox"></div>Creating content (blogs, social, emails)</div>
-          <div class="quiz-check" data-value="Social media management"><div class="quiz-checkbox"></div>Social media management</div>
-          <div class="quiz-check" data-value="Website doesn't generate leads"><div class="quiz-checkbox"></div>My website doesn't generate leads</div>
-          <div class="quiz-check" data-value="SEO / getting found online"><div class="quiz-checkbox"></div>SEO / getting found online</div>
-          <div class="quiz-check" data-value="Manual data entry & repetitive tasks"><div class="quiz-checkbox"></div>Manual data entry &amp; repetitive tasks</div>
-          <div class="quiz-check" data-value="Email marketing & campaigns"><div class="quiz-checkbox"></div>Email marketing &amp; campaigns</div>
-          <div class="quiz-check" data-value="No system - everything is manual"><div class="quiz-checkbox"></div>I don't have a system &mdash; everything is manual</div>
-        </div>
-
-        <div class="quiz-question" style="margin-top: 32px;">What would make the biggest impact?</div>
-        <div class="quiz-subtext">Pick your top priority.</div>
-        <div class="quiz-options two-col" data-field="goal">
-          <div class="quiz-option" data-value="Get more leads & sales">Get more leads &amp; sales</div>
-          <div class="quiz-option" data-value="Save time on daily operations">Save time on daily operations</div>
-          <div class="quiz-option" data-value="Build a better online presence">Build a better online presence</div>
-          <div class="quiz-option" data-value="Launch a new website or app">Launch a new website or app</div>
-          <div class="quiz-option" data-value="Automate my sales process end-to-end">Automate my sales process end-to-end</div>
-          <div class="quiz-option" data-value="All of the above">All of the above &mdash; I need a full AI team</div>
-        </div>
-
-        <div class="quiz-nav">
-          <button type="button" class="quiz-back">&larr; Back</button>
-          <button type="button" class="btn btn-gold quiz-next">Next &rarr;</button>
-        </div>
-      </div>
-
-      <!-- STEP 5: Availability -->
-      <div class="quiz-step" data-step="5">
-        <div class="quiz-question">When are you available for a discovery call?</div>
-        <div class="quiz-subtext">Select all the days that work for you.</div>
-        <div class="quiz-days" data-field="available_days">
-          <div class="quiz-day" data-value="Monday">Mon</div>
-          <div class="quiz-day" data-value="Tuesday">Tue</div>
-          <div class="quiz-day" data-value="Wednesday">Wed</div>
-          <div class="quiz-day" data-value="Thursday">Thu</div>
-          <div class="quiz-day" data-value="Friday">Fri</div>
-        </div>
-
-        <div class="quiz-question" style="margin-top: 28px;">What time of day works best?</div>
-        <div class="quiz-subtext">Select all that apply.</div>
-        <div class="quiz-times" data-field="available_times">
-          <div class="quiz-time" data-value="Morning (9am-12pm)">
-            <div class="time-label">Morning</div>
-            <div class="time-range">9:00 AM &ndash; 12:00 PM</div>
-          </div>
-          <div class="quiz-time" data-value="Afternoon (12pm-4pm)">
-            <div class="time-label">Afternoon</div>
-            <div class="time-range">12:00 PM &ndash; 4:00 PM</div>
-          </div>
-          <div class="quiz-time" data-value="Evening (4pm-7pm)">
-            <div class="time-label">Evening</div>
-            <div class="time-range">4:00 PM &ndash; 7:00 PM</div>
-          </div>
-        </div>
-
-        <div class="quiz-nav">
-          <button type="button" class="quiz-back">&larr; Back</button>
-          <button type="button" class="btn btn-gold quiz-next">Next &rarr;</button>
-        </div>
-      </div>
-
-      <!-- STEP 6: Contact Info -->
-      <div class="quiz-step" data-step="6">
-        <div class="quiz-question">Almost there. How should we reach you?</div>
-        <div class="quiz-subtext">We'll confirm your discovery call within 24 hours.</div>
-        <div class="quiz-form-fields">
-          <div class="quiz-form-row">
-            <div class="quiz-field">
-              <label>First Name *</label>
-              <input type="text" name="first_name" required>
-            </div>
-            <div class="quiz-field">
-              <label>Last Name *</label>
-              <input type="text" name="last_name" required>
-            </div>
-          </div>
-          <div class="quiz-field">
-            <label>Email *</label>
-            <input type="email" name="email" required>
-          </div>
-          <div class="quiz-form-row">
-            <div class="quiz-field">
-              <label>Phone *</label>
-              <input type="tel" name="phone" required>
-            </div>
-            <div class="quiz-field">
-              <label>Company (optional)</label>
-              <input type="text" name="company">
-            </div>
-          </div>
-          <div class="quiz-field">
-            <label>Anything else we should know?</label>
-            <textarea name="message" placeholder="Tell us about your business, goals, or challenges..."></textarea>
-          </div>
-        </div>
-        <div class="quiz-nav">
-          <button type="button" class="quiz-back">&larr; Back</button>
-          <button type="submit" class="btn btn-gold">Book My Discovery Call &rarr;</button>
-        </div>
-      </div>
-    </form>
-
-    <!-- Confirmation -->
-    <div class="quiz-confirmation" id="quizConfirmation">
-      <h2>Your Discovery Call Is <span class="gold italic">Almost Booked.</span></h2>
-      <p>Based on your answers, here's what we'll focus on during your call:</p>
-      <div class="quiz-recommendations" id="quizRecs"></div>
-      <p>A member of the Babylon team will confirm your discovery call time within 24 hours. We'll come prepared with a custom plan for your business.</p>
-    </div>
-  </div>
-</section>
-
-<div class="divider"></div>
-
-<!-- CONTACT (simplified) -->
-<section class="contact" id="contact">
-  <div class="reveal">
-    <p class="eyebrow">Get In Touch</p>
-    <h2>Prefer to Reach Out <span class="gold italic">Directly?</span></h2>
-    <p>We're always available for a conversation.</p>
-  </div>
-  <div class="contact-details reveal">
-    <div class="contact-item">
-      <div class="contact-icon">
-        <svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 4 10 8 10-8"/></svg>
-      </div>
-      <div>
-        <div class="label">Email</div>
-        <div class="value">ahmed@babylonconsulting.us</div>
-      </div>
-    </div>
-    <div class="contact-item">
-      <div class="contact-icon">
-        <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-      </div>
-      <div>
-        <div class="label">Phone</div>
-        <div class="value">+1 (313) 247-2008</div>
-      </div>
-    </div>
-    <div class="contact-item">
-      <div class="contact-icon">
-        <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-      </div>
-      <div>
-        <div class="label">Location</div>
-        <div class="value">Fort Lauderdale, Florida</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- FOOTER -->
-<footer>
-  <div class="footer-logo">BABYLON</div>
-  <div class="footer-copy">&copy; 2026 Babylon Consulting LLC &mdash; All rights reserved &mdash; Fort Lauderdale, FL</div>
-  <div class="footer-links">
-    <a href="#services">Services</a>
-    <a href="#process">How It Works</a>
-    <a href="#about">About</a>
-    <a href="#quiz">Get Started</a>
-    <a href="privacy-policy.html">Privacy</a>
-    <a href="terms-and-conditions.html">Terms</a>
+  <div class="footer-bottom">
+    <span>© 2026 Babylon Consulting LLC. All rights reserved.</span>
+    <span>
+      <a href="privacy-policy.html" style="margin-right:24px;">Privacy Policy</a>
+      <a href="terms-and-conditions.html">Terms</a>
+    </span>
   </div>
 </footer>
 
-<!-- JAVASCRIPT -->
 <script>
-  // Custom Cursor
-  const cursor = document.querySelector('.cursor');
-  const ring = document.querySelector('.cursor-ring');
-  let mx = 0, my = 0, rx = 0, ry = 0;
-
-  document.addEventListener('mousemove', e => {
-    mx = e.clientX; my = e.clientY;
-    cursor.style.left = mx - 4 + 'px';
-    cursor.style.top = my - 4 + 'px';
-  });
-
-  function animateRing() {
-    rx += (mx - rx) * 0.12;
-    ry += (my - ry) * 0.12;
-    ring.style.left = rx - 16 + 'px';
-    ring.style.top = ry - 16 + 'px';
-    requestAnimationFrame(animateRing);
-  }
-  animateRing();
-
-  // Cursor hover effect
-  document.querySelectorAll('a, button, .service-card, .quiz-option, .quiz-check, .quiz-day, .quiz-time').forEach(el => {
-    el.addEventListener('mouseenter', () => {
-      cursor.style.transform = 'scale(2.5)';
-      ring.style.transform = 'scale(1.5)';
-      ring.style.opacity = '0.2';
-    });
-    el.addEventListener('mouseleave', () => {
-      cursor.style.transform = 'scale(1)';
-      ring.style.transform = 'scale(1)';
-      ring.style.opacity = '0.5';
-    });
-  });
-
-  // Nav scroll
-  const nav = document.querySelector('nav');
-  window.addEventListener('scroll', () => {
-    nav.classList.toggle('scrolled', window.scrollY > 80);
-  });
-
-  // Scroll Reveal
-  const revealObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-      }
-    });
-  }, {
-    threshold: 0.08,
-    rootMargin: '0px 0px -40px 0px'
-  });
-
-  document.querySelectorAll('.reveal, .reveal-scale, .reveal-fade, .reveal-left, .reveal-right').forEach(el => {
-    revealObserver.observe(el);
-  });
-
-  // Parallax
-  const parallaxElements = document.querySelectorAll('.parallax-slow, .parallax-medium');
-  let ticking = false;
-
-  function updateParallax() {
-    const scrollY = window.scrollY;
-    parallaxElements.forEach(el => {
-      const speed = el.classList.contains('parallax-slow') ? 0.15 : 0.3;
-      el.style.transform = 'translateY(' + (scrollY * speed) + 'px)';
-    });
-    ticking = false;
-  }
-
-  window.addEventListener('scroll', () => {
-    if (!ticking) {
-      requestAnimationFrame(updateParallax);
-      ticking = true;
-    }
-  });
-
-  // Stat Counter Animation
-  const statNumbers = document.querySelectorAll('.stat-number');
-  const statObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        const el = entry.target;
-        const text = el.textContent;
-        if (/^\d+$/.test(text.replace(/[,$+%M]/g, ''))) {
-          const finalVal = parseInt(text.replace(/[^0-9]/g, ''));
-          const prefix = text.match(/^[^0-9]*/)[0] || '';
-          const suffix = text.match(/[^0-9]*$/)[0] || '';
-          const duration = 1500;
-          const startTime = performance.now();
-
-          function animate(currentTime) {
-            const elapsed = currentTime - startTime;
-            const progress = Math.min(elapsed / duration, 1);
-            const eased = 1 - Math.pow(1 - progress, 3);
-            const current = Math.round(eased * finalVal);
-            el.textContent = prefix + current.toLocaleString() + suffix;
-            if (progress < 1) requestAnimationFrame(animate);
-            else el.textContent = text;
-          }
-          requestAnimationFrame(animate);
-        }
-        statObserver.unobserve(el);
-      }
-    });
-  }, { threshold: 0.5 });
-
-  statNumbers.forEach(el => statObserver.observe(el));
-
-  // Mobile nav toggle
-  const mobileBtn = document.querySelector('.nav-mobile');
-  const navLinks = document.querySelector('.nav-links');
-  let navOpen = false;
-  mobileBtn.addEventListener('click', () => {
-    navOpen = !navOpen;
-    if (navOpen) {
-      navLinks.style.display = 'flex';
-      navLinks.style.flexDirection = 'column';
-      navLinks.style.position = 'absolute';
-      navLinks.style.top = '70px';
-      navLinks.style.right = '24px';
-      navLinks.style.background = 'rgba(10,10,10,0.97)';
-      navLinks.style.padding = '24px 32px';
-      navLinks.style.gap = '24px';
-      navLinks.style.backdropFilter = 'blur(12px)';
-      navLinks.style.borderRadius = '0';
-      navLinks.style.border = '1px solid var(--white-faint)';
-    } else {
-      navLinks.style.display = 'none';
-    }
-  });
-
-  navLinks.querySelectorAll('a').forEach(a => {
-    a.addEventListener('click', () => {
-      if (window.innerWidth <= 768) {
-        navLinks.style.display = 'none';
-        navOpen = false;
-      }
-    });
-  });
-
-  // ═══ ONBOARDING QUIZ ═══
-  const quizData = {
-    business_type: '',
-    team_size: '',
-    current_tools: [],
-    lead_source: [],
-    sales_bottleneck: [],
-    tried_automation: '',
-    pain_points: [],
-    goal: '',
-    available_days: [],
-    available_times: []
-  };
-
-  let currentStep = 1;
-  const totalSteps = 6;
-
-  // Single-select options
-  document.querySelectorAll('.quiz-options .quiz-option').forEach(opt => {
-    opt.addEventListener('click', () => {
-      const parent = opt.closest('.quiz-options');
-      parent.querySelectorAll('.quiz-option').forEach(o => o.classList.remove('selected'));
-      opt.classList.add('selected');
-      const field = parent.dataset.field;
-      quizData[field] = opt.dataset.value;
-    });
-  });
-
-  // Multi-select checkboxes
-  document.querySelectorAll('.quiz-check').forEach(chk => {
-    chk.addEventListener('click', () => {
-      chk.classList.toggle('selected');
-      const cb = chk.querySelector('.quiz-checkbox');
-      cb.textContent = chk.classList.contains('selected') ? '\u2713' : '';
-      // Rebuild the array for the parent field
-      const parent = chk.closest('.quiz-options-multi');
-      const field = parent.dataset.field;
-      quizData[field] = [];
-      parent.querySelectorAll('.quiz-check.selected').forEach(s => {
-        quizData[field].push(s.dataset.value);
-      });
-    });
-  });
-
-  // Day multi-select
-  document.querySelectorAll('.quiz-day').forEach(day => {
-    day.addEventListener('click', () => {
-      day.classList.toggle('selected');
-      quizData.available_days = [];
-      document.querySelectorAll('.quiz-day.selected').forEach(d => {
-        quizData.available_days.push(d.dataset.value);
-      });
-    });
-  });
-
-  // Time multi-select
-  document.querySelectorAll('.quiz-time').forEach(time => {
-    time.addEventListener('click', () => {
-      time.classList.toggle('selected');
-      quizData.available_times = [];
-      document.querySelectorAll('.quiz-time.selected').forEach(t => {
-        quizData.available_times.push(t.dataset.value);
-      });
-    });
-  });
-
-  // Navigation
-  function showStep(n) {
-    document.querySelectorAll('.quiz-step').forEach(s => s.classList.remove('active'));
-    const step = document.querySelector('.quiz-step[data-step="' + n + '"]');
-    if (step) {
-      step.classList.remove('active');
-      void step.offsetWidth;
-      step.classList.add('active');
-    }
-
-    document.querySelectorAll('.quiz-progress-bar').forEach(bar => {
-      const barStep = parseInt(bar.dataset.step);
-      bar.classList.remove('active', 'done');
-      if (barStep < n) bar.classList.add('done');
-      else if (barStep === n) bar.classList.add('active');
-    });
-
-    currentStep = n;
-  }
-
-  document.querySelectorAll('.quiz-next').forEach(btn => {
-    btn.addEventListener('click', () => {
-      if (currentStep === 1) {
-        if (!quizData.business_type || !quizData.team_size) {
-          alert('Please select your business type and team size.');
-          return;
-        }
-      } else if (currentStep === 2) {
-        if (quizData.current_tools.length === 0 || quizData.lead_source.length === 0) {
-          alert('Please select your tools and how you currently get leads.');
-          return;
-        }
-      } else if (currentStep === 3) {
-        if (quizData.sales_bottleneck.length === 0 || !quizData.tried_automation) {
-          alert('Please select at least one bottleneck and your automation experience.');
-          return;
-        }
-      } else if (currentStep === 4) {
-        if (quizData.pain_points.length === 0 || !quizData.goal) {
-          alert('Please select at least one pain point and your top priority.');
-          return;
-        }
-      } else if (currentStep === 5) {
-        if (quizData.available_days.length === 0 || quizData.available_times.length === 0) {
-          alert('Please select at least one day and time slot.');
-          return;
-        }
-      }
-      showStep(currentStep + 1);
-    });
-  });
-
-  document.querySelectorAll('.quiz-back').forEach(btn => {
-    btn.addEventListener('click', () => {
-      showStep(currentStep - 1);
-    });
-  });
-
-  // Service recommendation mapping
-  const painToService = {
-    'Lead generation & prospecting': 'AI Sales Agents',
-    'Following up with leads/clients': 'CRM & Sales Automation',
-    'Managing CRM/pipeline': 'CRM & Sales Automation',
-    'Creating content': 'Content Creation',
-    'Social media management': 'Social Media Management',
-    'Website doesn\'t generate leads': 'Website Design & Development',
-    'SEO / getting found online': 'SEO & Search Marketing',
-    'Manual data entry & repetitive tasks': 'Workflow Automation',
-    'Email marketing & campaigns': 'Marketing Automation',
-    'No system - everything is manual': 'Full AI Team'
-  };
-
-  // Form submission
-  const quizForm = document.getElementById('quizForm');
-  quizForm.addEventListener('submit', function(e) {
-    e.preventDefault();
-
-    // Populate hidden fields
-    document.getElementById('h_business_type').value = quizData.business_type;
-    document.getElementById('h_team_size').value = quizData.team_size;
-    document.getElementById('h_current_tools').value = quizData.current_tools.join(', ');
-    document.getElementById('h_lead_source').value = quizData.lead_source.join(', ');
-    document.getElementById('h_sales_bottleneck').value = quizData.sales_bottleneck.join(', ');
-    document.getElementById('h_tried_automation').value = quizData.tried_automation;
-    document.getElementById('h_pain_points').value = quizData.pain_points.join(', ');
-    document.getElementById('h_goal').value = quizData.goal;
-    document.getElementById('h_available_days').value = quizData.available_days.join(', ');
-    document.getElementById('h_available_times').value = quizData.available_times.join(', ');
-
-    // Submit via fetch
-    const formData = new FormData(quizForm);
-    fetch(quizForm.action, {
-      method: 'POST',
-      body: formData,
-      headers: { 'Accept': 'application/json' }
-    }).then(response => {
-      if (response.ok) {
-        quizForm.style.display = 'none';
-        document.querySelector('.quiz-progress').style.display = 'none';
-
-        const recs = new Set();
-        quizData.pain_points.forEach(p => {
-          if (painToService[p]) recs.add(painToService[p]);
-        });
-        const recsContainer = document.getElementById('quizRecs');
-        recsContainer.innerHTML = '';
-        recs.forEach(r => {
-          recsContainer.innerHTML += '<span class="quiz-rec-tag">' + r + '</span>';
-        });
-
-        document.getElementById('quizConfirmation').classList.add('active');
-      } else {
-        alert('Something went wrong. Please try again or email us directly at ahmed@babylonconsulting.us');
-      }
-    }).catch(() => {
-      alert('Something went wrong. Please try again or email us directly at ahmed@babylonconsulting.us');
-    });
-  });
-
-  // ARIA waitlist form
-  const ariaForm = document.querySelector('.aria-waitlist');
-  if (ariaForm) {
-    ariaForm.addEventListener('submit', function(e) {
-      const btn = ariaForm.querySelector('button');
-      setTimeout(() => {
-        btn.textContent = 'You\'re on the list!';
-        btn.style.background = 'var(--dark2)';
-        btn.style.color = 'var(--gold)';
-        btn.style.border = '1px solid var(--gold)';
-        ariaForm.querySelector('input[type="email"]').value = '';
-      }, 500);
-    });
-  }
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((e) => { if (e.isIntersecting) e.target.classList.add('in'); });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
 </script>
-
 </body>
 </html>

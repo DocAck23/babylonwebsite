@@ -1,258 +1,145 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Terms &amp; Conditions | Babylon Consulting LLC</title>
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body {
-            font-family: Helvetica, Arial, sans-serif;
-            background-color: #0d0d1a;
-            color: #e0e0e0;
-            line-height: 1.7;
-            font-size: 15px;
-        }
-        a { color: #C9A84C; text-decoration: none; }
-        a:hover { text-decoration: underline; }
-
-        .header {
-            background-color: #1a1a2e;
-            border-bottom: 2px solid #C9A84C;
-            padding: 24px 0;
-            text-align: center;
-        }
-        .header h1 {
-            font-size: 22px;
-            font-weight: 700;
-            color: #C9A84C;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-        }
-
-        .hero {
-            background: linear-gradient(180deg, #1a1a2e 0%, #0d0d1a 100%);
-            text-align: center;
-            padding: 60px 20px 40px;
-        }
-        .hero h2 {
-            font-size: 36px;
-            font-weight: 700;
-            color: #ffffff;
-            margin-bottom: 12px;
-        }
-        .hero .gold-line {
-            width: 80px;
-            height: 3px;
-            background-color: #C9A84C;
-            margin: 0 auto 16px;
-        }
-        .hero p {
-            color: #888888;
-            font-size: 14px;
-        }
-
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 40px 24px 80px;
-        }
-
-        .section { margin-bottom: 36px; }
-        .section h3 {
-            font-size: 18px;
-            font-weight: 700;
-            color: #C9A84C;
-            margin-bottom: 12px;
-            padding-bottom: 8px;
-            border-bottom: 1px solid rgba(201, 168, 76, 0.2);
-        }
-        .section p, .section li {
-            color: #cccccc;
-            margin-bottom: 10px;
-        }
-        .section ul, .section ol {
-            list-style: none;
-            padding-left: 0;
-        }
-        .section ul li::before {
-            content: "—";
-            color: #C9A84C;
-            margin-right: 10px;
-        }
-        .section ol { counter-reset: item; }
-        .section ol li { counter-increment: item; }
-        .section ol li::before {
-            content: counter(item, lower-alpha) ")";
-            color: #C9A84C;
-            margin-right: 10px;
-            font-weight: 700;
-        }
-
-        .footer {
-            background-color: #1a1a2e;
-            border-top: 2px solid #C9A84C;
-            text-align: center;
-            padding: 32px 20px;
-            color: #888888;
-            font-size: 13px;
-        }
-        .footer a { color: #C9A84C; }
-        .footer .links { margin-top: 12px; }
-        .footer .links a { margin: 0 16px; }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Terms & Conditions | Babylon Consulting</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-<div class="header">
-    <h1>Babylon Consulting LLC</h1>
-</div>
+<nav class="nav">
+  <a href="index.html" class="nav-brand">
+    <span class="nav-brand-mark"></span>
+    <span>Babylon<small>Consulting</small></span>
+  </a>
+  <div class="nav-links" id="navLinks">
+    <a href="index.html">Home</a>
+    <a href="sectors.html">Sectors</a>
+    <a href="capabilities.html">Capabilities</a>
+    <a href="about.html">About</a>
+    <a href="contact.html" class="nav-cta">Begin Dialogue</a>
+  </div>
+  <button class="nav-burger" aria-label="Menu" onclick="document.getElementById('navLinks').classList.toggle('open')">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
 
-<div class="hero">
-    <h2>Terms &amp; Conditions</h2>
-    <div class="gold-line"></div>
-    <p>Effective Date: March 24, 2026 &nbsp;|&nbsp; Last Updated: March 24, 2026</p>
-</div>
+<section class="page-hero">
+  <div class="container">
+    <span class="eyebrow">Legal</span>
+    <h1>Terms &amp; Conditions</h1>
+    <p>Effective Date: March 24, 2026 · Last Updated: March 24, 2026</p>
+  </div>
+</section>
 
-<div class="container">
+<section class="section">
+  <div class="prose">
 
-    <div class="section">
-        <h3>1. Acceptance of Terms</h3>
-        <p>These Terms and Conditions ("Terms") govern your access to and use of the website, services, and offerings provided by Babylon Consulting LLC ("Babylon Consulting," "we," "our," or "us"). By accessing our website at <a href="https://www.babylonconsulting.us">www.babylonconsulting.us</a> or engaging our services, you agree to be bound by these Terms.</p>
-        <p>If you do not agree to these Terms, you must not access or use our website or services. If you are entering into these Terms on behalf of a business or entity, you represent that you have the authority to bind that entity.</p>
+    <h3>1. Acceptance of Terms</h3>
+    <p>By accessing or using the website <a href="https://www.babylonconsulting.us">www.babylonconsulting.us</a> or engaging the services of Babylon Consulting LLC ("Babylon Consulting," "we," "our," or "us"), you ("you" or "Client") agree to be bound by these Terms &amp; Conditions. If you do not agree, do not use our website or services.</p>
+
+    <h3>2. Services</h3>
+    <p>Babylon Consulting provides advisory, deal origination, project facilitation, capital introduction, procurement, trade, and related consulting services to governments, sovereign entities, enterprises, and principals. The specific scope, deliverables, timeline, and fees for each engagement are governed by a separate written agreement executed between Babylon Consulting and the Client.</p>
+
+    <h3>3. No Attorney-Client, Fiduciary, or Broker-Dealer Relationship</h3>
+    <p>Our services do not constitute legal, tax, accounting, investment-banking, broker-dealer, or medical advice. We are not licensed as attorneys, investment advisors, or broker-dealers. Clients are responsible for retaining licensed professionals where such advice is required.</p>
+
+    <h3>4. Client Responsibilities</h3>
+    <ul>
+      <li>Provide accurate, complete, and timely information</li>
+      <li>Obtain all necessary internal and external authorizations</li>
+      <li>Comply with all applicable laws, sanctions, and regulations</li>
+      <li>Pay all fees and expenses in accordance with the governing engagement agreement</li>
+    </ul>
+
+    <h3>5. Confidentiality</h3>
+    <p>Both parties agree to treat non-public information exchanged during an engagement as confidential and to use it only for the purpose of the engagement. This obligation survives termination of the engagement.</p>
+
+    <h3>6. Intellectual Property</h3>
+    <p>All materials, methodologies, frameworks, and deliverables produced by Babylon Consulting remain our intellectual property unless otherwise agreed in writing. Clients receive a limited, non-exclusive license to use deliverables for their internal purposes.</p>
+
+    <h3>7. Fees &amp; Payment</h3>
+    <p>Fees are specified in the governing engagement agreement and may include retainers, success fees, expense reimbursements, or combinations thereof. Late payments accrue interest at the maximum rate permitted by law.</p>
+
+    <h3>8. Limitation of Liability</h3>
+    <p>To the fullest extent permitted by law, Babylon Consulting's total liability arising from or related to any engagement shall not exceed the fees paid by the Client for the specific engagement giving rise to the claim. In no event shall Babylon Consulting be liable for indirect, incidental, consequential, or punitive damages.</p>
+
+    <h3>9. Indemnification</h3>
+    <p>You agree to indemnify, defend, and hold harmless Babylon Consulting and its officers, partners, and affiliates from any claims, damages, losses, or expenses arising out of your breach of these Terms, your misuse of our services, or your violation of any law.</p>
+
+    <h3>10. Sanctions &amp; Compliance</h3>
+    <p>Babylon Consulting complies with all applicable U.S. and international sanctions, anti-corruption, and anti-money-laundering laws. We reserve the right to decline or terminate any engagement that, in our sole judgment, presents unacceptable legal, ethical, or reputational risk.</p>
+
+    <h3>11. No Guarantee of Outcomes</h3>
+    <p>Advisory and facilitation services are inherently uncertain. While we commit to diligent and professional effort, we do not guarantee any specific outcome, deal closure, regulatory approval, financing, or commercial result.</p>
+
+    <h3>12. Third-Party Services and Introductions</h3>
+    <p>We may introduce Clients to third-party operators, financiers, contractors, or advisors. Such third parties are independent, and Babylon Consulting is not responsible for their acts, omissions, or performance.</p>
+
+    <h3>13. Termination</h3>
+    <p>Either party may terminate an engagement in accordance with the governing engagement agreement. Provisions relating to confidentiality, intellectual property, payment of earned fees, indemnification, and limitation of liability survive termination.</p>
+
+    <h3>14. Governing Law &amp; Dispute Resolution</h3>
+    <p>These Terms are governed by the laws of the State of Delaware, United States, without regard to its conflict of laws principles. Any dispute shall be resolved exclusively by confidential binding arbitration seated in the United States, conducted in English.</p>
+
+    <h3>15. Changes to These Terms</h3>
+    <p>We may update these Terms &amp; Conditions from time to time. Changes will be posted on this page with an updated "Last Updated" date.</p>
+
+    <h3>16. Contact</h3>
+    <p><strong>Babylon Consulting LLC</strong><br>
+      Email: <a href="mailto:ahmed@babylonconsulting.us">ahmed@babylonconsulting.us</a><br>
+      Website: <a href="https://www.babylonconsulting.us">www.babylonconsulting.us</a></p>
+
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <a href="index.html" class="nav-brand" style="color:var(--ivory);">
+        <span class="nav-brand-mark"></span>
+        <span>Babylon<small>Consulting</small></span>
+      </a>
+      <p>A global advisory and deal-facilitation firm. Headquartered in the United States, engaged worldwide.</p>
     </div>
-
-    <div class="section">
-        <h3>2. Services</h3>
-        <p>Babylon Consulting provides business consulting services, including but not limited to:</p>
-        <ul>
-            <li>Revenue operations consulting for independent medical practices</li>
-            <li>Cash-pay program development and management</li>
-            <li>Patient acquisition and sales infrastructure</li>
-            <li>CRM implementation and operational support</li>
-            <li>Equipment and asset sourcing and acquisition consulting</li>
-        </ul>
-        <p>The scope, deliverables, fees, and timeline for any engagement will be defined in a separate service agreement or statement of work between you and Babylon Consulting.</p>
+    <div>
+      <h5>Firm</h5>
+      <ul>
+        <li><a href="about.html">About</a></li>
+        <li><a href="capabilities.html">Capabilities</a></li>
+        <li><a href="sectors.html">Sectors</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
     </div>
-
-    <div class="section">
-        <h3>3. Eligibility</h3>
-        <p>You must be at least 18 years old and have the legal capacity to enter into a binding agreement to use our services. By using our website or services, you represent and warrant that you meet these requirements.</p>
+    <div>
+      <h5>Sectors</h5>
+      <ul>
+        <li><a href="sectors.html#energy">Energy</a></li>
+        <li><a href="sectors.html#mining">Mining</a></li>
+        <li><a href="sectors.html#agriculture">Agriculture</a></li>
+        <li><a href="sectors.html#health">Health</a></li>
+      </ul>
     </div>
-
-    <div class="section">
-        <h3>4. User Responsibilities</h3>
-        <p>When using our website or engaging our services, you agree to:</p>
-        <ul>
-            <li>Provide accurate, current, and complete information</li>
-            <li>Not use our services for any unlawful or prohibited purpose</li>
-            <li>Not interfere with or disrupt the website or its infrastructure</li>
-            <li>Not attempt to gain unauthorized access to any systems or data</li>
-            <li>Not reproduce, distribute, or create derivative works from our content without written permission</li>
-            <li>Comply with all applicable laws and regulations</li>
-        </ul>
+    <div>
+      <h5>Contact</h5>
+      <ul>
+        <li><a href="mailto:ahmed@babylonconsulting.us">ahmed@babylonconsulting.us</a></li>
+        <li><a href="contact.html">Secure Inquiry</a></li>
+      </ul>
     </div>
-
-    <div class="section">
-        <h3>5. Intellectual Property</h3>
-        <p>All content on this website — including text, graphics, logos, images, branding, software, and documentation — is the property of Babylon Consulting LLC or its licensors and is protected by copyright, trademark, and other intellectual property laws.</p>
-        <p>You may not copy, modify, distribute, sell, or lease any part of our content or intellectual property without prior written consent from Babylon Consulting.</p>
-        <p>Any materials, strategies, frameworks, or deliverables created by Babylon Consulting in the course of a client engagement remain our intellectual property unless explicitly transferred in writing.</p>
-    </div>
-
-    <div class="section">
-        <h3>6. Confidentiality</h3>
-        <p>Both parties agree to maintain the confidentiality of any proprietary or sensitive information exchanged during the course of an engagement. This includes, but is not limited to, business strategies, financial data, patient information, operational processes, and trade secrets.</p>
-        <p>This obligation survives the termination of any service agreement.</p>
-    </div>
-
-    <div class="section">
-        <h3>7. Fees and Payment</h3>
-        <p>Fees for our services will be outlined in the applicable service agreement. Unless otherwise specified:</p>
-        <ul>
-            <li>All fees are quoted in U.S. dollars</li>
-            <li>Payment is due within the timeframe specified in the service agreement</li>
-            <li>Late payments may be subject to interest at a rate of 1.5% per month or the maximum rate permitted by law, whichever is lower</li>
-            <li>You are responsible for all taxes associated with the services, excluding taxes based on our income</li>
-        </ul>
-    </div>
-
-    <div class="section">
-        <h3>8. Disclaimers</h3>
-        <p><strong style="color:#ffffff;">No Guarantees of Results.</strong> Babylon Consulting provides professional consulting services based on our experience and expertise. However, we do not guarantee specific outcomes, revenue figures, patient volumes, or business results. Results depend on numerous factors beyond our control, including but not limited to market conditions, client execution, and regulatory changes.</p>
-        <p><strong style="color:#ffffff;">Not Medical Advice.</strong> Babylon Consulting is a business consulting firm. Nothing provided by us constitutes medical advice, diagnosis, or treatment. Medical decisions remain the sole responsibility of licensed healthcare providers.</p>
-        <p><strong style="color:#ffffff;">"As Is" Website.</strong> Our website is provided on an "as is" and "as available" basis. We make no warranties, express or implied, regarding the website's accuracy, reliability, availability, or fitness for a particular purpose.</p>
-    </div>
-
-    <div class="section">
-        <h3>9. Limitation of Liability</h3>
-        <p>To the maximum extent permitted by law, Babylon Consulting LLC, its officers, directors, employees, and agents shall not be liable for any indirect, incidental, special, consequential, or punitive damages, including but not limited to loss of profits, revenue, data, or business opportunities, arising from or related to your use of our website or services.</p>
-        <p>Our total aggregate liability for any claims arising under these Terms shall not exceed the total fees paid by you to Babylon Consulting in the twelve (12) months preceding the event giving rise to the claim.</p>
-    </div>
-
-    <div class="section">
-        <h3>10. Indemnification</h3>
-        <p>You agree to indemnify, defend, and hold harmless Babylon Consulting LLC and its officers, directors, employees, and agents from and against any claims, liabilities, damages, losses, costs, or expenses (including reasonable attorneys' fees) arising from:</p>
-        <ul>
-            <li>Your use of our website or services</li>
-            <li>Your breach of these Terms</li>
-            <li>Your violation of any law or regulation</li>
-            <li>Your infringement of any third-party rights</li>
-        </ul>
-    </div>
-
-    <div class="section">
-        <h3>11. Termination</h3>
-        <p>We reserve the right to suspend or terminate your access to our website or services at any time, with or without cause, and with or without notice. Upon termination, all provisions of these Terms that by their nature should survive will remain in effect, including intellectual property, confidentiality, limitation of liability, and indemnification.</p>
-        <p>Termination of a specific service engagement is governed by the applicable service agreement.</p>
-    </div>
-
-    <div class="section">
-        <h3>12. Governing Law and Dispute Resolution</h3>
-        <p>These Terms are governed by and construed in accordance with the laws of the State of Florida, without regard to its conflict of law provisions.</p>
-        <p>Any disputes arising under or in connection with these Terms shall first be attempted to be resolved through good-faith negotiation. If negotiation fails, disputes shall be resolved through binding arbitration in Palm Beach County, Florida, in accordance with the rules of the American Arbitration Association. Each party shall bear its own costs and attorneys' fees unless the arbitrator rules otherwise.</p>
-    </div>
-
-    <div class="section">
-        <h3>13. Third-Party Services</h3>
-        <p>Our website and services may integrate with or reference third-party tools, platforms, and services. Babylon Consulting is not responsible for the availability, accuracy, or practices of third-party services. Your use of such services is subject to their own terms and policies.</p>
-    </div>
-
-    <div class="section">
-        <h3>14. Modifications to These Terms</h3>
-        <p>We reserve the right to modify these Terms at any time. Updated Terms will be posted on this page with a revised "Last Updated" date. Your continued use of our website or services after changes are posted constitutes your acceptance of the modified Terms. We encourage you to review these Terms periodically.</p>
-    </div>
-
-    <div class="section">
-        <h3>15. Severability</h3>
-        <p>If any provision of these Terms is found to be invalid, illegal, or unenforceable, the remaining provisions shall continue in full force and effect. The invalid provision shall be modified to the minimum extent necessary to make it valid and enforceable.</p>
-    </div>
-
-    <div class="section">
-        <h3>16. Entire Agreement</h3>
-        <p>These Terms, together with our <a href="privacy-policy.html">Privacy Policy</a> and any applicable service agreements, constitute the entire agreement between you and Babylon Consulting LLC regarding the subject matter herein and supersede all prior agreements and understandings.</p>
-    </div>
-
-    <div class="section">
-        <h3>17. Contact Us</h3>
-        <p>If you have questions about these Terms, please contact us:</p>
-        <p style="margin-top: 16px;">
-            <strong style="color:#ffffff;">Babylon Consulting LLC</strong><br>
-            Email: <a href="mailto:ahmed@babylonconsulting.us">ahmed@babylonconsulting.us</a><br>
-            Phone: +1 (313) 247-2008<br>
-            Website: <a href="https://www.babylonconsulting.us">www.babylonconsulting.us</a>
-        </p>
-    </div>
-
-</div>
-
-<div class="footer">
-    <p>&copy; 2026 Babylon Consulting LLC. All rights reserved.</p>
-    <div class="links">
-        <a href="privacy-policy.html">Privacy Policy</a>
-        <a href="terms-and-conditions.html">Terms &amp; Conditions</a>
-    </div>
-</div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Babylon Consulting LLC. All rights reserved.</span>
+    <span>
+      <a href="privacy-policy.html" style="margin-right:24px;">Privacy Policy</a>
+      <a href="terms-and-conditions.html">Terms</a>
+    </span>
+  </div>
+</footer>
 
 </body>
 </html>

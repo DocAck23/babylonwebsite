@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact | Babylon Consulting</title>
+<meta name="description" content="Begin a private conversation with Babylon Consulting. Serious inquiries only.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<style>
+  .contact-layout {
+    display: grid;
+    grid-template-columns: 0.9fr 1.3fr;
+    gap: 96px;
+    align-items: start;
+  }
+  .contact-meta h3 { margin-bottom: 14px; }
+  .contact-meta .block { margin-bottom: 40px; }
+  .contact-meta .block h5 {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--copper);
+    margin-bottom: 12px;
+    font-weight: 500;
+  }
+  .contact-meta a.email {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 24px;
+    color: var(--ivory);
+    border-bottom: 1px solid var(--copper);
+    padding-bottom: 2px;
+  }
+  .status {
+    padding: 18px 22px;
+    border: 1px solid var(--copper);
+    background: rgba(200, 122, 75, 0.08);
+    color: var(--ivory);
+    font-size: 14px;
+    margin-bottom: 24px;
+    display: none;
+  }
+  .status.show { display: block; }
+  @media (max-width: 1024px) {
+    .contact-layout { grid-template-columns: 1fr; gap: 48px; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a href="index.html" class="nav-brand">
+    <span class="nav-brand-mark"></span>
+    <span>Babylon<small>Consulting</small></span>
+  </a>
+  <div class="nav-links" id="navLinks">
+    <a href="index.html">Home</a>
+    <a href="sectors.html">Sectors</a>
+    <a href="capabilities.html">Capabilities</a>
+    <a href="about.html">About</a>
+    <a href="contact.html" class="nav-cta active">Begin Dialogue</a>
+  </div>
+  <button class="nav-burger" aria-label="Menu" onclick="document.getElementById('navLinks').classList.toggle('open')">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<section class="page-hero">
+  <div class="container">
+    <span class="eyebrow reveal">Contact</span>
+    <h1 class="reveal delay-1">Begin a <em class="italic copper">private conversation.</em></h1>
+    <p class="reveal delay-2">Tell us who you are, on whose behalf you write, and what you are trying to accomplish. Serious inquiries receive a response within two business days.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="contact-layout">
+
+      <div class="contact-meta reveal">
+        <div class="block">
+          <h5>Direct Correspondence</h5>
+          <a class="email" href="mailto:ahmed@babylonconsulting.us">ahmed@babylonconsulting.us</a>
+        </div>
+        <div class="block">
+          <h5>Firm</h5>
+          <p style="color:var(--ivory);">Babylon Consulting LLC</p>
+          <p>United States — engaged worldwide</p>
+        </div>
+        <div class="block">
+          <h5>Before You Write</h5>
+          <p>Please indicate the capacity in which you write—government, ministry, enterprise, principal, or intermediary—and the jurisdiction involved. Confidentiality is assumed from first contact.</p>
+        </div>
+        <div class="block">
+          <h5>Response Standard</h5>
+          <p>All serious inquiries are reviewed by a partner and answered within two business days. We decline politely and promptly when there is not a fit.</p>
+        </div>
+      </div>
+
+      <div class="reveal delay-1">
+        <div id="status" class="status"></div>
+        <form class="form" id="contactForm" action="mailto:ahmed@babylonconsulting.us" method="post" enctype="text/plain">
+          <div class="field">
+            <label for="name">Full Name</label>
+            <input id="name" name="name" type="text" required autocomplete="name">
+          </div>
+          <div class="field">
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" required autocomplete="email">
+          </div>
+          <div class="field">
+            <label for="phone">Phone (with country code)</label>
+            <input id="phone" name="phone" type="tel" autocomplete="tel" placeholder="+1 555 000 0000">
+          </div>
+          <div class="field">
+            <label for="country">Country / Jurisdiction</label>
+            <input id="country" name="country" type="text" required>
+          </div>
+          <div class="field field-full">
+            <label for="behalf">On Behalf of Whom Do You Write?</label>
+            <input id="behalf" name="behalf" type="text" required placeholder="Government, ministry, company name, or 'principal / self'">
+          </div>
+          <div class="field">
+            <label for="role">Your Role</label>
+            <input id="role" name="role" type="text" placeholder="Minister, CEO, advisor, intermediary…">
+          </div>
+          <div class="field">
+            <label for="sector">Sector of Interest</label>
+            <select id="sector" name="sector">
+              <option value="">Select a sector</option>
+              <option>Energy — Power, Turbines &amp; Transition</option>
+              <option>Mining — Extractives &amp; Critical Minerals</option>
+              <option>Agriculture — Food Security &amp; Agribusiness</option>
+              <option>Health — Systems &amp; Infrastructure</option>
+              <option>Industrial — Manufacturing &amp; Heavy Industry</option>
+              <option>Trade — Import, Export &amp; Logistics</option>
+              <option>AI &amp; Digital Transformation</option>
+              <option>Other / Multiple</option>
+            </select>
+          </div>
+          <div class="field field-full">
+            <label for="message">Nature of the Mandate</label>
+            <textarea id="message" name="message" required placeholder="Briefly describe the initiative, objective, timeline, and any constraints we should understand."></textarea>
+          </div>
+          <div class="field field-full">
+            <button type="submit" class="btn btn-primary" style="border:none; cursor:pointer; font-family:inherit;">
+              Send Inquiry <span class="arrow"></span>
+            </button>
+            <p style="font-size:12px; color:var(--ivory-faint); margin-top:16px; letter-spacing:0.04em;">
+              By submitting, you acknowledge our <a href="privacy-policy.html" style="color:var(--copper); border-bottom:1px solid var(--copper);">Privacy Policy</a>. All inquiries are treated as confidential.
+            </p>
+          </div>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <a href="index.html" class="nav-brand" style="color:var(--ivory);">
+        <span class="nav-brand-mark"></span>
+        <span>Babylon<small>Consulting</small></span>
+      </a>
+      <p>A global advisory and deal-facilitation firm. Headquartered in the United States, engaged worldwide.</p>
+    </div>
+    <div>
+      <h5>Firm</h5>
+      <ul>
+        <li><a href="about.html">About</a></li>
+        <li><a href="capabilities.html">Capabilities</a></li>
+        <li><a href="sectors.html">Sectors</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <h5>Sectors</h5>
+      <ul>
+        <li><a href="sectors.html#energy">Energy</a></li>
+        <li><a href="sectors.html#mining">Mining</a></li>
+        <li><a href="sectors.html#agriculture">Agriculture</a></li>
+        <li><a href="sectors.html#health">Health</a></li>
+      </ul>
+    </div>
+    <div>
+      <h5>Contact</h5>
+      <ul>
+        <li><a href="mailto:ahmed@babylonconsulting.us">ahmed@babylonconsulting.us</a></li>
+        <li><a href="contact.html">Secure Inquiry</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Babylon Consulting LLC. All rights reserved.</span>
+    <span>
+      <a href="privacy-policy.html" style="margin-right:24px;">Privacy Policy</a>
+      <a href="terms-and-conditions.html">Terms</a>
+    </span>
+  </div>
+</footer>
+
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((e) => { if (e.isIntersecting) e.target.classList.add('in'); });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
+
+  // Fallback mailto composer — builds a formatted email so the form works
+  // even on a static host. Swap action to a real endpoint when available.
+  document.getElementById('contactForm').addEventListener('submit', function (e) {
+    e.preventDefault();
+    const f = e.target;
+    const get = (n) => (f.elements[n] ? f.elements[n].value.trim() : '');
+    const lines = [
+      'Name: ' + get('name'),
+      'Email: ' + get('email'),
+      'Phone: ' + get('phone'),
+      'Country / Jurisdiction: ' + get('country'),
+      'On Behalf Of: ' + get('behalf'),
+      'Role: ' + get('role'),
+      'Sector: ' + get('sector'),
+      '',
+      '— Message —',
+      get('message'),
+    ];
+    const subject = 'Babylon Inquiry — ' + (get('behalf') || get('name'));
+    const body = encodeURIComponent(lines.join('\n'));
+    window.location.href = 'mailto:ahmed@babylonconsulting.us?subject=' +
+      encodeURIComponent(subject) + '&body=' + body;
+    const s = document.getElementById('status');
+    s.classList.add('show');
+    s.textContent = 'Opening your mail client. If nothing happens, please email ahmed@babylonconsulting.us directly.';
+  });
+</script>
+</body>
+</html>

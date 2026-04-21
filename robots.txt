@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: /available-inventory/
+
+Sitemap: https://www.babylonconsulting.us/sitemap.xml
