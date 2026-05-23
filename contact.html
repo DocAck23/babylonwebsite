@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Contact | Babylon Consulting</title>
-<meta name="description" content="Begin a private conversation with Babylon Consulting. Serious inquiries only.">
+<meta name="description" content="Begin a private conversation with Babylon Consulting about buying or selling steam and gas turbines, or our medical and AI advisory practices.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
@@ -58,8 +58,8 @@
   </a>
   <div class="nav-links" id="navLinks">
     <a href="index.html">Home</a>
-    <a href="sectors.html">Sectors</a>
-    <a href="capabilities.html">Capabilities</a>
+    <a href="turbines.html">Turbines</a>
+    <a href="consulting.html">Consulting</a>
     <a href="about.html">About</a>
     <a href="contact.html" class="nav-cta active">Begin Dialogue</a>
   </div>
@@ -92,11 +92,11 @@
         </div>
         <div class="block">
           <h5>Before You Write</h5>
-          <p>Please indicate the capacity in which you write—government, ministry, enterprise, principal, or intermediary—and the jurisdiction involved. Confidentiality is assumed from first contact.</p>
+          <p>If your inquiry concerns a turbine, please include the type (steam or gas), output class, frequency, and your timeline. For an advisory engagement, a few lines on what you are trying to accomplish is enough. Confidentiality is assumed from first contact.</p>
         </div>
         <div class="block">
           <h5>Response Standard</h5>
-          <p>All serious inquiries are reviewed by a partner and answered within two business days. We decline politely and promptly when there is not a fit.</p>
+          <p>All serious inquiries are reviewed and answered within two business days. We decline politely and promptly when there is not a fit.</p>
         </div>
       </div>
 
@@ -116,34 +116,33 @@
             <input id="phone" name="phone" type="tel" autocomplete="tel" placeholder="+1 555 000 0000">
           </div>
           <div class="field">
-            <label for="country">Country / Jurisdiction</label>
+            <label for="country">Country</label>
             <input id="country" name="country" type="text" required>
           </div>
           <div class="field field-full">
             <label for="behalf">On Behalf of Whom Do You Write?</label>
-            <input id="behalf" name="behalf" type="text" required placeholder="Government, ministry, company name, or 'principal / self'">
+            <input id="behalf" name="behalf" type="text" required placeholder="Company, organization, or 'self'">
           </div>
           <div class="field">
             <label for="role">Your Role</label>
-            <input id="role" name="role" type="text" placeholder="Minister, CEO, advisor, intermediary…">
+            <input id="role" name="role" type="text" placeholder="Owner, director, manager, advisor…">
           </div>
           <div class="field">
-            <label for="sector">Sector of Interest</label>
-            <select id="sector" name="sector">
-              <option value="">Select a sector</option>
-              <option>Energy — Power, Turbines &amp; Transition</option>
-              <option>Mining — Extractives &amp; Critical Minerals</option>
-              <option>Agriculture — Food Security &amp; Agribusiness</option>
-              <option>Health — Systems &amp; Infrastructure</option>
-              <option>Industrial — Manufacturing &amp; Heavy Industry</option>
-              <option>Trade — Import, Export &amp; Logistics</option>
-              <option>AI &amp; Digital Transformation</option>
-              <option>Other / Multiple</option>
+            <label for="interest">Area of Interest</label>
+            <select id="interest" name="interest">
+              <option value="">Select an area</option>
+              <option>Buying a Steam Turbine</option>
+              <option>Buying a Gas Turbine</option>
+              <option>Selling / Placing a Turbine</option>
+              <option>Complete Generating Package</option>
+              <option>Medical Practice Consulting</option>
+              <option>AI &amp; Data Consulting</option>
+              <option>Other / General</option>
             </select>
           </div>
           <div class="field field-full">
-            <label for="message">Nature of the Mandate</label>
-            <textarea id="message" name="message" required placeholder="Briefly describe the initiative, objective, timeline, and any constraints we should understand."></textarea>
+            <label for="message">How Can We Help?</label>
+            <textarea id="message" name="message" required placeholder="Briefly describe what you need. For a turbine, include type, output, frequency, and timeline."></textarea>
           </div>
           <div class="field field-full">
             <button type="submit" class="btn btn-primary" style="border:none; cursor:pointer; font-family:inherit;">
@@ -167,24 +166,23 @@
         <span class="nav-brand-mark"></span>
         <span>Babylon<small>Consulting</small></span>
       </a>
-      <p>A global advisory and deal-facilitation firm. Headquartered in the United States, engaged worldwide.</p>
+      <p>The acquisition and sale of steam and gas turbines, with medical practice and AI &amp; data advisory. Headquartered in the United States, engaged worldwide.</p>
     </div>
     <div>
       <h5>Firm</h5>
       <ul>
         <li><a href="about.html">About</a></li>
-        <li><a href="capabilities.html">Capabilities</a></li>
-        <li><a href="sectors.html">Sectors</a></li>
+        <li><a href="turbines.html">Turbines</a></li>
+        <li><a href="consulting.html">Consulting</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
     </div>
     <div>
-      <h5>Sectors</h5>
+      <h5>Practice</h5>
       <ul>
-        <li><a href="sectors.html#energy">Energy</a></li>
-        <li><a href="sectors.html#mining">Mining</a></li>
-        <li><a href="sectors.html#agriculture">Agriculture</a></li>
-        <li><a href="sectors.html#health">Health</a></li>
+        <li><a href="turbines.html">Steam &amp; Gas Turbines</a></li>
+        <li><a href="consulting.html#medical">Medical Practice Consulting</a></li>
+        <li><a href="consulting.html#ai">AI &amp; Data Consulting</a></li>
       </ul>
     </div>
     <div>
@@ -210,8 +208,6 @@
   }, { threshold: 0.12 });
   document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
 
-  // Fallback mailto composer — builds a formatted email so the form works
-  // even on a static host. Swap action to a real endpoint when available.
   document.getElementById('contactForm').addEventListener('submit', function (e) {
     e.preventDefault();
     const f = e.target;
@@ -220,10 +216,10 @@
       'Name: ' + get('name'),
       'Email: ' + get('email'),
       'Phone: ' + get('phone'),
-      'Country / Jurisdiction: ' + get('country'),
+      'Country: ' + get('country'),
       'On Behalf Of: ' + get('behalf'),
       'Role: ' + get('role'),
-      'Sector: ' + get('sector'),
+      'Area of Interest: ' + get('interest'),
       '',
       '— Message —',
       get('message'),
