@@ -119,7 +119,7 @@ let y = BAND + 38;
 eyebrow(MX, y, 'Firm Overview', C.babylon, true);
 y += 24;
 doc.font('serif').fontSize(20).fillColor(C.ink)
-   .text('A principal in the market — not a name on the sidelines.', MX, y, { width: 430 });
+   .text('A principal in the market.', MX, y, { width: 430 });
 y = doc.y + 12;
 doc.font('sans').fontSize(10.5).fillColor(C.g700)
    .text('Babylon Consulting LLC is a privately held firm headquartered in the United States and engaged worldwide. Our core business is the acquisition and sale of steam and gas turbines for power producers, industrial operators, and project developers. Around that core we run two focused advisory practices — healthcare and AI & data — measured by outcomes delivered, not reports issued.',
