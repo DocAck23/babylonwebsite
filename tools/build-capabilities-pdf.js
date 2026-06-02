@@ -233,7 +233,7 @@ rows.forEach((r) => {
 // ---- Confidential engagements block -------------------------------------
 const bx = MX, bw = CW;
 const by = y + 6;
-const bh = 198;
+const bh = 208;
 doc.rect(bx, by, bw, bh).fill(C.babylon);
 doc.rect(bx, by, 4, bh).fill(C.gold);
 // faint mark
@@ -247,10 +247,11 @@ doc.font('serif').fontSize(17).fillColor(CREAM)
 doc.font('sans').fontSize(9.8).fillColor(CREAM_80)
    .text('Babylon Consulting maintains active non-disclosure agreements across multiple engagements in the United States, principally tied to data-center developments and the power systems that serve them. Counterparties and project specifics are withheld in accordance with those agreements.',
      bx + 28, by + 78, { width: bw - 56, lineGap: 2.8 });
-doc.rect(bx + 28, doc.y + 12, 30, 1.5).fill(C.gold);
+const bodyBottom = doc.y;
+doc.rect(bx + 28, bodyBottom + 14, 30, 1.5).fill(C.gold);
 doc.font('sansB').fontSize(8.8).fillColor(C.gold)
    .text('The U.S. data-center buildout is driving sustained demand for on-site and grid generation — the steam and gas turbine capacity Babylon sources and transacts as principal.',
-     bx + 28, doc.y + 10, { width: bw - 56, lineGap: 2 });
+     bx + 28, bodyBottom + 28, { width: bw - 56, lineGap: 2 });
 
 footer('Page 2 of 2');
 
