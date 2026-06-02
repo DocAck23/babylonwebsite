@@ -151,8 +151,8 @@ doc.rect(MX, y + 86, CW, 2).fill(C.babylon);
 const stats = [
   ['Direct', 'Buyer & Seller'],
   ['Global', 'Reach & Sourcing'],
-  ['Steam & Gas', 'Turbine Specialists'],
-  ['Discreet', 'By Default'],
+  ['Turbines', 'Steam & Gas Focus'],
+  ['Confidential', 'Engagements'],
 ];
 const sW = CW / 4;
 stats.forEach((st, i) => {
