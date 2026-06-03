@@ -1,0 +1,11 @@
+# Confidential business correspondence — must NOT be published to the public
+# website repository. Kept on disk locally only.
+babylon-letter-vafaev-DRAFT.pdf
+tools/build-letter-pdf.js
+
+# PDF build scratch (node deps, render previews)
+tools/node_modules/
+tools/package.json
+tools/package-lock.json
+tools/render.mjs
+tools/*preview-*.png
